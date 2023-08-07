@@ -1,0 +1,22 @@
+
+.app{
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
+
+.hireMeContainer{
+  border: 1px solid #000;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-left: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: aliceblue;
+  font-weight: 600;
+
+}
+

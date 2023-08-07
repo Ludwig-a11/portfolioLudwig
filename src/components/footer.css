@@ -1,0 +1,22 @@
+.footerCointainer{
+  border-top: 2px solid rgba(41, 85, 246, 0.629);
+  margin-top: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+
+.footer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footerSpan{
+  margin-top: 1%;
+  display: inline-block;
+  width: auto;
+  margin-left: 20%;
+}

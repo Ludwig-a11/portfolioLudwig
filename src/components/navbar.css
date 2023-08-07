@@ -1,0 +1,51 @@
+.navBarContainer{
+  margin-top: 1%;
+  padding: 1%;
+  display: flex;
+  
+}
+
+.navBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  list-style: none;
+  width: 80%;
+  margin-left: 5%;
+}
+
+.navBarIcons{
+  width: 20%;
+  /*margin-left: 2%; */
+    
+}
+
+.navBarItem{
+  margin-top: 1%;
+  margin-right: 3%;
+  margin-left: 3%;
+  font-size: large;
+  text-decoration: none;
+  color: #181717;
+  font-weight: 600;
+}
+
+.linkedInIcon{
+  width: 10%;
+  height: auto;
+  color: #0A66C2;
+}
+
+.twitterIcon{
+  margin-left: 3%;
+  width: 10%;
+  height: auto;
+  color: #1DA1F2;
+}
+
+ .gitHubIcon{
+  margin-left: 3%;
+  width: 10%;
+  height: auto;
+  color: #181717;
+}
