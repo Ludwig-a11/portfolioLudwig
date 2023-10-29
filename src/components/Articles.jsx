@@ -1,9 +1,10 @@
 
 
-const Articles = () => {
-  return (
-    <div>Articles</div>
-  )
-}
+const Articles = () =>{
 
+
+return(
+  <div>Aricles</div>
+)
+};
 export default Articles
