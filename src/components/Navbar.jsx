@@ -11,7 +11,7 @@ const Navbar = () => {
         <Link to='/' className='navBarItem'>Home</Link>
         <Link to='/about' className='navBarItem'>About</Link>
         <Link to='/projects' className='navBarItem'>Projects</Link>
-        <Link to='/articles' className='navBarItem'>Articles</Link>
+        <Link to='/contact' className='navBarItem'>Contact</Link>
       </nav>
       <nav className='navBarIcons'>
          <motion.a href='https://www.linkedin.com/in/luis-zarza-471b06132/' target={'_blank'} rel='noreferrer'

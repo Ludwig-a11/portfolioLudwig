@@ -1,27 +1,28 @@
 import "./projects.css";
 import { motion } from "framer-motion";
-import projectImg from "../assets/project1Pic.jpg";
+import projectImg from "../assets/lifeAndCodeBlog.png";
+import ddtcImg from "../assets/ddtCalculator.png";
 
 const Projects = () => {
   return (
     <div>
       <div className="projectsContainer">
         <div className="project1Card">
-          <img className="project1Img" src={projectImg} alt="Project Image" />
+          <img className="ddtcImg" src={ddtcImg} alt="Project Image" />
           <div className="project1Details">
             <h2>Dedicated Development Teams Calculator</h2>
-            <h3>Assable your drem team</h3>
+            
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-              voluptate consectetur quidem quos officiis cum laudantium commodi
-              quia et sed atque nesciunt, sapiente eligendi, impedit iusto.
-              Error autem est sed.
+              Salvo Software’s tool helps companies create and manage dedicated
+              development teams. The teams are customized, scalable, and
+              cost-effective. They offer control, transparency, and quality
+              results.
             </p>
           </div>
           <motion.button
-          className="projectBtn"
-          whileHover={{scale: 1.1}}
-          transition={{type: "spring", stiffness: 400, damping: 10 }}
+            className="projectBtn"
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             Project
           </motion.button>
@@ -30,8 +31,8 @@ const Projects = () => {
         <div className="project1Card">
           <img className="project1Img" src={projectImg} alt="Project Image" />
           <div className="project1Details">
-            <h2>Dedicated Development Teams Calculator</h2>
-            <h3>Assable your dream team</h3>
+            <h2>Blog</h2>
+            
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, ad
               corrupti laudantium voluptatum explicabo voluptatibus enim
@@ -40,9 +41,9 @@ const Projects = () => {
             </p>
           </div>
           <motion.button
-          className="projectBtn"
-          whileHover={{scale: 1.1}}
-          transition={{type: "spring", stiffness: 400, damping: 10 }}
+            className="projectBtn"
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             Project
           </motion.button>
