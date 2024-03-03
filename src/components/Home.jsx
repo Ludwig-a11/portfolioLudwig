@@ -1,27 +1,16 @@
 import "./home.css";
 import image from '../assets/profilepic.jpg'
 import { motion } from "framer-motion"
+import { GithubIcon, LinkedInIcon, TwitterIcon } from './Icons'
+
+
 
 const Home = () => {
 
-  const handleHireMeClick = () =>{
-    const recipient = 'boue123@gmail.com';
-    const subjectline = "Let's talk...";
-    const body = 'What is your project about?';
-
-    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subjectline)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoUrl;
-  };
 
   return (
     <>
     <div className="homeContainer">
-      <div className="homeProfile">
-        <img 
-          className='profilePic'
-          src={image} 
-          alt="profilepic" />
-      </div>
       <div className="homeDetails">
         <motion.div
           className="homedetails"
@@ -34,41 +23,57 @@ const Home = () => {
             }}
           >
           <h2 className="homeTitle">
-            Mejora continua a través de pequeños cambios.
+            Luis Martinez
           </h2>
         </motion.div>
         <p className="homeSlogan">
-          Mi enfoque se basa en la idea de que incluso los pequeños cambios
-          pueden marcar una gran diferencia. <br />
-          ¡Gracias por visitar mi portfolio!
+          My approach to overcomming challenges is both systematic and proactive, <br/>reflecting a commitment to ensuring project success.
         </p>
-
         <div className="contactSection">
           <div className="homeResume">
             <motion.button
               className="resumeBtn"
               whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
               Resume
             </motion.button>
-          </div>
-          <div 
-          className="homeHireMe"
-          onClick={handleHireMeClick}
-          >
-            <motion.button
-              className="hireMeBtn"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              Hire Me
-            </motion.button>
-          </div>
+          </div> 
         </div>
       </div>
+      <div className="homeProfile">
+        <img 
+          className='profilePic'
+          src={image} 
+          alt="profilepic" />
+      </div>
+      <nav className='navBarIcons'>
+         <motion.a href='https://www.linkedin.com/in/luis-zarza-471b06132/' target={'_blank'} rel='noreferrer'
+          whileHover={{
+            scale:1.2,
+            transition:{duration:1},
+            }}
+            whileTap={{scale:0.2}}
+            > <LinkedInIcon className='linkedInIcon' />
+          </motion.a>
+         <motion.a href='https://twitter.com/_Luis_Z' target={'_blank'} rel='noreferrer'
+          whileHover={{
+            scale:1.2,
+            transition: {duration:1},
+            }}
+            whileTap={{scale:0.2}}
+            > <TwitterIcon className='twitterIcon' />
+            </motion.a>
+         <motion.a href='https://github.com/Ludwig-a11' target={'_blank'} rel='noreferrer'
+          whileHover={{
+            scale:1.2,
+            transition:{duration:1},
+            }}
+            whileTap={{scale:0.2}}
+            > <GithubIcon className='gitHubIcon' />
+          </motion.a>         
+      </nav>
     </div>
-    
     
     </>
   );

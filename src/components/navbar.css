@@ -8,16 +8,10 @@
 .navBar{
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
   list-style: none;
   width: 80%;
   margin-left: 5%;
-}
-
-.navBarIcons{
-  width: 20%;
-  /*margin-left: 2%; */
-    
 }
 
 .navBarItem{
@@ -30,22 +24,20 @@
   font-weight: 600;
 }
 
-.linkedInIcon{
-  width: 10%;
-  height: auto;
-  color: #0A66C2;
+.hireMeBtn{
+  background-color: #1a1a1c;
+  color: aliceblue;
+  border-radius: 5px;
+  border-style: none;
+  margin-bottom: 5%;
+  margin-left: 10%;
+  width: 110px;
+  height: 30px;
+  cursor: pointer;
+  font-size: large;
+
 }
 
-.twitterIcon{
-  margin-left: 3%;
-  width: 10%;
-  height: auto;
-  color: #1DA1F2;
-}
-
- .gitHubIcon{
-  margin-left: 3%;
-  width: 10%;
-  height: auto;
-  color: #181717;
+.homeHireMe{
+  margin-top: .5%;
 }

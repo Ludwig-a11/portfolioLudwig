@@ -1,8 +1,15 @@
 import './navbar.css'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { GithubIcon, LinkedInIcon, TwitterIcon } from './Icons'
+import { motion } from "framer-motion"
 
+const handleHireMeClick = () =>{
+  const recipient = 'boue123@gmail.com';
+  const subjectline = "Let's talk...";
+  const body = 'What is your project about?';
+
+  const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subjectline)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailtoUrl;
+};
 
 const Navbar = () => {
   return (
@@ -11,23 +18,20 @@ const Navbar = () => {
         <Link to='/' className='navBarItem'>Home</Link>
         <Link to='/about' className='navBarItem'>About</Link>
         <Link to='/projects' className='navBarItem'>Projects</Link>
-        <Link to='/contact' className='navBarItem'>Contact</Link>
+        <div 
+          className="homeHireMe"
+          onClick={handleHireMeClick}
+          >
+            <motion.button
+              className="hireMeBtn"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
+            >
+              Hire Me
+            </motion.button>
+        </div>
       </nav>
-      <nav className='navBarIcons'>
-         <motion.a href='https://www.linkedin.com/in/luis-zarza-471b06132/' target={'_blank'} rel='noreferrer'
-          whileHover={{
-            scale:1.2,
-            transition:{duration:1},
-            }}
-            whileTap={{scale:0.2}}
-            > <LinkedInIcon className='linkedInIcon' />
-          </motion.a>
-         <motion.a href='https://twitter.com/_Luis_Z' target={'_blank'} rel='noreferrer'
-         whileHover={{y:5}}><TwitterIcon className='twitterIcon' /></motion.a>
-         <motion.a href='https://github.com/Ludwig-a11' target={'_blank'} rel='noreferrer'
-         whileHover={{y:2}}><GithubIcon className='gitHubIcon' /></motion.a>
-         
-      </nav>
+      
     </div>
   )
 }

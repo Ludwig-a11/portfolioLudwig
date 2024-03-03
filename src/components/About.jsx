@@ -1,22 +1,28 @@
 import "./about.css";
 import image from "../assets/aboutMePic.jpg";
-import { motion } from "framer-motion";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
 
 const About = () => {
   const handleUpButton = () => {
     window.scrollTo(0, 0);
   };
 
+  const { scrollYProgress } = useViewportScroll()
+  const scale = useTransform(scrollYProgress, [1000,1000], [0.1000, 1]);  
+
+
   return (
-    <>
+    < >
       <div className="aboutMainContainer">
         <div className="aboutMePicContainer">
           <img className="aboutMePic" src={image} alt="aboutMePicture" />
         </div>
       </div>
 
-      <section className="bioSection">
-        <h2 className="bio">Biography</h2>
+      <section 
+      style={{scale}}
+      className="bioSection">
+        <motion.h2 style={{scaleY: scrollYProgress}} className="bio">Biography</motion.h2>
         <p className="details">
           Luis Martinez <br /> 1990 / México
         </p>
@@ -105,7 +111,7 @@ const About = () => {
           href="https://certificates.academlo.com/en/verify/00470908666115"
           target={"_blank"}
           rel="noreferrer"
-          whileHover={{ scale: 1.3 }}
+          whileHover={{ scale: 1.3, fontWeight:'bold' }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           Show Credential
@@ -118,7 +124,7 @@ const About = () => {
           href="https://certificates.academlo.com/en/verify/31039857591732"
           target={"_blank"}
           rel="noreferrer"
-          whileHover={{ scale: 1.3 }}
+          whileHover={{ scale: 1.3, fontWeight:'bold' }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           Show Credential
@@ -131,7 +137,7 @@ const About = () => {
           href="https://certificates.academlo.com/en/verify/13744625688450"
           target={"_blank"}
           rel="noreferrer"
-          whileHover={{ scale: 1.3 }}
+          whileHover={{ scale: 1.3, fontWeight:'bold' }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           Show Credential

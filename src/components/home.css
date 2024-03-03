@@ -6,6 +6,7 @@
   margin-top: 2.5%;
   margin-left: 5%;
   margin-right: 5%;
+  border: solid #000 1px; 
 
 }
 
@@ -15,12 +16,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  border: solid #000 1px; 
+  
 }
 
 .profilePic{
   height: 100%;
   width: auto;
+  
 }
 
 .homeName, .homeProfilePic, h3, span{
@@ -31,22 +34,23 @@
 .homeDetails{
   flex: 1.4;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction:column;
+  justify-content:end;
+  margin-bottom: 3%;
+  width: 80%;;
+
 }
 
 
 .homeTitle{
   margin-top: 3%;
   margin-bottom: 1%;
-  font-size: 50px;  
-  text-align: center;
+  font-size: 45px;  
+  
 }
 
 .homeSlogan{
-  text-align: center;
-  font-size: larger;
+  font-size:large;
 }
 
 .contactSection{
@@ -59,34 +63,43 @@
   color: aliceblue;
   border-radius: 5px;
   border-style: none;
-  margin-top: 3%;
   right: 2%;
   width: 130px;
-  height: 43px;
+  height: 35px;
   cursor: pointer;
   font-size: larger;
   
 }
 .homeResume{
-  margin-top: 3%;
+  margin-top: 2%;
 }
 
-.hireMeBtn{
-  background-color: #1a1a1c;
-  color: aliceblue;
-  border-radius: 5px;
-  border-style: none;
-  margin-top: 7%;
-  margin-left: 10%;
-  width: 130px;
-  height: 43px;
-  cursor: pointer;
-  font-size: large;
-
+.navBarIcons{
+  width: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #000;
+    
 }
 
-.homeHireMe{
-  margin-top: 1%;
+.linkedInIcon{
+  width: auto;
+  height: auto;
+  color: #0A66C2;
 }
+
+.twitterIcon{
+  width: auto;
+  height: auto;
+  color: #1DA1F2;
+}
+
+ .gitHubIcon{
+  width: auto;
+  height: auto;
+  color: #181717;
+}
+
 
 
