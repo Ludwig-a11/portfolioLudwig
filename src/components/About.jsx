@@ -1,14 +1,13 @@
 import "./about.css";
 import image from "../assets/aboutMePic.jpg";
-import { motion, useTransform, useViewportScroll } from "framer-motion";
+import { motion } from "framer-motion";
+import { HiOutlineArrowSmallUp } from "react-icons/hi2";
+import { PiArrowSquareInLight } from "react-icons/pi";
 
 const About = () => {
   const handleUpButton = () => {
     window.scrollTo(0, 0);
-  };
-
-  const { scrollYProgress } = useViewportScroll()
-  const scale = useTransform(scrollYProgress, [1000,1000], [0.1000, 1]);  
+  };  
 
 
   return (
@@ -20,9 +19,9 @@ const About = () => {
       </div>
 
       <section 
-      style={{scale}}
+      
       className="bioSection">
-        <motion.h2 style={{scaleY: scrollYProgress}} className="bio">Biography</motion.h2>
+        <h2 className="bio">Biography</h2>
         <p className="details">
           Luis Martinez <br /> 1990 / México
         </p>
@@ -104,6 +103,20 @@ const About = () => {
 
       <section className="certSection">
         <h3 className="cert">Certifications</h3>
+
+        <p className="certTesting">Software Testing for Developers</p>
+        <p className="date">Feb-2024</p>
+        <motion.a
+          className="testingCred"
+          href="https://www.coursera.org/account/accomplishments/verify/XD3ZQ2KFVEGA"
+          target={"_blank"}
+          rel="noreferrer"
+          whileHover={{ scale: 1.3, fontWeight:'bold' }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
+        >
+          Credential <PiArrowSquareInLight/>
+        </motion.a>
+
         <p className="certFullStack">Full Stack Web Development</p>
         <p className="date">Nov-2022</p>
         <motion.a
@@ -112,9 +125,9 @@ const About = () => {
           target={"_blank"}
           rel="noreferrer"
           whileHover={{ scale: 1.3, fontWeight:'bold' }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
         >
-          Show Credential
+          Credential <PiArrowSquareInLight/>
         </motion.a>
 
         <p className="certBackEnd">Back-end Development with Node.js</p>
@@ -125,9 +138,9 @@ const About = () => {
           target={"_blank"}
           rel="noreferrer"
           whileHover={{ scale: 1.3, fontWeight:'bold' }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
         >
-          Show Credential
+          Credential <PiArrowSquareInLight/>
         </motion.a>
 
         <p className="certFrontEnd">Front-end Development with React.js</p>
@@ -138,9 +151,9 @@ const About = () => {
           target={"_blank"}
           rel="noreferrer"
           whileHover={{ scale: 1.3, fontWeight:'bold' }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
         >
-          Show Credential
+          Credential <PiArrowSquareInLight/>
         </motion.a>
       </section>
 
@@ -198,9 +211,15 @@ const About = () => {
           </div>
         </div>
       </section>
-      <button className="backToTopBtn" onClick={handleUpButton}>
-        Back to top
-      </button>
+      <motion.button 
+        className="backToTopBtn" 
+        onClick={handleUpButton}
+        whileHover={{ scale: 2, fontWeight:'bold' }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        >
+         < HiOutlineArrowSmallUp/>
+      </motion.button>
+      
     </>
   );
 };

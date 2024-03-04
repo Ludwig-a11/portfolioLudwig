@@ -134,6 +134,15 @@
   padding: 0;
 }
 
+.testingCred{
+  margin-top: 1%;
+  text-decoration: none;
+}
+
+.certFullStack{
+  margin-top: 3%;
+}
+
 .fullStackCred{
   margin-top: 1%;
   text-decoration: none;
@@ -178,7 +187,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-bottom: 5%;
+  margin-bottom: 4%;
 }
 
 .salesList{
@@ -202,5 +211,17 @@
 }
 
 .backToTopBtn{
-  
+  position: absolute;
+  left: 93%;
+  top: 96.5%;
+  margin-bottom: 30%;
+  border: none; 
+  outline: none; 
+  background: none; 
+  padding: 0; 
+  margin: 0; 
+  font-family: inherit;
+  font-size:larger;
+  font-style: bold; 
+  cursor: pointer;
 }
