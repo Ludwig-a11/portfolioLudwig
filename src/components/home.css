@@ -85,20 +85,23 @@
 
 .linkedInIcon{
   width: auto;
-  height: auto;
-  color: #0A66C2;
+  height: 25px;
+  color: #181717;
+  margin-bottom: 5%;
 }
 
 .twitterIcon{
   width: auto;
-  height: auto;
-  color: #1DA1F2;
+  height: 25px;
+  color: #181717;
+  margin-bottom: 5%;
 }
 
  .gitHubIcon{
   width: auto;
-  height: auto;
+  height: 25px;
   color: #181717;
+  margin-bottom: 5%;
 }
 
 

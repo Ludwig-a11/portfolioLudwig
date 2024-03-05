@@ -14,13 +14,22 @@ const About = () => {
     < >
       <div className="aboutMainContainer">
         <div className="aboutMePicContainer">
-          <img className="aboutMePic" src={image} alt="aboutMePicture" />
+          <motion.img 
+            className="aboutMePic" 
+            src={image} alt="aboutMePicture"
+            initial={{opacity:0, scale:0.5}}
+            animate={{opacity:1, scale:1}}
+            transition={{
+              duration:1,
+              delay: 0.5,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}>
+          </motion.img>
         </div>
       </div>
 
       <section 
-      
-      className="bioSection">
+       className="bioSection">
         <h2 className="bio">Biography</h2>
         <p className="details">
           Luis Martinez <br /> 1990 / México
