@@ -71,6 +71,13 @@ const About = () => {
           steps to replicate it, including screenshots, videos, and log files.
         </p>
 
+        <p className="parallelStaff">Freelancer</p>
+        <p className="date">Aug.2021 - To date</p>
+        <p className="parallelRole">Front-end Developer</p>
+        <p className="description">
+          
+        </p>
+
         <div className="eduSection">
           <h3 className="edu">Education</h3>
           <p className="institute">

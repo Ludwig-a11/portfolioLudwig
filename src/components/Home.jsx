@@ -1,5 +1,5 @@
 import "./home.css";
-import image from "../assets/profilepic.jpg";
+import image from "../assets/project1Pic.jpg";
 import { motion } from "framer-motion";
 //import { GithubIcon, LinkedInIcon, TwitterIcon } from './Icons'
 import { FaLinkedin, FaXTwitter, FaGithub } from "react-icons/fa6";
@@ -66,7 +66,7 @@ const Home = () => {
         </div>
         <nav className="navBarIcons">
           <motion.a
-            href="https://www.linkedin.com/in/luis-zarza-471b06132/"
+            href="https://www.linkedin.com/in/luis-zarza/"
             target={"_blank"}
             rel="noreferrer"
             whileHover={{
