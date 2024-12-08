@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { HiOutlineArrowSmallUp } from "react-icons/hi2";
 import CertSection from "./CertSection";
 
+
 const About = () => {
   const handleUpButton = () => {
     window.scrollTo(0, 0);
@@ -16,6 +17,7 @@ const About = () => {
 
   return (
     <>
+      
       <AboutPicture image={image} alt="aboutMePic" />
       <BioSection />
       <ExpSection />
@@ -30,6 +32,7 @@ const About = () => {
       >
         <HiOutlineArrowSmallUp />
       </motion.button>
+      
     </>
   );
 };
