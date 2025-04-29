@@ -1,34 +1,44 @@
 .homeContainer{
   border-radius: 30px;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;  
   height: 65vh;
-  width: 90%;
+  width: 75%;
   margin-top: 2.5%;
   margin-left: 5%;
   margin-right: 5%;
-  /*border: solid #000 1px; */
+  border: solid #000 1px;
+}
 
+.home1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 17rem;
+  height: 100%;
+  margin-left: 3%;
+  margin-right: 3%;
+  border: solid #d32020 1px;
 }
 
 .homeProfile{
-  flex: .7;
+  flex: .4;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /*border: solid #000 1px; */
-  
+  /*border: solid #000 1px;*/
 }
 
 .profilePic{
-  height: 100%;
-  width: auto;
+  width: 200px; /* o el tamaño que quieras */
+  height: 200px;
+  object-fit: cover; /* para que no se deforme */
+  border-radius: 50%;  
   
-}
-
-.homeName, .homeProfilePic, h3, span{
-  /*border: 1px solid #000;*/
-  padding-right: 10%;
 }
 
 .homeDetails{
@@ -37,37 +47,37 @@
   flex-direction:column;
   justify-content:end;
   margin-bottom: 3%;
-  width: 80%;;
-
+  width: 100%;
+  /*border: 1px solid #000;*/
 }
 
 
 .homeTitle{
   margin-top: 3%;
   margin-bottom: 1%;
-  font-size: 45px;  
+  font-size: 28px;  
   
-}
-
-.homeSlogan{
-  font-size:large;
 }
 
 .contactSection{
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90%;
+  border: 1px solid #000;
 }
 
 .resumeBtn{
-  background-color: #486be8;
+  background-color: #1a1a1c;
   color: aliceblue;
   border-radius: 5px;
   border-style: none;
-  right: 2%;
-  width: 130px;
-  height: 35px;
+  margin-bottom: 5%;
+  margin-left: 10%;
+  width: 110px;
+  height: 30px;
   cursor: pointer;
-  font-size: larger;
+  font-size: large;
   
 }
 .homeResume{
