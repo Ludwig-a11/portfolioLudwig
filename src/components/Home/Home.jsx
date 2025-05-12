@@ -4,12 +4,13 @@ import ProfilePicture from "./ProfilePicture";
 import NameAndSlogan from "./NameAndSlogan";
 import ResumeButton from "./ResumeButton";
 import SocialMediaLinks from "./SocialMediaLinks";
+import Summary from "./Summary";
 
 
 const Home = () => {
 
   const name = "Luis Martinez";
-  const title = "SPM | Web Dev";
+  const title = "Sales | QA | Dev | SPM";
   
 
   return (
@@ -19,8 +20,10 @@ const Home = () => {
           <ProfilePicture image={image} alt="profilepic" />
           <NameAndSlogan name={name} title={title} /> 
           <ResumeButton />
-          <ResumeButton />
           <SocialMediaLinks />
+        </div>
+        <div className="home2">
+          <Summary />
         </div>
       </div>
     </>

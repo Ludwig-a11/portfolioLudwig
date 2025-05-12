@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import './home.css';
 
+
 const NameAndSlogan = ({ name, title}) => {
 
 

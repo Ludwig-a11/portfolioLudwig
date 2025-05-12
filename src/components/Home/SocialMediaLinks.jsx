@@ -9,6 +9,14 @@ const SocialMediaLinks = () => {
             href="https://www.linkedin.com/in/luis-zarza-471b06132/"
             target={"_blank"}
             rel="noreferrer"
+            initial={{ opacity: 0, scale: 0.5, y: 0 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{
+              y: { type: "spring", stiffness: 1 },
+              duration: 1.1,
+              delay: 2,
+              ease: "easeInOut",
+            }}
             whileHover={{
               scale: 1.1,
               transition: { duration: 1 },
@@ -22,6 +30,14 @@ const SocialMediaLinks = () => {
             href="https://github.com/Ludwig-a11"
             target={"_blank"}
             rel="noreferrer"
+            initial={{ opacity: 0, scale: 0.5, y: 0 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{
+              y: { type: "spring", stiffness: 1 },
+              duration: 1.1,
+              delay: 2,
+              ease: "easeInOut",
+            }}
             whileHover={{
               scale: 1.1,
               transition: { duration: 1 },
