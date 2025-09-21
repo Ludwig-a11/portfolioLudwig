@@ -1,10 +1,9 @@
-import SocialMediaLinks from "../Home/SocialMediaLinks";
+
 
 const ExpSection = () => {
   return (
     <div className="expSection">
       <h3 className="exp">Background</h3>
-      <SocialMediaLinks />
       <p className="salvoSoftware">Salvo Software</p>
       <p className="startDate">Sep.2022 - Present</p>
       <p className="salvoRole">QA Tester</p>

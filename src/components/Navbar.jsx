@@ -1,8 +1,9 @@
 import './navbar.css'
 import { Link } from 'react-router-dom'
 import { motion } from "framer-motion"
-/*import { MoonIcon, SunIcon } from './Icons';*/
+import { useState } from 'react'
 
+/*import { MoonIcon, SunIcon } from './Icons';*/
 
 const handleHireMeClick = () =>{
   const recipient = 'boue123@gmail.com';
@@ -14,31 +15,78 @@ const handleHireMeClick = () =>{
 };
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
-    <div className='navBarContainer'>
-      <div className='navBarItemName'>Ludwig
-        {/*<SunIcon/>
-        <MoonIcon/>*/}
-      </div>
-      <nav className='navBar'>
-        <Link to='/' className='navBarItem'>Home</Link>
-        <Link to='/about' className='navBarItem'>Biography</Link>
-        <Link to='/projects' className='navBarItem'>Projects</Link>
-        <div 
-          className="homeHireMe"
-          onClick={handleHireMeClick}
-          >
-            <motion.button
-              className="hireMeBtn"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            >
-              Let&apos;s Talk
-            </motion.button>
+    <>
+      <div className='navBarContainer'>
+        <div className='navBarItemName'>Ludwig
+          {/*<SunIcon/>
+          <MoonIcon/>*/}
         </div>
-      </nav>
-      
-    </div>
+        
+        {/* Menú desktop */}
+        <nav className='navBar desktop-nav'>
+          <Link to='/' className='navBarItem'>Home</Link>
+          <Link to='/about' className='navBarItem'>Biography</Link>
+          <Link to='/projects' className='navBarItem'>Projects</Link>
+          <div 
+            className="homeHireMe"
+            onClick={handleHireMeClick}
+            >
+              <motion.button
+                className="hireMeBtn"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              >
+                Let&apos;s Talk
+              </motion.button>
+          </div>
+        </nav>
+        
+        {/* Botón hamburguesa */}
+        <button 
+          className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      {/* Menú mobile */}
+      <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
+        <nav>
+          <Link to='/' className='mobile-nav-item' onClick={closeMenu}>Home</Link>
+          <Link to='/about' className='mobile-nav-item' onClick={closeMenu}>Biography</Link>
+          <Link to='/projects' className='mobile-nav-item' onClick={closeMenu}>Projects</Link>
+          <div 
+            className="mobile-hire-me"
+            onClick={() => {
+              handleHireMeClick();
+              closeMenu();
+            }}
+          >
+            <button className="mobile-hire-btn">
+              Let&apos;s Talk
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      {/* Overlay */}
+      {isMenuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
+    </>
   )
 }
 

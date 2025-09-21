@@ -69,21 +69,171 @@ body { padding-top: var(--nav-h); }
 
 /* ===== CTA ===== */
 .hireMeBtn{
-  background-color: #1a1a1c;
-  color: aliceblue;
+  /*background-color: #1a1a1c;*/
+  /*color: aliceblue;*/
+  background:rgba(2,216,255,.12);
+  color: #181717;  
   border-radius: 5px;
   border: none;
   width: 110px;
   height: 35px;
   cursor: pointer;
   font-size: large;
+  font-weight: 600;
   box-shadow: 0 6px 18px rgba(0,0,0,.25);
 }
 
 /* contenedor del CTA sin empuje vertical */
 .homeHireMe{ margin: 0; }
 
+/* Botón hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+  margin-left: auto; /* Empuja el botón hacia la derecha */
+}
 
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #181717;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 3px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Menú mobile */
+.mobile-menu {
+  position: fixed;
+  top: var(--nav-h);
+  right: -100%;
+  width: 300px;
+  height: calc(100vh - var(--nav-h));
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 999;
+  transition: right 0.3s ease;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem 0;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobile-nav-item {
+  display: block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: #181717;
+  font-weight: 600;
+  font-size: large;
+  transition: background 0.3s ease;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.mobile-nav-item:hover {
+  background: rgba(2,216,255,.08);
+}
+
+.mobile-hire-me {
+  margin: 2rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-hire-btn {
+  width: 100%;
+  background: rgba(2,216,255,.12);
+  color: #181717;
+  border-radius: 5px;
+  border: none;
+  height: 45px;
+  cursor: pointer;
+  font-size: large;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  transition: all 0.3s ease;
+}
+
+.mobile-hire-btn:hover {
+  background: rgba(2,216,255,.20);
+  transform: translateY(-2px);
+}
+
+/* Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+/* Media Queries */
+
+/* Tablet */
+@media (max-width: 1366px) {
+  .navBarContainer {
+    justify-content: space-between; /* Distribuye espacio entre Ludwig y hamburger */
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .mobile-menu {
+    width: 280px;
+  }
+}
+
+/* Mobile pequeño */
+@media (max-width: 480px) {
+  .navBarItemName {
+    font-size: x-large;
+  }
+  
+  .mobile-menu {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .mobile-menu.active {
+    right: 0;
+  }
+}
 /*:root { --nav-h: 64px; }
 
 .navBarContainer{

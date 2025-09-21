@@ -3,6 +3,9 @@
   width: 100%;
   overflow-x: hidden;
   padding: 24px;
+  margin-top: -6rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  border-top: 1px solid rgba(0,0,0,0.08);
 }
 
 /* Fila superior: dos columnas */
@@ -58,6 +61,73 @@
   justify-content: center;
   text-align: center;
 }
+
+/* Media queries del footer */
+
+/* Tablet */
+@media (max-width: 1366px) {
+  .footerRoot {
+    margin-top: 5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footerRoot {
+    margin-top: 5rem;
+  }
+  
+  .footerTop {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+    text-align: center;
+  }
+  
+  .footerInfo {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footerSocial {
+    justify-content: center;
+  }
+}
+
+/* Mobile pequeño */
+@media (max-width: 480px) {
+  .footerRoot {
+    margin-top: 5rem;
+    padding: 20px 16px;
+  }
+  
+  .footerTop {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+    text-align: center;
+  }
+  
+  .footerInfo {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footerInfo h3 {
+    font-size: 1.2em;
+  }
+  
+  .footerInfo h4 {
+    font-size: 1em;
+  }
+  
+  .footerSocial {
+    justify-content: center;
+  }
+  
+  .footerBottom span {
+    font-size: 0.9em;
+  }
+}
+
 
 /* Responsivo: en móviles apila nombre/título e iconos */
 @media (max-width: 700px){
