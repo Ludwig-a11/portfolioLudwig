@@ -1,6 +1,6 @@
 "use client";
 import "./about.css";
-import image from "../../assets/aboutMePic.jpg";
+import image from "../../assets/copper_pic.jpg";
 import BioSection from "./BioSection";
 import AboutPicture from "./AboutPicture";
 import ExpSection from "./ExpSection";
@@ -8,7 +8,7 @@ import SkillSection from "./SkillSection";
 import { motion } from "framer-motion";
 import { HiOutlineArrowSmallUp } from "react-icons/hi2";
 import CertSection from "./CertSection";
-
+import Footer from "../Footer";
 
 const About = () => {
   const handleUpButton = () => {
@@ -32,7 +32,7 @@ const About = () => {
       >
         <HiOutlineArrowSmallUp />
       </motion.button>
-      
+      <Footer/>
     </>
   );
 };
