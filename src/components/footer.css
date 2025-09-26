@@ -1,4 +1,4 @@
-/* Contenedor raíz del footer */
+
 .footerRoot {
   width: 100%;
   overflow-x: hidden;
@@ -8,36 +8,31 @@
   border-top: 1px solid rgba(0,0,0,0.08);
 }
 
-/* Fila superior: dos columnas */
+/*
 .footerTop{
   display: grid;
-  grid-template-columns: 1fr auto; /* izquierda flexible, derecha al tamaño de los iconos */
+  grid-template-columns: 1fr auto; 
   align-items: center;
   gap: 16px;
 }
 
-/* Columna izquierda: nombre + título en columna */
+
 .footerInfo{
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-/* Columna derecha: iconos en fila, alineados a la derecha */
+
 .footerSocial{
   display: flex;
   gap: 12px;
   justify-content: flex-end;
   align-items: center;
-  flex-wrap: wrap; /* <-- Permite que los iconos bajen si no caben */
-  max-width: 100%; /* <-- Evita que se desborde */
+  flex-wrap: wrap; 
+  max-width: 100%; 
   
 }
-
-/*.footerSocial a{
-  display: inline-flex;
-  line-height: 0;
-}*/
 
 .footerSocial a svg {
   max-width: 32px;
@@ -45,11 +40,11 @@
   max-width: 100%;
   max-height: 100%;
   box-sizing: border-box;
-}
+}*/
 
 /* Divisor */
 .footerDivider{
-  margin: 20px 0;
+  margin: 5px 0 12px 0;
   border: none;
   border-top: 1px solid currentColor; /* usa el color de texto actual */
   opacity: .25; /* ligera */

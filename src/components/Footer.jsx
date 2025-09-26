@@ -6,7 +6,7 @@ const Footer = () => {
 
   return (
     <footer className="footerRoot">
-      {/* Fila superior */}
+      {/* Fila superior 
       <div className="footerTop">
         <div className="footerInfo">
           <h3>Luis Martinez</h3>
@@ -30,9 +30,9 @@ const Footer = () => {
           >
             <LinkedInIcon width="28" height="28" />
           </a>
-          {/* agrega más si quieres */}
+          
         </div>
-      </div>
+      </div>*/}
 
       {/* Divisor */}
       <hr className="footerDivider" />
