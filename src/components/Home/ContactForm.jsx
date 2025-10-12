@@ -58,40 +58,6 @@ const ContactForm = () => {
               </div>
             </form>
           </div>
-          <div className="cardContainerGetInTouch">
-            <h4>Get In Touch</h4>
-            <p>
-              I&apos;m always interested in hearing about new opportunities and
-              exciting projects. Whether you have a question, want to
-              collaborate, or just want to say hello, feel free to reach out!
-            </p>
-            <div className="contactCards">
-              <div className="contactCard">
-                <div className="contactIcon">✉️</div>
-                <div>
-                  <div className="contactLabel">Email</div>
-                  <div className="contactValue">ludwigd3v@gmail.com</div>
-                </div>
-              </div>
-              <div className="contactCard">
-                <div className="contactIcon">📞</div>
-                <div>
-                  <div className="contactLabel">Phone</div>
-                  <div className="contactValue">+52 (55) 3150-6673</div>
-                </div>
-              </div>
-              <div className="contactCard">
-                <div className="contactIcon">📍</div>
-                <div>
-                  <div className="contactLabel">Location</div>
-                  <div className="contactValue">México, City, MX</div>
-                </div>
-              </div>
-            </div>
-            <div className="responseTime">
-              Response time: Usually within 24 hours
-            </div>
-          </div>
         </div>
       </div>
   )

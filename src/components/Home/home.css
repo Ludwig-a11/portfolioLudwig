@@ -166,7 +166,8 @@
   display:flex;
   align-items:center;
   gap:1rem;
-  padding:1rem;
+  padding:0.5rem;
+
   background:#ffffff;
   color: #181717;
   opacity: .7;
@@ -183,9 +184,15 @@
   font-size:1.35rem;
 }
 
-.contactLabel{ font-size:.9rem; opacity:.7; }
-.contactValue{ font-size:1rem; font-weight:600; }
+.contactLabel{ 
+  font-size:.9rem; 
+  opacity:.7; 
+}
 
+.contactValue{ 
+  font-size:1rem; 
+  font-weight:600; 
+}
 
 .responseTime{ 
   color: #181717; 

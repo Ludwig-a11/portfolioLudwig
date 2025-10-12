@@ -1,4 +1,4 @@
-import Footer from "../Footer";
+
 import "./home.css";
 import Picture from "../../assets/portfolio_pc2.jpg";
 import ContactForm from "./ContactForm";
@@ -16,7 +16,7 @@ const Home = () => {
         <img className="picHome" src={Picture} alt="picture" />
       </div>
       <ContactForm />
-      <Footer />
+      
     </>
   );
 };

@@ -5,13 +5,9 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Error from "./components/Error";
 import Home from "./components/Home/Home";
-//import Footer from "./components/Footer";
-
-
+import Footer from "./components/Footer";
 
 function App() {
-
-  
   return (
     <>
       <div className="app">
@@ -23,14 +19,9 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="*" element={<Error />} />
           </Routes>
-          
         </Router>
       </div>
-      
-     {/* <div className="footerCointainer">
-        <Footer />
-      </div>
-     */}
+      <Footer />
     </>
   );
 }
