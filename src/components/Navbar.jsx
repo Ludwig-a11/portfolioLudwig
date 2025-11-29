@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import { motion } from "framer-motion"
 import { useState } from 'react'
 
-/*import { MoonIcon, SunIcon } from './Icons';*/
-
 const handleHireMeClick = () =>{
   const recipient = 'boue123@gmail.com';
   const subjectline = "Let's talk...";
@@ -28,14 +26,12 @@ const Navbar = () => {
   return (
     <>
       <div className='navBarContainer'>
-        <div className='navBarItemName'>Ludwig
-          {/*<SunIcon/>
-          <MoonIcon/>*/}
-        </div>
+        <div className='navBarItemName'>Ludwig</div>
         
         {/* Menú desktop */}
         <nav className='navBar desktop-nav'>
           <Link to='/' className='navBarItem'>Home</Link>
+          <Link to='/discovery' className='navBarItem'>Discovery</Link>
           <Link to='/about' className='navBarItem'>Biography</Link>
           <Link to='/projects' className='navBarItem'>Projects</Link>
           <div 
@@ -68,6 +64,7 @@ const Navbar = () => {
       <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
         <nav>
           <Link to='/' className='mobile-nav-item' onClick={closeMenu}>Home</Link>
+          <Link to='/discovery' className='mobile-nav-item' onClick={closeMenu}>Discovery</Link>
           <Link to='/about' className='mobile-nav-item' onClick={closeMenu}>Biography</Link>
           <Link to='/projects' className='mobile-nav-item' onClick={closeMenu}>Projects</Link>
           <div 

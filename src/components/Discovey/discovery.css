@@ -1,0 +1,395 @@
+/* Discovery Page Styles */
+
+/* Wrapper que ocupa TODO el viewport disponible */
+.discoveryPageWrapper {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+/* Layout de dos columnas */
+.discoveryMainLayout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ===== SIDEBAR IZQUIERDO ===== */
+.discoverySidebarFixed {
+  width: 350px;
+  min-width: 350px;
+  height: 100%;
+  overflow-y: auto;
+  padding: 2rem 1.5rem;
+  background: white;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.discoveryProfileCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 1rem;
+}
+
+.discoveryPicContainer {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 4px solid white;
+}
+
+.discoveryPic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discoveryProfileInfo {
+  text-align: center;
+  width: 100%;
+}
+
+.discoveryProfileInfo h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.8rem;
+  color: #181717;
+  font-weight: 700;
+}
+
+.discoveryProfileTitle {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* Botones Follow y Message */
+.discoveryActionButtons {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.discoveryFollowBtn,
+.discoveryMessageBtn {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.discoveryFollowBtn {
+  background: #0A66C2;
+  color: white;
+}
+
+.discoveryFollowBtn:hover {
+  background: #004182;
+}
+
+.discoveryMessageBtn {
+  background: rgba(2, 216, 255, 0.12);
+  color: #181717;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.discoveryMessageBtn:hover {
+  background: rgba(2, 216, 255, 0.2);
+}
+
+/* Contact Details */
+.discoveryContactDetails {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 1.25rem 0;
+}
+
+.discoveryContactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.discoveryContactIcon {
+  font-size: 1.2rem;
+  min-width: 24px;
+  color: #666;
+}
+
+.discoveryContactValue {
+  word-break: break-word;
+}
+
+/* Social Media Icons */
+.discoverySocialIcons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.discoverySocialIcons a {
+  color: #181717;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.discoverySocialIcons a:hover {
+  transform: translateY(-2px);
+  color: #0A66C2;
+}
+
+/* Work Experience Section */
+.discoveryWorkSection {
+  width: 100%;
+  text-align: left;
+}
+
+.discoveryWorkItem {
+  margin-bottom: 1.5rem;
+}
+
+.discoveryWorkItem h4 {
+  font-size: 1rem;
+  color: #181717;
+  margin: 0 0 0.25rem;
+  font-weight: 600;
+}
+
+.discoveryWorkItem p {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+.discoveryContentScrollable {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 0;
+  background: #f8f9fa;
+}
+
+.discoveryContentInner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Banner Superior */
+.discoveryBanner {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: #e0e0e0;
+}
+
+.discoveryBannerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Projects Section */
+.discoveryProjectsSection {
+  padding: 3rem 2rem;
+}
+
+.discoveryProjectsTitle {
+  font-size: 2rem;
+  color: #181717;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+/* Projects Grid - similar a Behance */
+.discoveryProjectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.discoveryProjectCard {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  aspect-ratio: 4/3;
+}
+
+.discoveryProjectCard:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.discoveryProjectImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.discoveryProjectCard:hover .discoveryProjectImg {
+  transform: scale(1.05);
+}
+
+.discoveryProjectOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.discoveryProjectCard:hover .discoveryProjectOverlay {
+  opacity: 1;
+}
+
+.discoveryProjectOverlay h3 {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .discoveryPageWrapper {
+    position: static;
+    overflow: visible;
+  }
+
+  .discoveryMainLayout {
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .discoverySidebarFixed {
+    width: 100%;
+    min-width: auto;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .discoveryProfileCard {
+    position: static;
+    margin-bottom: 2rem;
+  }
+
+  .discoveryContentScrollable {
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .discoveryBanner {
+    height: 250px;
+  }
+
+  .discoveryProjectsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .discoverySidebarFixed {
+    padding: 1rem;
+  }
+
+  .discoveryPicContainer {
+    width: 150px;
+    height: 150px;
+  }
+
+  .discoveryProfileInfo h2 {
+    font-size: 1.5rem;
+  }
+
+  .discoveryProfileTitle {
+    font-size: 0.9rem;
+  }
+
+  .discoveryBanner {
+    height: 200px;
+  }
+
+  .discoveryProjectsSection {
+    padding: 2rem 1rem;
+  }
+
+  .discoveryProjectsTitle {
+    font-size: 1.5rem;
+  }
+
+  .discoveryProjectsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .discoveryActionButtons {
+    flex-direction: column;
+  }
+
+  .discoveryWorkItem h4 {
+    font-size: 0.95rem;
+  }
+
+  .discoveryWorkItem p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile pequeño */
+@media (max-width: 480px) {
+  .discoveryPicContainer {
+    width: 120px;
+    height: 120px;
+  }
+
+  .discoveryProfileInfo h2 {
+    font-size: 1.3rem;
+  }
+
+  .discoveryBanner {
+    height: 150px;
+  }
+
+  .discoveryProjectsSection {
+    padding: 1.5rem 1rem;
+  }
+}
