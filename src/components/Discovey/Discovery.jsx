@@ -4,7 +4,6 @@ import TechBannerImage from "../../assets/tech_banner.jpeg"; // Necesitarás agr
 import { GithubIcon, LinkedInIcon } from "../Icons";
 import { motion } from "framer-motion";
 import { FaXTwitter } from "react-icons/fa6";
-import { HiLocationMarker } from "react-icons/hi";
 
 // Importa las imágenes de los proyectos
 import chloeImg from "../../assets/chloe_banner.jpeg"; // Necesitarás agregar estas imágenes
@@ -16,19 +15,19 @@ const Discovery = () => {
   const projects = [
     {
       id: 1,
-      title: "Chloe Voice AI Agent",
+      title: "Chloe",
       image: chloeImg,
       link: "#" // Añade el link cuando esté disponible
     },
     {
       id: 2,
-      title: "Kivo Sales Co-Pilot",
+      title: "Kivo",
       image: kivoImg,
       link: "#" // Añade el link cuando esté disponible
     },
     {
       id: 3,
-      title: "Dedicated Development Teams Calculator",
+      title: "Dedicated Teams Calculator",
       image: ddtcImg,
       link: "https://www.salvosoftware.com/dedicated-development-teams/#calculator"
     },
@@ -72,15 +71,7 @@ const Discovery = () => {
             <div className="discoveryProfileInfo">
               <h2>Luis Martinez</h2>
               <p className="discoveryProfileTitle">AI Automation and Web Developer</p>
-
-
-              {/* Contact Details */}
-              <div className="discoveryContactDetails">
-                <div className="discoveryContactItem">
-                  <HiLocationMarker className="discoveryContactIcon" />
-                  <div className="discoveryContactValue">Mexico City, Mexico</div>
-                </div>
-              </div>
+              <p className="discoveryProfileTitle" >México City, México</p>
 
               {/* Social Media Icons */}
               <div className="discoverySocialIcons">
@@ -110,23 +101,15 @@ const Discovery = () => {
                 </a>
               </div>
               
-              {/* Botones Follow y Message */}
+              {/* Boton Let's Connect */}
               <div className="discoveryActionButtons">
-                <motion.button
-                  className="discoveryFollowBtn"
-                  onClick={handleFollow}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  Follow
-                </motion.button>
                 <motion.button
                   className="discoveryMessageBtn"
                   onClick={handleMessage}
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  Message
+                  Let&apos;s Connect
                 </motion.button>
               </div>
 
@@ -135,6 +118,16 @@ const Discovery = () => {
                 <div className="discoveryWorkItem">
                   <h4>AI Automation Developer</h4>
                   <p>Salvo Software - Custom Software Solutions</p>
+                  <br />
+                  <h4>QA Tester</h4>
+                  <p>Salvo Software - Custom Software Solutions</p>
+                  <br /> 
+                  <h4>View Full Resume -</h4>
+                  <br />
+                  <br />
+                  <p>Other Projects</p>
+                  <h4>Factory Code Studio</h4>
+                  <p>factorycodestudio.com</p>
                 </div>
               </div>
             </div>
@@ -151,7 +144,7 @@ const Discovery = () => {
 
             {/* Projects Grid */}
             <div className="discoveryProjectsSection">
-              <h2 className="discoveryProjectsTitle">Work</h2>
+              <h2 className="discoveryProjectsTitle">Projects</h2>
               <div className="discoveryProjectsGrid">
                 {projects.map((project) => (
                   <motion.div

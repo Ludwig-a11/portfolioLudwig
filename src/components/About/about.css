@@ -1,705 +1,405 @@
+/* About Page Layout (separado de Biography) */
+
 * {
-  font-size: large;
+  box-sizing: border-box;
 }
 
+.aboutWrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f0f0 0%, #e5e5e5 100%);
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 2rem 2rem;
+}
 
-.aboutPageWrapper {
-  position: fixed;
-  top: 64px; 
-  left: 0;
-  right: 0;
-  bottom: 0;
+/* Main Container */
+.aboutContent {
+  max-width: 1400px;
+  width: 100%;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  min-height: 85vh;
+  max-height: 90vh;
+}
+
+/* Left Sidebar */
+.aboutSidebar {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-}
-
-
-.aboutMainLayout {
-  display: flex;
-  flex: 1;
-  overflow: hidden;
-  min-height: 0; 
-}
-
-
-.aboutSidebarFixed {
-  width: 30%;
-  min-width: 350px;
-  height: 100%;
+  gap: 2rem;
   overflow-y: auto;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.aboutProfileCircle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  margin: 0 auto 1.5rem;
+}
+
+.aboutProfileCircle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aboutHeroText {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.aboutHeroText h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.aboutHeroText p {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  opacity: 0.95;
+}
+
+.aboutLocation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  text-align: center;
+}
+
+/* Summary in Sidebar */
+.aboutSummary {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.aboutSummary h3 {
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.aboutSummary p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* Right Content Area - Scrollable */
+.aboutMain {
+  padding: 3rem;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+/* Section Titles */
+.aboutSection {
+  margin-bottom: 3rem;
+}
+
+.aboutSection h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #3498db;
+}
+
+/* Skills Grid */
+.aboutSkillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.aboutSkillCategory {
+  margin-bottom: 1.5rem;
+}
+
+.aboutSkillCategory h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 1rem;
+}
+
+.aboutSkillCard {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 2px solid #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.aboutSkillCard:hover {
+  border-color: #3498db;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+/* Re-uso de estas clases en About y no chocan con Biography */
+.skillIcon {
+  font-size: 2rem;
+}
+
+.skillIconSvg {
+  font-size: 2rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.skillName {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Experience Cards */
+.aboutCompanies {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.aboutCompanyCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #3498db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.aboutCompanyCard:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 16px rgba(52, 152, 219, 0.15);
+}
+
+.aboutCompanyHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.aboutCompanyLogo {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
   flex-shrink: 0;
 }
 
-.aboutProfileCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: white;
-  border-radius: 20px;
-  padding: 2rem;
-  position: sticky;
-  top: 1rem;
-}
-
-.aboutMePicContainer {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.aboutMePic {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.profileInfo {
-  text-align: center;
-  width: 90%;
-  
-}
-
-.profileInfo h2 {
-  margin: 0 0 0.5rem;
-  font-size: 1.8rem;
-  color: #181717;
-}
-
-.profileTitle {
-  color: #666;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-.contactDetails {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  
-}
-
-.contactItem {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  background: #f8f9fa;
-  border-radius: 10px;
-  font-size: 0.95rem;
-}
-
-.contactIcon {
+.aboutCompanyInfo h3 {
   font-size: 1.2rem;
-  min-width: 24px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 0.25rem;
 }
 
-.footerSocial {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  margin: 1.5rem 0;
-}
-
-.footerSocial a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: #f8f9fa;
-  transition: all 0.3s ease;
-  color: #181717;
-}
-
-.footerSocial a:hover {
-  background: rgba(2,216,255,.12);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.footerSocial a svg {
-  width: 24px;
-  height: 24px;
-}
-
-/* Contenedor de las tarjetas de contacto */
-.contactCards {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  width: 100%;
-}
-
-/* Actualizar .contactCard para mejor estilo */
-.contactCard {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  background: #f8f9fa;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-}
-
-.contactCard:hover {
-  background: rgba(2,216,255,.08);
-  transform: translateX(5px);
-}
-
-.contactValue {
-  font-size: 0.9rem;
-  color: #181717;
-  font-weight: 500;
-}
-
-
-.aboutContentScrollable {
-  flex: 1;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  min-width: 0;
-}
-
-.aboutContentInner {
-  padding: 2rem 3rem;
-  padding-bottom: 1rem;
-}
-
-.certSectionWrapper {
-  position: relative;
-  padding-bottom: 4rem;
-}
-
-.bioSection,
-.expSection,
-.skillSection,
-.certSection {
-  margin-bottom: 4rem;
-}
-
-.backToTopBtn {
-  position: absolute;
-  right: 2rem;
-  bottom: 1rem;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(2,216,255,.12);
-  color: #181717;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: all 0.3s ease;
-  z-index: 10;
-}
-
-.backToTopBtn:hover {
-  background: rgba(2,216,255,.20);
-  transform: translateY(-2px);
-}
-
-.bioSection h2,
-.expSection h2,
-.skillSection h2,
-.certSection h2 {
-  color: #181717;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid rgba(2,216,255,.3);
-  padding-bottom: 0.5rem;
-}
-
-.bio, .exp, .skill, .cert {
-  font-size: large;
-  margin-bottom: 1.5rem;
-}
-
-.skillsContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
-  width: 100%;
-}
-
-.skillsContainer ul {
-  list-style: none;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 10px;
+.aboutCompanyPeriod {
+  font-size: 0.85rem;
+  color: #7f8c8d;
   margin: 0;
 }
 
-.skillsContainer ul li {
-  padding: 0.25rem 0;
-  color: #555;
-}
-
-.detailsTitles { margin-top: 1%; }
-.detailsSummary { margin-top: 2%; margin-bottom: 2%; text-align: left; }
-.salvoRole, .parallelRole, .integralRole { margin-top: 1%; }
-.parallelStaff, .integraTechnologies { margin-top: 5%; }
-.description { text-align: left; }
-.instituteMexicana { margin-top: 4%; }
-.certSection a { color: black; }
-.testingCred, .fullStackCred, .backEndCred, .frontEndCred { margin-top: 1%; text-decoration: none; }
-.certFullStack, .certBackEnd, .certFrontEnd { margin-top: 3%; }
-.salesList, .testingList, .developmentList, .developmentList2, .developmentList3 { list-style: none; }
-
-@media (max-width: 1024px) {
-  .aboutPageWrapper {
-    position: static;
-    overflow: visible;
-  }
-  
-  .aboutMainLayout {
-    flex-direction: column;
-    overflow: visible;
-  }
-  
-  .aboutSidebarFixed {
-    width: 100%;
-    min-width: auto;
-    height: auto;
-    padding: 1rem;
-  }
-  
-  .aboutProfileCard {
-    margin-bottom: 2rem;
-    position: static;
-  }
-  
-  .aboutContentScrollable {
-    height: auto;
-    overflow-y: visible;
-  }
-  
-  .aboutContentInner {
-    padding: 1rem;
-  }
-  
-  .backToTopBtn {
-    right: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .aboutProfileCard {
-    padding: 1.5rem;
-  }
-  
-  .aboutMePicContainer {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .profileInfo h2 {
-    font-size: 1.5rem;
-  }
-  
-  .contactDetails {
-    gap: 0.75rem;
-  }
-  
-  .contactItem {
-    font-size: 0.9rem;
-    padding: 0.5rem;
-  }
-}
-
-/* Media queries para iconos sociales */
-@media (max-width: 768px) {
-  .footerSocial {
-    gap: 0.75rem;
-    margin: 1rem 0;
-  }
-  
-  .footerSocial a {
-    width: 36px;
-    height: 36px;
-  }
-  
-  .footerSocial a svg {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-
-/*-------------- COMPONENTE ABOUT.CSS --------------
-
-* {
-  font-size: large;
-}
-
-
-.aboutMainLayout {
-  display: flex;
-  min-height: calc(100vh - 64px);
-  gap: 2rem;
-  padding: 2rem;
-}
-
-
-.aboutSidebarFixed {
-  flex: 0 0 350px;
-  position: sticky;
-  top: calc(64px + 2rem);
-  height: fit-content;
-  max-height: calc(100vh - 64px - 4rem);
-  overflow-y: auto;
-}
-
-
-.aboutProfileCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: white;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-
-.aboutMePicContainer {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.aboutMePic {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
-.profileInfo {
-  text-align: center;
-  width: 100%;
-}
-
-.profileInfo h2 {
-  margin: 0 0 0.5rem;
-  font-size: 1.8rem;
-  color: #181717;
-}
-
-.profileTitle {
-  color: #666;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-
-.contactDetails {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contactItem {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  background: #f8f9fa;
-  border-radius: 10px;
-  font-size: 0.95rem;
-}
-
-.contactIcon {
-  font-size: 1.2rem;
-  min-width: 24px;
-}
-
-
-.footerSocial {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  margin: 1.5rem 0;
-}
-
-.footerSocial a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: #f8f9fa;
-  transition: all 0.3s ease;
-}
-
-.footerSocial a:hover {
-  background: rgba(2,216,255,.12);
-  transform: translateY(-2px);
-}
-
-.footerSocial a svg {
-  width: 24px;
-  height: 24px;
-}
-
-.contactCards {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  width: 100%;
-}
-
-
-.aboutContentScrollable {
-  flex: 1;
-  min-width: 0;
-}
-
-.aboutContentInner {
-  max-width: 900px;
-}
-
-
-.bioSection,
-.expSection,
-.skillSection,
-.certSection {
-  margin-bottom: 4rem;
-  padding: 2rem;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.bioSection h2,
-.expSection h2,
-.skillSection h2,
-.certSection h2,
-.bio, .exp, .skill, .cert {
-  color: #181717;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid rgba(2,216,255,.3);
-  padding-bottom: 0.5rem;
-}
-
-
-.skillsContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
+.aboutRoleItem {
   margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ecf0f1;
 }
 
-.skillsContainer ul {
-  list-style: none;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 10px;
+.aboutRoleItem:first-child {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: none;
+}
+
+.aboutRoleItem h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3498db;
+  margin: 0 0 0.5rem;
+}
+
+.aboutRoleItem p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555;
   margin: 0;
 }
 
-.skillsContainer ul li {
-  padding: 0.5rem 0;
-  color: #555;
+/* Certifications */
+.aboutCerts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
-
-.backToTopBtn {
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(2,216,255,.12);
-  color: #181717;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: all 0.3s ease;
-  z-index: 100;
-}
-
-.backToTopBtn:hover {
-  background: rgba(2,216,255,.20);
-  transform: translateY(-2px);
-}
-
-
-.details {
-  margin: 1rem 0;
-}
-
-.detailsTitles {
-  margin-top: 1rem;
-  font-weight: 600;
-}
-
-.detailsSummary {
-  margin: 2rem 0;
-  text-align: left;
-  line-height: 1.6;
-}
-
-.salvoSoftware,
-.parallelStaff,
-.integraTechnologies {
-  font-weight: 600;
-  margin-top: 2rem;
-}
-
-.startDate,
-.date {
-  color: #666;
-  font-size: 0.9rem;
-  margin: 0.5rem 0;
-}
-
-.salvoRole,
-.parallelRole,
-.integralRole {
-  font-weight: 600;
-  margin: 1rem 0;
-}
-
-.description {
-  text-align: left;
-  line-height: 1.6;
-  margin: 1rem 0;
-}
-
-
-.certSection a {
-  color: #181717;
+.aboutCertCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
   text-decoration: none;
-  display: inline-flex;
+  border: 2px solid #ecf0f1;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.3s ease;
 }
 
-.certSection a:hover {
-  color: rgba(2,216,255,.8);
+.aboutCertCard:hover {
+  border-color: #f39c12;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(243, 156, 18, 0.2);
 }
 
-.certTesting,
-.certFullStack,
-.certBackEnd,
-.certFrontEnd {
+.aboutCertIcon {
+  font-size: 2rem;
+}
+
+.aboutCertCard h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.aboutCertIssuer {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.aboutCertDate {
+  font-size: 0.8rem;
+  color: #95a5a6;
+  margin: 0;
+}
+
+.aboutCertLink {
+  font-size: 0.8rem;
+  color: #3498db;
   font-weight: 600;
-  margin-top: 2rem;
+  margin-top: 0.25rem;
 }
 
-.testingCred,
-.fullStackCred,
-.backEndCred,
-.frontEndCred {
-  display: inline-block;
-  margin: 0.5rem 0;
+/* Media Queries */
+@media (max-width: 1200px) {
+  .aboutContent {
+    grid-template-columns: 350px 1fr;
+  }
 }
-
-.salesList,
-.testingList,
-.developmentList,
-.developmentList2,
-.developmentList3 {
-  list-style: none;
-}
-
 
 @media (max-width: 1024px) {
-  .aboutMainLayout {
-    flex-direction: column;
-    padding: 1rem;
+  .aboutWrapper {
+    padding: 80px 1rem 1rem;
   }
-  
-  .aboutSidebarFixed {
-    position: static;
-    flex: none;
-    width: 100%;
+
+  .aboutContent {
+    grid-template-columns: 1fr;
     max-height: none;
-    margin-bottom: 2rem;
+    min-height: auto;
   }
-  
-  .aboutProfileCard {
-    padding: 1.5rem;
+
+  .aboutSidebar {
+    padding: 2rem 1.5rem;
+    max-height: none;
   }
-  
-  .backToTopBtn {
-    right: 1rem;
-    bottom: 1rem;
+
+  .aboutMain {
+    padding: 2rem;
+    max-height: none;
+  }
+
+  .aboutSkillsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
-  .aboutMainLayout {
-    padding: 1rem;
+  .aboutWrapper {
+    padding: 70px 0.5rem 0.5rem;
   }
-  
-  .aboutMePicContainer {
+
+  .aboutContent {
+    border-radius: 20px;
+  }
+
+  .aboutProfileCircle {
     width: 150px;
     height: 150px;
   }
-  
-  .profileInfo h2 {
-    font-size: 1.5rem;
+
+  .aboutHeroText h1 {
+    font-size: 1.6rem;
   }
-  
-  .bioSection,
-  .expSection,
-  .skillSection,
-  .certSection {
+
+  .aboutMain {
     padding: 1.5rem;
   }
-  
-  .skillsContainer {
+
+  .aboutSkillsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  .aboutCerts {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .aboutProfileCard {
-    padding: 1rem;
+  .aboutProfileCircle {
+    width: 120px;
+    height: 120px;
   }
-  
-  .profileInfo h2 {
-    font-size: 1.3rem;
+
+  .aboutHeroText h1 {
+    font-size: 1.4rem;
   }
-  
-  .contactItem {
-    font-size: 0.85rem;
-    padding: 0.5rem;
-  }
-  
-  .backToTopBtn {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
+
+  .aboutSkillsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-*/

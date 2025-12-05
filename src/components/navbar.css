@@ -1,92 +1,114 @@
-:root { --nav-h: 64px; }
+:root { 
+  --nav-h: 64px;
+  --nav-dark: #2c2c2c;
+  --nav-darker: #1a1a1a;
+}
 
-/* empuja el contenido para que no quede debajo del nav fijo */
-html, body { margin: 0; padding: 0; }
-body { padding-top: var(--nav-h); }
+/* Empuja el contenido para que no quede debajo del nav fijo */
+html, body { 
+  margin: 0; 
+  padding: 0; 
+}
 
-/* ===== NAVBAR CONTENEDOR (fijo + blur) ===== */
-.navBarContainer{
+body { 
+  padding-top: var(--nav-h); 
+}
+
+/* ===== NAVBAR CONTENEDOR (Dark Grey + Glass Effect) ===== */
+.navBarContainer {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0; 
+  left: 0; 
+  right: 0;
   height: var(--nav-h);
   z-index: 1000;
 
-  /* layout */
+  /* Layout */
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 32px;
 
-  /* espaciado lateral (ajusta si quieres) */
+  /* Espaciado lateral */
   padding: 0 clamp(16px, 4vw, 48px);
   margin: 0;
 
-  /* efecto glass */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background: rgba(255,255,255,0.6);          /* semitransparente p/blur */
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+  /* Glass Effect + Dark Grey Background */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(44, 44, 44, 0.85);  /* Dark grey con transparencia para glass effect */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Intensificar fondo/sombra al hacer scroll (opcional, si luego añades la clase por JS) */
-.navBarContainer.scrolled{
-  background: rgba(255,255,255,0.75);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+/* Intensificar al hacer scroll */
+.navBarContainer.scrolled {
+  background: rgba(26, 26, 26, 0.9);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* ===== BLOQUE DE LINKS (a la derecha) ===== */
-.navBar{
+.navBar {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  gap: 24px;
+  gap: 48px;
   list-style: none;
-
-  /* que tome el espacio restante y “pegue” a la derecha */
   margin: 0 0 0 auto;
-  width: auto;               /* anula el 78% previo */
+  width: auto;
 }
 
 /* ===== MARCA/NAME (a la izquierda) ===== */
-.navBarItemName{
-  margin: 0 24px 0 0;        /* sin top para centrar vertical */
-  font-size: xx-large;
+.navBarItemName {
+  margin: 0;
+  font-size: 1.8rem;
   text-decoration: none;
-  color: #181717;
-  font-weight: 600;
-  white-space: nowrap;       /* evita cortes raros del nombre */
+  color: #ffffff;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navBarItemName:hover {
+  color: #e0e0e0;
+  transform: translateY(-1px);
 }
 
 /* ===== LINKS ===== */
-.navBarItem{
-  margin: 0 12px;
-  font-size: large;
+.navBarItem {
+  margin: 0;
+  font-size: 1rem;
   text-decoration: none;
-  color: #181717;
-  font-weight: 600;
+  color: #ffffff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== CTA ===== */
-.hireMeBtn{
-  /*background-color: #1a1a1c;*/
-  /*color: aliceblue;*/
-  background:rgba(2,216,255,.12);
-  color: #181717;  
-  border-radius: 5px;
-  border: none;
-  width: 110px;
-  height: 35px;
-  cursor: pointer;
-  font-size: large;
-  font-weight: 600;
-  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+.navBarItem::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
-/* contenedor del CTA sin empuje vertical */
-.homeHireMe{ margin: 0; }
+.navBarItem:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
 
-/* Botón hamburguesa */
+.navBarItem:hover::after {
+  width: 100%;
+}
+
+/* ===== HAMBURGER MENU ===== */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -95,16 +117,17 @@ body { padding-top: var(--nav-h); }
   cursor: pointer;
   padding: 0.5rem;
   z-index: 1001;
-  margin-left: auto; /* Empuja el botón hacia la derecha */
+  margin-left: auto;
 }
 
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: #181717;
+  background: #ffffff;
   margin: 3px 0;
   transition: 0.3s;
   border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .hamburger.active span:nth-child(1) {
@@ -119,20 +142,24 @@ body { padding-top: var(--nav-h); }
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Menú mobile */
+/* ===== MOBILE MENU ===== */
 .mobile-menu {
   position: fixed;
   top: var(--nav-h);
   right: -100%;
   width: 300px;
   height: calc(100vh - var(--nav-h));
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  
+  /* Glass Effect para mobile menu */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(44, 44, 44, 0.95);
+  
   z-index: 999;
   transition: right 0.3s ease;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.4);
   padding: 2rem 0;
+  overflow-y: auto;
 }
 
 .mobile-menu.active {
@@ -149,58 +176,37 @@ body { padding-top: var(--nav-h); }
   display: block;
   padding: 1rem 2rem;
   text-decoration: none;
-  color: #181717;
+  color: #ffffff;
   font-weight: 600;
-  font-size: large;
-  transition: background 0.3s ease;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .mobile-nav-item:hover {
-  background: rgba(2,216,255,.08);
+  background: rgba(255, 255, 255, 0.15);
+  padding-left: 2.5rem;
 }
 
-.mobile-hire-me {
-  margin: 2rem;
-  margin-bottom: 1rem;
-}
-
-.mobile-hire-btn {
-  width: 100%;
-  background: rgba(2,216,255,.12);
-  color: #181717;
-  border-radius: 5px;
-  border: none;
-  height: 45px;
-  cursor: pointer;
-  font-size: large;
-  font-weight: 600;
-  box-shadow: 0 6px 18px rgba(0,0,0,.25);
-  transition: all 0.3s ease;
-}
-
-.mobile-hire-btn:hover {
-  background: rgba(2,216,255,.20);
-  transform: translateY(-2px);
-}
-
-/* Overlay */
+/* ===== OVERLAY ===== */
 .menu-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 998;
+  backdrop-filter: blur(2px);
 }
 
-/* Media Queries */
+/* ===== MEDIA QUERIES ===== */
 
 /* Tablet */
 @media (max-width: 1366px) {
   .navBarContainer {
-    justify-content: space-between; /* Distribuye espacio entre Ludwig y hamburger */
+    justify-content: space-between;
   }
   
   .hamburger {
@@ -214,15 +220,24 @@ body { padding-top: var(--nav-h); }
 
 /* Mobile */
 @media (max-width: 768px) {
+  .navBarItemName {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
   .mobile-menu {
     width: 280px;
+  }
+
+  .navBar {
+    gap: 32px;
   }
 }
 
 /* Mobile pequeño */
 @media (max-width: 480px) {
   .navBarItemName {
-    font-size: x-large;
+    font-size: 1.3rem;
   }
   
   .mobile-menu {
@@ -233,81 +248,8 @@ body { padding-top: var(--nav-h); }
   .mobile-menu.active {
     right: 0;
   }
-}
-/*:root { --nav-h: 64px; }
-
-.navBarContainer{
-  margin-top: 1%;
-  padding: 1%;
-  display: flex;
-
   
+  .navBar {
+    gap: 24px;
+  }
 }
-
-.navBar{
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  list-style: none;
-  width: 78%;
-  margin-left: 5%;
-
-}
-
-.navbar{
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); 
-  background: rgba(16,18,27,0.55);     
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  box-shadow: 0 2px 16px rgba(0,0,0,.12);
-}
-
-
-.navbar.scrolled{
-  background: rgba(16,18,27,0.7);
-  box-shadow: 0 6px 24px rgba(0,0,0,.18);
-}
-
-.navBarItemName{
-  margin-top: .5%;
-  margin-right: 3%;
-  margin-left: 3%;
-  font-size:xx-large;
-  text-decoration: none;
-  color: #181717;
-  font-weight: 600;
-
-}
-
-.navBarItem{
-  margin-top: 1%;
-  margin-right: 3%;
-  margin-left: 3%;
-  font-size: large;
-  text-decoration: none;
-  color: #181717;
-  font-weight: 600;
-}
-
-.hireMeBtn{
-  background-color: #1a1a1c;
-  color: aliceblue;
-  border-radius: 5px;
-  border-style: none;
-  margin-bottom: 5%;
-  margin-left: 10%;
-  width: 110px;
-  height: 35px;
-  cursor: pointer;
-  font-size: large;
-  box-shadow: 0 6px 18px rgba(0,0,0,.25);
-}
-
-.homeHireMe{
-  margin-top: .5%;
-}*/

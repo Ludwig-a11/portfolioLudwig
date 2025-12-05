@@ -1,16 +1,6 @@
 import './navbar.css'
 import { Link } from 'react-router-dom'
-import { motion } from "framer-motion"
 import { useState } from 'react'
-
-const handleHireMeClick = () =>{
-  const recipient = 'boue123@gmail.com';
-  const subjectline = "Let's talk...";
-  const body = 'What is your project about?';
-
-  const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subjectline)}&body=${encodeURIComponent(body)}`;
-  window.open(mailtoUrl, '_blank');
-};
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +16,7 @@ const Navbar = () => {
   return (
     <>
       <div className='navBarContainer'>
-        <div className='navBarItemName'>Ludwig</div>
+        <Link to='/' className='navBarItemName'>Ludwig</Link>
         
         {/* Menú desktop */}
         <nav className='navBar desktop-nav'>
@@ -34,18 +24,6 @@ const Navbar = () => {
           <Link to='/discovery' className='navBarItem'>Discovery</Link>
           <Link to='/about' className='navBarItem'>Biography</Link>
           <Link to='/projects' className='navBarItem'>Projects</Link>
-          <div 
-            className="homeHireMe"
-            onClick={handleHireMeClick}
-            >
-              <motion.button
-                className="hireMeBtn"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              >
-                Let&apos;s Talk
-              </motion.button>
-          </div>
         </nav>
         
         {/* Botón hamburguesa */}
@@ -67,17 +45,6 @@ const Navbar = () => {
           <Link to='/discovery' className='mobile-nav-item' onClick={closeMenu}>Discovery</Link>
           <Link to='/about' className='mobile-nav-item' onClick={closeMenu}>Biography</Link>
           <Link to='/projects' className='mobile-nav-item' onClick={closeMenu}>Projects</Link>
-          <div 
-            className="mobile-hire-me"
-            onClick={() => {
-              handleHireMeClick();
-              closeMenu();
-            }}
-          >
-            <button className="mobile-hire-btn">
-              Let&apos;s Talk
-            </button>
-          </div>
         </nav>
       </div>
 
