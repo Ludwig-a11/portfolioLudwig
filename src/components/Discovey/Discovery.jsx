@@ -1,12 +1,12 @@
 import "./discovery.css";
 import ProfilePicture from "../../assets/portfolio_pc2.jpg";
-import TechBannerImage from "../../assets/tech_banner.jpeg"; // Necesitarás agregar esta imagen
+import TechBannerImage from "../../assets/tech_banner.jpeg";
 import { GithubIcon, LinkedInIcon } from "../Icons";
 import { motion } from "framer-motion";
 import { FaXTwitter } from "react-icons/fa6";
 
 // Importa las imágenes de los proyectos
-import chloeImg from "../../assets/chloe_banner.jpeg"; // Necesitarás agregar estas imágenes
+import chloeImg from "../../assets/chloe_banner.jpeg";
 import kivoImg from "../../assets/kivo_banner.jpeg";
 import ddtcImg from "../../assets/ddtCalculator.png";
 import rickMortyImg from "../../assets/rick-morthy.png";
@@ -17,26 +17,26 @@ const Discovery = () => {
       id: 1,
       title: "Chloe",
       image: chloeImg,
-      link: "#" // Añade el link cuando esté disponible
+      link: "#",
     },
     {
       id: 2,
       title: "Kivo",
       image: kivoImg,
-      link: "#" // Añade el link cuando esté disponible
+      link: "#",
     },
     {
       id: 3,
       title: "Dedicated Teams Calculator",
       image: ddtcImg,
-      link: "https://www.salvosoftware.com/dedicated-development-teams/#calculator"
+      link: "https://www.salvosoftware.com/dedicated-development-teams/#calculator",
     },
     {
       id: 4,
       title: "Rick & Morty",
       image: rickMortyImg,
-      link: "https://subtle-pasca-8707dd.netlify.app/"
-    }
+      link: "https://subtle-pasca-8707dd.netlify.app/",
+    },
   ];
 
   const handleFollow = () => {
@@ -45,16 +45,16 @@ const Discovery = () => {
   };
 
   const handleMessage = () => {
-    const recipient = 'ludwigd3v@gmail.com';
+    const recipient = "ludwigd3v@gmail.com";
     const subjectline = "Let's connect!";
-    const body = 'Hi Luis, I would like to connect with you...';
+    const body = "Hi Luis, I would like to connect with you...";
     const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subjectline)}&body=${encodeURIComponent(body)}`;
-    window.open(mailtoUrl, '_blank');
+    window.open(mailtoUrl, "_blank");
   };
 
   const handleProjectClick = (link) => {
     if (link !== "#") {
-      window.open(link, '_blank');
+      window.open(link, "_blank");
     }
   };
 
@@ -65,13 +65,19 @@ const Discovery = () => {
         <div className="discoverySidebarFixed">
           <div className="discoveryProfileCard">
             <div className="discoveryPicContainer">
-              <img className="discoveryPic" src={ProfilePicture} alt="Luis Martinez" />
+              <img
+                className="discoveryPic"
+                src={ProfilePicture}
+                alt="Luis Martinez"
+              />
             </div>
 
             <div className="discoveryProfileInfo">
               <h2>Luis Martinez</h2>
-              <p className="discoveryProfileTitle">AI Automation and Web Developer</p>
-              <p className="discoveryProfileTitle" >México City, México</p>
+              <p className="discoveryProfileTitle">
+                AI Automation and Web Developer
+              </p>
+              <p className="discoveryProfileTitle">México City, México</p>
 
               {/* Social Media Icons */}
               <div className="discoverySocialIcons">
@@ -100,34 +106,56 @@ const Discovery = () => {
                   <FaXTwitter size={28} />
                 </a>
               </div>
-              
-              {/* Boton Let's Connect */}
-              <div className="discoveryActionButtons">
-                <motion.button
-                  className="discoveryMessageBtn"
-                  onClick={handleMessage}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  Let&apos;s Connect
-                </motion.button>
-              </div>
 
-              {/* Work Experience */}
+              {/* Certifications Experience */}
               <div className="discoveryWorkSection">
                 <div className="discoveryWorkItem">
-                  <h4>AI Automation Developer</h4>
-                  <p>Salvo Software - Custom Software Solutions</p>
+                  <a
+                    href="https://www.coursera.org/account/accomplishments/specialization/CS0M4THYKAYW"
+                    target={"_blank"}
+                    rel="noreferrer"
+                  >
+                    Software Product Management
+                  </a>
+                  <p>University of Alberta - May 2025</p>
                   <br />
-                  <h4>QA Tester</h4>
-                  <p>Salvo Software - Custom Software Solutions</p>
-                  <br /> 
-                  <h4>View Full Resume -</h4>
+                  <a
+                    href="https://www.coursera.org/account/accomplishments/verify/XD3ZQ2KFVEGA"
+                    target={"_blank"}
+                    rel="noreferrer"
+                  >
+                    Software Testing for Developers
+                  </a>
+                  <p>Codio - Feb 2024</p>
+                  <br />
+                  <a
+                    href="https://verified.sertifier.com/en/verify/00470908666115/"
+                    target={"_blank"}
+                    rel="noreferrer"
+                  >
+                    Full Stack Web Developer
+                  </a>
+                  <p>Academlo - Nov 2022</p>
                   <br />
                   <br />
-                  <p>Other Projects</p>
-                  <h4>Factory Code Studio</h4>
-                  <p>factorycodestudio.com</p>
+                  <br />
+
+                  
+                  {/* Boton Let's Connect */}
+                  <div className="discoveryActionButtons">
+                    <motion.button
+                      className="discoveryMessageBtn"
+                      onClick={handleMessage}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                      }}
+                    >
+                      Let&apos;s Connect
+                    </motion.button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -139,7 +167,11 @@ const Discovery = () => {
           <div className="discoveryContentInner">
             {/* Banner superior */}
             <div className="discoveryBanner">
-              <img src={TechBannerImage} alt="Banner" className="discoveryBannerImg" />
+              <img
+                src={TechBannerImage}
+                alt="Banner"
+                className="discoveryBannerImg"
+              />
             </div>
 
             {/* Projects Grid */}
@@ -154,7 +186,11 @@ const Discovery = () => {
                     whileHover={{ scale: 1.03 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
-                    <img src={project.image} alt={project.title} className="discoveryProjectImg" />
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="discoveryProjectImg"
+                    />
                     <div className="discoveryProjectOverlay">
                       <h3>{project.title}</h3>
                     </div>
