@@ -5,8 +5,8 @@ const Footer = () => {
 
   return (
     <footer className="footerRoot">
-      {/* Divisor */}
-      <hr className="footerDivider" />
+      {/* Divisor 
+      <hr className="footerDivider" />*/}
 
       {/* Fila inferior */}
       <div className="footerBottom">

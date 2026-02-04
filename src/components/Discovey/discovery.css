@@ -150,7 +150,6 @@
   justify-content: center;
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .discoverySocialIcons a {
@@ -163,7 +162,7 @@
   color: #0A66C2;
 }
 
-/* Work Experience Section */
+/* Certifications Experience Section */
 .discoveryWorkSection {
   width: 100%;
   text-align: left;
@@ -173,11 +172,17 @@
   margin-bottom: 1.5rem;
 }
 
-.discoveryWorkItem h4 {
+.discoveryWorkItem a {
   font-size: 1rem;
   color: #181717;
   margin: 0 0 0.25rem;
   font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.discoveryWorkItem a:hover {
+  color: #0A66C2;
 }
 
 .discoveryWorkItem p {
