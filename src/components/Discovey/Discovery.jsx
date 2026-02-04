@@ -39,12 +39,7 @@ const Discovery = () => {
     },
   ];
 
-  const handleFollow = () => {
-    // Configuraremos esto después para redes sociales
-    console.log("Follow clicked");
-  };
-
-  const handleMessage = () => {
+    const handleMessage = () => {
     const recipient = "ludwigd3v@gmail.com";
     const subjectline = "Let's connect!";
     const body = "Hi Luis, I would like to connect with you...";
