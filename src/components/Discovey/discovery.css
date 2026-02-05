@@ -72,8 +72,8 @@
 .discoveryProfileTitle {
   color: #666;
   font-size: 1rem;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 /* Botones Follow y Message */
@@ -148,8 +148,8 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .discoverySocialIcons a {
@@ -165,7 +165,7 @@
 /* Certifications Experience Section */
 .discoveryWorkSection {
   width: 100%;
-  text-align: left;
+  text-align: center;
 }
 
 .discoveryWorkItem {
@@ -231,6 +231,18 @@
   color: #181717;
   margin-bottom: 2rem;
   font-weight: 700;
+}
+
+/* About Section (mismo lenguaje visual de Projects) */
+.discoveryAboutSection {
+  padding-bottom: 0;
+}
+
+.discoveryAboutText {
+  margin: 0;
+  color: #555;
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
 /* Projects Grid - similar a Behance */

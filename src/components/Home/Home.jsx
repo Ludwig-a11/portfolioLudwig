@@ -1,7 +1,7 @@
 
 import "./home.css";
 import Picture from "../../assets/portfolio_pc2.jpg";
-import ContactForm from "./ContactForm";
+//import ContactForm from "./ContactForm";
 
 const Home = () => {
   return (
@@ -15,7 +15,7 @@ const Home = () => {
         </div>
         <img className="picHome" src={Picture} alt="picture" />
       </div>
-      <ContactForm />
+      {/*<ContactForm />*/}
       
     </>
   );

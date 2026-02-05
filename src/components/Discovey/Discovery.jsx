@@ -10,6 +10,7 @@ import chloeImg from "../../assets/chloe_banner.jpeg";
 import kivoImg from "../../assets/kivo_banner.jpeg";
 import ddtcImg from "../../assets/ddtCalculator.png";
 import rickMortyImg from "../../assets/rick-morthy.png";
+import ContactForm from "../Home/ContactForm";
 
 const Discovery = () => {
   const projects = [
@@ -39,7 +40,7 @@ const Discovery = () => {
     },
   ];
 
-    const handleMessage = () => {
+  const handleMessage = () => {
     const recipient = "ludwigd3v@gmail.com";
     const subjectline = "Let's connect!";
     const body = "Hi Luis, I would like to connect with you...";
@@ -70,9 +71,8 @@ const Discovery = () => {
             <div className="discoveryProfileInfo">
               <h2>Luis Martinez</h2>
               <p className="discoveryProfileTitle">
-                AI Automation and Web Developer
+                Automation Developer at Salvo Software
               </p>
-              <p className="discoveryProfileTitle">México City, México</p>
 
               {/* Social Media Icons */}
               <div className="discoverySocialIcons">
@@ -92,19 +92,13 @@ const Discovery = () => {
                 >
                   <GithubIcon width="28" height="28" />
                 </a>
-                <a
-                  href="https://twitter.com/yourusername" // Añade tu usuario
-                  aria-label="Twitter/X"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaXTwitter size={28} />
-                </a>
               </div>
 
               {/* Certifications Experience */}
               <div className="discoveryWorkSection">
                 <div className="discoveryWorkItem">
+                  <h3>Courses</h3>
+                  <br />
                   <a
                     href="https://www.coursera.org/account/accomplishments/specialization/CS0M4THYKAYW"
                     target={"_blank"}
@@ -135,7 +129,6 @@ const Discovery = () => {
                   <br />
                   <br />
 
-                  
                   {/* Boton Let's Connect */}
                   <div className="discoveryActionButtons">
                     <motion.button
@@ -169,6 +162,23 @@ const Discovery = () => {
               />
             </div>
 
+            {/* About Section */}
+            <div className="discoveryProjectsSection discoveryAboutSection">
+              <h2 className="discoveryProjectsTitle">About</h2>
+              <p className="discoveryAboutText">
+                Automation Developer with hands-on experience designing,
+                building, and deploying intelligent workflow systems powered by
+                LLMs, voice AI agents, and multi-app integrations. I specialize
+                in automating operational and sales processes using custom logic
+                to streamline response time and improve lead qualification.
+                Previously worked in QA, Sales Ops, and Tech Recruitment, giving
+                me a unique cross-functional understanding of how technology,
+                product, and business goals connect. I thrive in fast-paced
+                environments, quickly learning new tools, designing robust
+                automation flows, and delivering production-ready solutions.
+              </p>
+            </div>
+
             {/* Projects Grid */}
             <div className="discoveryProjectsSection">
               <h2 className="discoveryProjectsTitle">Projects</h2>
@@ -193,6 +203,7 @@ const Discovery = () => {
                 ))}
               </div>
             </div>
+            <ContactForm />
           </div>
         </div>
       </div>
