@@ -5,7 +5,7 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Error from "./components/Error";
 import Home from "./components/Home/Home";
-import Footer from "./components/Footer";
+//import Footer from "./components/Footer";
 import Discovery from "./components/Discovey/Discovery";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
           </Routes>
         </Router>
       </div>
-      <Footer />
+      {/*<Footer />*/}
     </>
   );
 }
