@@ -2,41 +2,67 @@ import "./discovery.css";
 import ProfilePicture from "../../assets/portfolio_pc2.jpg";
 import TechBannerImage from "../../assets/tech_banner.jpeg";
 import { GithubIcon, LinkedInIcon } from "../Icons";
-import { motion } from "framer-motion";
-import { FaXTwitter } from "react-icons/fa6";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 // Importa las imágenes de los proyectos
 import chloeImg from "../../assets/chloe_banner.jpeg";
 import kivoImg from "../../assets/kivo_banner.jpeg";
 import ddtcImg from "../../assets/ddtCalculator.png";
 import rickMortyImg from "../../assets/rick-morthy.png";
+import expensesPlaceholderImg from "../../assets/project1Pic.jpg";
 import ContactForm from "../Home/ContactForm";
 
 const Discovery = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const menuItems = [
+    { text: "HOME", link: "/" },
+    { text: "DISCOVERY", link: "/discovery" },
+    { text: "CONTACT", link: "/contact" },
+  ];
+
   const projects = [
     {
       id: 1,
       title: "Chloe",
+      description: "AI voice agent — Lead qualification",
+      stack: "Retell · n8n · Decision trees",
       image: chloeImg,
       link: "#",
     },
     {
       id: 2,
       title: "Kivo",
+      description: "Automation platform — Internal ops assistant",
+      stack: "n8n · Slack · Google Sheets",
       image: kivoImg,
       link: "#",
     },
     {
       id: 3,
       title: "Dedicated Teams Calculator",
+      description: "Pricing calculator — Fast quote experience",
+      stack: "React · CSS · JS",
       image: ddtcImg,
       link: "https://www.salvosoftware.com/dedicated-development-teams/#calculator",
     },
     {
       id: 4,
       title: "Rick & Morty",
+      description: "API explorer — Character discovery UI",
+      stack: "React · REST API · CSS",
       image: rickMortyImg,
       link: "https://subtle-pasca-8707dd.netlify.app/",
+    },
+    {
+      id: 5,
+      title: "Expenses record app",
+      description: "Expense tracker — Simple personal finance",
+      stack: "React · Local state · CSS",
+      image: expensesPlaceholderImg,
+      link: "#",
     },
   ];
 
@@ -56,6 +82,70 @@ const Discovery = () => {
 
   return (
     <div className="discoveryPageWrapper">
+      {/* Botón de menú flotante */}
+      <div
+        className="discoveryFloatingMenu"
+        onMouseEnter={() => setIsMenuOpen(true)}
+        onMouseLeave={() => setIsMenuOpen(false)}
+        aria-label="Discovery navigation"
+      >
+        <motion.button
+          className="discoveryMenuButton"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <div className="discoveryMenuIcon">
+            <motion.div
+              className="discoveryMenuLine"
+              animate={isMenuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+              transition={{ duration: 0.25 }}
+            />
+            <motion.div
+              className="discoveryMenuLine"
+              animate={isMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+              transition={{ duration: 0.2 }}
+            />
+            <motion.div
+              className="discoveryMenuLine"
+              animate={isMenuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+              transition={{ duration: 0.25 }}
+            />
+          </div>
+        </motion.button>
+
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              className="discoveryMenuDropdown"
+              initial={{ opacity: 0, y: -8, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8, scale: 0.98 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+            >
+              {menuItems.map((item, index) => (
+                <motion.div
+                  key={item.text}
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.06, duration: 0.2 }}
+                >
+                  <Link
+                    to={item.link}
+                    className={`discoveryMenuItem ${
+                      item.text === "DISCOVERY" ? "active" : ""
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.text}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
       <div className="discoveryMainLayout">
         {/* Sidebar izquierdo */}
         <div className="discoverySidebarFixed">
@@ -94,6 +184,29 @@ const Discovery = () => {
                 </a>
               </div>
 
+              {/* Exploring */}
+              <div className="discoverySidebarSection discoverySidebarSectionCentered">
+                <h3>Currently exploring</h3>
+                <ul className="discoverySidebarList">
+                  <li>LLMs + LangChain</li>
+                  <li>Typescript + Three.js + Python (pandas, numpy)</li>
+                  <li>Tech Prompts (SOP, JSON scheme)</li>
+                  <li>Microservices + Freefire + Auth (tokens, OAuth, API Keys)</li>
+                </ul>
+              </div>
+
+              {/* Tech Skills*/}
+              <div className="discoverySidebarSection discoverySidebarSectionCentered">
+                <h3>Tech Skills</h3>
+                <ul className="discoverySidebarList">
+                  <li>Retell + n8n + LLMs</li>
+                  <li>JavaScript + React.js + Motion</li>
+                  <li>Cypress + Postman + Gerkin</li>
+                  <li>SQL + PostsgreSQL</li>
+                  <li>APIs + Webhooks</li>
+                </ul>
+              </div>
+
               {/* Certifications Experience */}
               <div className="discoveryWorkSection">
                 <div className="discoveryWorkItem">
@@ -125,7 +238,6 @@ const Discovery = () => {
                     Full Stack Web Developer
                   </a>
                   <p>Academlo - Nov 2022</p>
-                  <br />
                   <br />
                   <br />
 
@@ -183,7 +295,7 @@ const Discovery = () => {
             <div className="discoveryProjectsSection">
               <h2 className="discoveryProjectsTitle">Projects</h2>
               <div className="discoveryProjectsGrid">
-                {projects.map((project) => (
+                {projects.map((project, index) => (
                   <motion.div
                     key={project.id}
                     className="discoveryProjectCard"
@@ -198,12 +310,26 @@ const Discovery = () => {
                     />
                     <div className="discoveryProjectOverlay">
                       <h3>{project.title}</h3>
+                      <p className="discoveryProjectMeta">
+                        {project.description}
+                      </p>
+                      <div className="discoveryProjectStack">
+                        {project.stack}
+                      </div>
                     </div>
                   </motion.div>
                 ))}
               </div>
             </div>
-            <ContactForm />
+
+            <div className="discoveryProjectsSection discoveryContactSection">
+              <h2 className="discoveryProjectsTitle">Contact</h2>
+              <p className="discoveryContactIntro">
+                If you’re building a web project, automating a workflow, or
+                simply validating an idea, feel free to reach out.
+              </p>
+              <ContactForm />
+            </div>
           </div>
         </div>
       </div>
