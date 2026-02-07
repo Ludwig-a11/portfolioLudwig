@@ -3,8 +3,6 @@ import './home.css';
 const ContactForm = () => {
   return (
     <div className="contactContainer">
-        <h2>Let&apos;s Work Together</h2>
-        <h3>Have a project in mind? I&apos;d love to hear about it.</h3>
         <div className="cardContainer">
           <div className="cardContactForm">
             <form className="contactForm">
@@ -52,7 +50,7 @@ const ContactForm = () => {
 
               {/* BOTÓN EN LUGAR DEL INPUT VACÍO */}
               <div className="formFull">
-                <button type="submit" className="btnPrimary">
+                <button type="submit" className="btnPrimary discoveryMessageBtn">
                   Send Message
                 </button>
               </div>
