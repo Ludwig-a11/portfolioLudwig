@@ -236,6 +236,11 @@
   border-radius: 10px;
   filter: grayscale(100%) contrast(1.05);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  transition: filter 0.35s ease;
+}
+
+.picHome:hover {
+  filter: grayscale(0%) contrast(1.02);
 }
 
 .iconsContainer{

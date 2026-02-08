@@ -5,7 +5,7 @@
 /* Wrapper que ocupa TODO el viewport disponible */
 .discoveryPageWrapper {
   position: fixed;
-  top: 64px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -415,11 +415,31 @@
 }
 
 /* Projects Grid - similar a Behance */
-.discoveryProjectsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+/* Slider Projects */
+.discoveryProjectsSlider {
+  position: relative;
   width: 100%;
+  overflow: hidden;
+  --cards-per-view: 3;
+  --card-gap: 24px;
+  --card-width: calc(
+    (100% - (var(--cards-per-view) - 1) * var(--card-gap)) /
+      var(--cards-per-view)
+  );
+}
+
+.discoveryProjectsTrack {
+  display: flex;
+  gap: var(--card-gap);
+  transition: transform 0.6s ease;
+  will-change: transform;
+  transform: translateX(
+    calc(var(--slide-index) * -1 * (var(--card-width) + var(--card-gap)))
+  );
+}
+
+.discoveryProjectCard.sliderItem {
+  flex: 0 0 var(--card-width);
 }
 
 .discoveryProjectCard {
@@ -431,6 +451,7 @@
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.3s ease;
   aspect-ratio: 4/3;
+  width: var(--card-width);
 }
 
 .discoveryProjectCard:hover {
@@ -463,6 +484,10 @@
   );
   opacity: 0;
   transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 45%;
 }
 
 .discoveryProjectCard:hover .discoveryProjectOverlay {
@@ -547,9 +572,8 @@
     display: none;
   }
 
-  .discoveryProjectsGrid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
+  .discoveryProjectsTrack {
+    transition: transform 0.5s ease;
   }
 
   .discoveryWorkSection {
@@ -569,6 +593,11 @@
 
   .discoveryContactSection .btnPrimary.discoveryMessageBtn {
     width: 100%;
+  }
+
+  .discoveryProjectsSlider {
+    --cards-per-view: 2;
+    --card-gap: 20px;
   }
 }
 
@@ -626,9 +655,13 @@
     font-size: 1.5rem;
   }
 
-  .discoveryProjectsGrid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .discoveryProjectsTrack {
+    transition: transform 0.5s ease;
+  }
+
+  .discoveryProjectsSlider {
+    --cards-per-view: 1;
+    --card-gap: 16px;
   }
 
   .discoveryActionButtons {
