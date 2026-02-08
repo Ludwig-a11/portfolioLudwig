@@ -4,7 +4,7 @@ import TechBannerImage from "../../assets/tech_banner.jpeg";
 import { GithubIcon, LinkedInIcon } from "../Icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Importa las imágenes de los proyectos
 import chloeImg from "../../assets/chloe_banner.jpeg";
@@ -15,7 +15,11 @@ import expensesPlaceholderImg from "../../assets/project1Pic.jpg";
 import ContactForm from "../Home/ContactForm";
 
 const Discovery = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isResetting, setIsResetting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const wheelLockRef = useRef(0);
 
   const menuItems = [
     { text: "HOME", link: "/" },
@@ -67,7 +71,7 @@ const Discovery = () => {
   ];
 
   const handleMessage = () => {
-    const recipient = "ludwigd3v@gmail.com";
+    const recipient = "boue123@gmail.com";
     const subjectline = "Let's connect!";
     const body = "Hi Luis, I would like to connect with you...";
     const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subjectline)}&body=${encodeURIComponent(body)}`;
@@ -79,6 +83,50 @@ const Discovery = () => {
       window.open(link, "_blank");
     }
   };
+
+  const handleWheel = (event) => {
+    event.preventDefault();
+    const now = Date.now();
+    if (now - wheelLockRef.current < 300) return;
+    wheelLockRef.current = now;
+
+    const direction = event.deltaY > 0 ? 1 : -1;
+    if (direction > 0) {
+      setCurrentIndex((prev) => {
+        if (projects.length === 0) return 0;
+        if (prev >= projects.length) return 1;
+        return prev + 1;
+      });
+      return;
+    }
+
+    setCurrentIndex((prev) => {
+      if (projects.length === 0) return 0;
+      if (prev <= 0) return projects.length - 1;
+      return prev - 1;
+    });
+  };
+
+  useEffect(() => {
+    if (projects.length <= 1 || isPaused) return undefined;
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prev) => {
+        if (projects.length === 0) return 0;
+        if (prev >= projects.length) return 1;
+        return prev + 1;
+      });
+    }, 4500);
+    return () => clearInterval(intervalId);
+  }, [projects.length, isPaused]);
+
+  useEffect(() => {
+    if (projects.length === 0) return;
+    if (currentIndex === projects.length) {
+      setIsResetting(true);
+      setCurrentIndex(0);
+      requestAnimationFrame(() => setIsResetting(false));
+    }
+  }, [currentIndex, projects.length]);
 
   return (
     <div className="discoveryPageWrapper">
@@ -189,9 +237,9 @@ const Discovery = () => {
                 <h3>Currently exploring</h3>
                 <ul className="discoverySidebarList">
                   <li>LLMs + LangChain</li>
-                  <li>Typescript + Three.js + Python (pandas, numpy)</li>
+                  <li>Typescript + Three.js + Python</li>
                   <li>Tech Prompts (SOP, JSON scheme)</li>
-                  <li>Microservices + Freefire + Auth (tokens, OAuth, API Keys)</li>
+                  <li>Freefire + Auth (tokens, OAuth, API Keys)</li>
                 </ul>
               </div>
 
@@ -294,31 +342,41 @@ const Discovery = () => {
             {/* Projects Grid */}
             <div className="discoveryProjectsSection">
               <h2 className="discoveryProjectsTitle">Projects</h2>
-              <div className="discoveryProjectsGrid">
-                {projects.map((project, index) => (
-                  <motion.div
-                    key={project.id}
-                    className="discoveryProjectCard"
-                    onClick={() => handleProjectClick(project.link)}
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  >
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="discoveryProjectImg"
-                    />
-                    <div className="discoveryProjectOverlay">
-                      <h3>{project.title}</h3>
-                      <p className="discoveryProjectMeta">
-                        {project.description}
-                      </p>
-                      <div className="discoveryProjectStack">
-                        {project.stack}
+              <div className="discoveryProjectsSlider" onWheel={handleWheel}>
+                <div
+                  className="discoveryProjectsTrack"
+                  style={{
+                    "--slide-index": currentIndex,
+                    transition: isResetting ? "none" : "transform 4.5s ease",
+                  }}
+                >
+                  {[...projects, ...projects].map((project, index) => (
+                    <motion.div
+                      key={`${project.id}-${index}`}
+                      className="discoveryProjectCard sliderItem"
+                      onClick={() => handleProjectClick(project.link)}
+                      onMouseEnter={() => setIsPaused(true)}
+                      onMouseLeave={() => setIsPaused(false)}
+                      whileHover={{ scale: 1.03 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    >
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="discoveryProjectImg"
+                      />
+                      <div className="discoveryProjectOverlay">
+                        <h3>{project.title}</h3>
+                        <p className="discoveryProjectMeta">
+                          {project.description}
+                        </p>
+                        <div className="discoveryProjectStack">
+                          {project.stack}
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
 
