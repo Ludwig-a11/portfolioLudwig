@@ -12,7 +12,7 @@ import kivoImg from "../../assets/kivo_banner.jpeg";
 import ddtcImg from "../../assets/ddtCalculator.png";
 import rickMortyImg from "../../assets/rick-morthy.png";
 import expensesPlaceholderImg from "../../assets/project1Pic.jpg";
-import ContactForm from "../Home/ContactForm";
+//import ContactForm from "../Home/ContactForm";
 
 const Discovery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -380,14 +380,14 @@ const Discovery = () => {
               </div>
             </div>
 
-            <div className="discoveryProjectsSection discoveryContactSection">
+            {/*<div className="discoveryProjectsSection discoveryContactSection">
               <h2 className="discoveryProjectsTitle">Contact</h2>
               <p className="discoveryContactIntro">
                 If you’re building a web project, automating a workflow, or
                 simply validating an idea, feel free to reach out.
               </p>
               <ContactForm />
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>

@@ -1,21 +1,25 @@
 /* contact.css
-   Scoped styles for Contact.jsx only (no global html/body rules)
-   Targets ONLY the classes used in Contact.jsx.
+   Layout acordado:
+   - .services-grid arriba (1 sola fila, ancho completo)
+   - Abajo: .contact-left (izq) + .contact-right (der con form)
+   - Sin overlays absolutos, sin padding-top hacks
+   - Todo cabe en pantalla (en desktop)
 */
 
+/* ===== Page wrapper ===== */
 .contact-page {
-  /* Full viewport without relying on global rules */
   min-height: 100vh;
   background: #e9eaec;
   padding: 18px;
   display: grid;
   place-items: center;
-  overflow: hidden; /* avoid page scroll from this section */
+  overflow: hidden; /* evita scroll por esta sección */
 }
 
+/* ===== Main shell (2 rows: services + content) ===== */
 .contact-shell {
-  width: min(1320px, calc(100vw - 36px));   /* a bit wider */
-  height: min(760px, calc(100vh - 36px));   /* fit screen (no scroll) */
+  width: min(1380px, calc(100vw - 36px));   /* un poco más ancho */
+  height: min(780px, calc(100vh - 36px));   /* fit screen */
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 26px;
@@ -23,20 +27,77 @@
   padding: 22px;
 
   display: grid;
-  grid-template-columns: 1.08fr 0.92fr; /* left text | right form */
+  grid-template-columns: 1.08fr 0.92fr; /* left | right */
+  grid-template-rows: auto 1fr;         /* services | main */
   gap: 18px;
-  overflow: hidden; /* no internal scrollbars */
+
+  overflow: hidden;
+  position: relative;
 }
 
-/* LEFT: slogan (below process row), big text, then info blocks */
+/* ========= TOP ROW: SERVICES ========= */
+.services-grid {
+  grid-column: 1 / -1; /* ocupa todo el ancho */
+  grid-row: 1;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* un solo row */
+  gap: 12px;
+  align-items: stretch;
+}
+
+.service-card {
+  background: #f7f7f8;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: 14px;
+  padding: 12px;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 150px; /* mantiene proporción del mock */
+  overflow: hidden;
+}
+
+.service-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.88);
+  letter-spacing: 0.1px;
+}
+
+.service-card ul {
+  margin: 8px 0 0 0;
+  padding-left: 16px;
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.service-card li {
+  margin-bottom: 6px;
+}
+
+.service-footer {
+  margin: 10px 0 0 0;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.60);
+}
+
+/* ========= BOTTOM LEFT ========= */
 .contact-left {
+  grid-column: 1;
+  grid-row: 2;
+
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 18px;
-  padding: 16px;
+  padding: 18px;
   background: #ffffff;
 
   display: grid;
-  grid-template-rows: auto 1fr auto; /* kicker | big title | bottom cards */
+  grid-template-rows: auto 1fr auto; /* slogan | title | bottom cards */
   gap: 12px;
   overflow: hidden;
 }
@@ -47,20 +108,23 @@
   color: rgba(0, 0, 0, 0.62);
 }
 
+/* "Just send it." grande como el mock (alineado a la izquierda) */
 .contact-title {
   margin: 0;
   align-self: center;
-  font-size: clamp(52px, 4.2vw, 72px);
+  justify-self: start;
+
+  font-size: clamp(64px, 5.2vw, 96px);
   line-height: 0.95;
   letter-spacing: -1.2px;
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.90);
 }
 
-/* Bottom: opening hours + follow me */
+/* bottom cards */
 .contact-bottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 12px;
 }
 
 .contact-info-card {
@@ -104,68 +168,23 @@
   font-size: 12.5px;
 }
 
-/* RIGHT: top process row + form filling right side */
+/* ========= BOTTOM RIGHT ========= */
 .contact-right {
+  grid-column: 2;
+  grid-row: 2;
+
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 18px;
-  padding: 16px;
+  padding: 18px;
   background: #ffffff;
 
   display: grid;
-  grid-template-rows: auto 1fr; /* services top row | form below */
-  gap: 14px;
+  grid-template-rows: 1fr; /* SOLO el form */
+  gap: 12px;
   overflow: hidden;
 }
 
-/* (2) Process: ONE ROW (4 cards) */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
-  align-items: stretch;
-}
-
-.service-card {
-  background: #f7f7f8;
-  border: 1px solid rgba(0, 0, 0, 0.10);
-  border-radius: 14px;
-  padding: 12px;
-
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 150px;
-  overflow: hidden;
-}
-
-.service-title {
-  margin: 0;
-  font-weight: 700;
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.88);
-  letter-spacing: 0.1px;
-}
-
-.service-card ul {
-  margin: 8px 0 0 0;
-  padding-left: 16px;
-  font-size: 11.5px;
-  line-height: 1.35;
-  color: rgba(0, 0, 0, 0.72);
-}
-
-.service-card li {
-  margin-bottom: 6px;
-}
-
-.service-footer {
-  margin: 10px 0 0 0;
-  padding-top: 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.10);
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.60);
-}
-
-/* (4) Form on the RIGHT column */
+/* Form */
 .contact-form {
   background: #f7f7f8;
   border: 1px solid rgba(0, 0, 0, 0.10);
@@ -203,12 +222,12 @@
 }
 
 .form-field textarea {
-  resize: none;          /* avoid breaking layout */
-  min-height: 128px;     /* fits within viewport */
+  resize: none;
+  min-height: 170px; /* más parecido al mock */
 }
 
 .send-button {
-  height: 42px;
+  height: 44px;
   border-radius: 999px;
   background: #111827;
   color: #ffffff;
@@ -218,10 +237,7 @@
   margin-top: 4px;
 }
 
-/* Responsive fallback:
-   If viewport gets too small, allow height to grow naturally.
-   (Contact.jsx still works; layout stacks, and scrolling can happen naturally elsewhere.)
-*/
+/* ===== Responsive ===== */
 @media (max-width: 1100px) {
   .contact-page {
     overflow: visible;
@@ -232,18 +248,31 @@
     height: auto;
     min-height: calc(100vh - 36px);
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
   }
 
   .services-grid {
+    grid-column: 1;
+    grid-row: 1;
     grid-template-columns: 1fr 1fr;
   }
 
+  .contact-left {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
   .contact-right {
-    grid-template-rows: auto auto;
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .contact-bottom {
+    grid-template-columns: 1fr;
   }
 
   .form-field textarea {
-    min-height: 140px;
+    min-height: 160px;
   }
 }
 
@@ -251,13 +280,9 @@
   .services-grid {
     grid-template-columns: 1fr;
   }
-
-  .contact-bottom {
-    grid-template-columns: 1fr;
-  }
 }
 
-/* Floating nav (matches Contact.jsx classes) */
+/* ===== Floating nav (ya existente en tu archivo) ===== */
 .contactFloatingMenu {
   position: fixed;
   top: 88px;
