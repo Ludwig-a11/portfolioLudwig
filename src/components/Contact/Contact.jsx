@@ -78,6 +78,52 @@ export default function Contact() {
         </AnimatePresence>
       </div>
       <div className="contact-shell">
+        <div className="services-grid">
+          <ServiceCard
+            title="Discovery & Alignment"
+            footer="Clear problem definition + priorities + success criteria"
+            bullets={[
+              "Understand the real problem (not just the request).",
+              "Business goals, users, and success metrics.",
+              "Initial scope and risks.",
+              "Rapid validation (wireframes, flows, prototypes).",
+            ]}
+          />
+
+          <ServiceCard
+            title="Design & Technical Planning"
+            footer="Functional design + technical plan ready to iterate"
+            bullets={[
+              "UX/UI flows (not perfect design—just what’s needed).",
+              "Architecture and technical decisions.",
+              "MVP definition and iterations.",
+              "Prioritized backlog.",
+            ]}
+          />
+
+          <ServiceCard
+            title="Build, Test & Iterate"
+            footer="Functional software validated through iterations"
+            bullets={[
+              "Incremental development.",
+              "Continuous testing (manual and automated).",
+              "Early feedback from clients and stakeholders.",
+              "Fast adjustments.",
+            ]}
+          />
+
+          <ServiceCard
+            title="Launch, Monitor & Improve"
+            footer="A living, stable product that continuously improves"
+            bullets={[
+              "Continuous deployment.",
+              "Monitoring (performance, errors, real usage).",
+              "Support and data-driven improvements.",
+              "Ongoing product evolution.",
+            ]}
+          />
+        </div>
+
         {/* LEFT COLUMN */}
         <div className="contact-left">
           {/* (3) */}
@@ -130,53 +176,6 @@ export default function Contact() {
 
         {/* RIGHT COLUMN */}
         <div className="contact-right">
-          {/* (2) */}
-          <div className="services-grid">
-            <ServiceCard
-              title="Discovery & Alignment"
-              footer="Clear problem definition + priorities + success criteria"
-              bullets={[
-                "Understand the real problem (not just the request).",
-                "Business goals, users, and success metrics.",
-                "Initial scope and risks.",
-                "Rapid validation (wireframes, flows, prototypes).",
-              ]}
-            />
-
-            <ServiceCard
-              title="Design & Technical Planning"
-              footer="Functional design + technical plan ready to iterate"
-              bullets={[
-                "UX/UI flows (not perfect design—just what’s needed).",
-                "Architecture and technical decisions.",
-                "MVP definition and iterations.",
-                "Prioritized backlog.",
-              ]}
-            />
-
-            <ServiceCard
-              title="Build, Test & Iterate"
-              footer="Functional software validated through iterations"
-              bullets={[
-                "Incremental development.",
-                "Continuous testing (manual and automated).",
-                "Early feedback from clients and stakeholders.",
-                "Fast adjustments.",
-              ]}
-            />
-
-            <ServiceCard
-              title="Launch, Monitor & Improve"
-              footer="A living, stable product that continuously improves"
-              bullets={[
-                "Continuous deployment.",
-                "Monitoring (performance, errors, real usage).",
-                "Support and data-driven improvements.",
-                "Ongoing product evolution.",
-              ]}
-            />
-          </div>
-
           {/* (4) FORM */}
           <form className="contact-form">
             <div className="form-field">
