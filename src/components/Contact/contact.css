@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap");
+
 /* contact.css
    Layout acordado:
    - .services-grid arriba (1 sola fila, ancho completo)
@@ -10,10 +12,13 @@
 .contact-page {
   min-height: 100vh;
   background: #e9eaec;
+  font-family: "Work Sans", sans-serif;
   padding: 18px;
   display: grid;
   place-items: center;
   overflow: hidden; /* evita scroll por esta sección */
+  position: relative;
+  isolation: isolate;
 }
 
 /* ===== Main shell (2 rows: services + content) ===== */
@@ -28,73 +33,65 @@
 
   display: grid;
   grid-template-columns: 1.08fr 0.92fr; /* left | right */
-  grid-template-rows: auto 1fr;         /* services | main */
+  grid-template-rows: 1fr;
   gap: 18px;
 
   overflow: hidden;
   position: relative;
 }
 
-/* ========= TOP ROW: SERVICES ========= */
-.services-grid {
-  grid-column: 1 / -1; /* ocupa todo el ancho */
-  grid-row: 1;
-
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)); /* un solo row */
-  gap: 12px;
-  align-items: stretch;
-}
-
-.service-card {
-  background: #f7f7f8;
-  border: 1px solid rgba(0, 0, 0, 0.10);
+.contact-shell::before,
+.contact-shell::after {
+  content: "";
+  position: absolute;
   border-radius: 14px;
-  padding: 12px;
-
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 150px; /* mantiene proporción del mock */
-  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
-.service-title {
-  margin: 0;
-  font-weight: 700;
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.88);
-  letter-spacing: 0.1px;
+.contact-shell::before {
+  width: 118px;
+  height: 118px;
+  right: 9%;
+  top: 7%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.36),
+    rgba(255, 255, 255, 0.18)
+  );
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.08);
 }
 
-.service-card ul {
-  margin: 8px 0 0 0;
-  padding-left: 16px;
-  font-size: 11.5px;
-  line-height: 1.35;
-  color: rgba(0, 0, 0, 0.72);
+.contact-shell::after {
+  width: 92px;
+  height: 92px;
+  left: 47%;
+  bottom: 11%;
+  background: linear-gradient(
+    145deg,
+    rgba(210, 220, 230, 0.34),
+    rgba(255, 255, 255, 0.14)
+  );
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.07);
 }
 
-.service-card li {
-  margin-bottom: 6px;
-}
-
-.service-footer {
-  margin: 10px 0 0 0;
-  padding-top: 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.10);
-  font-size: 11px;
-  color: rgba(0, 0, 0, 0.60);
+.contact-shell > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* ========= BOTTOM LEFT ========= */
 .contact-left {
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 1;
 
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 18px;
+  /*border: 1px solid rgba(0, 0, 0, 0.08);*/
+  /*border-radius: 18px;*/
   padding: 18px;
-  background: #ffffff;
+  background: transparent;
 
   display: grid;
   grid-template-rows: auto 1fr auto; /* slogan | title | bottom cards */
@@ -104,17 +101,18 @@
 
 .contact-kicker {
   margin: 0;
-  font-size: 13px;
+  font-size: 25px;
   color: rgba(0, 0, 0, 0.62);
 }
 
-/* "Just send it." grande como el mock (alineado a la izquierda) */
+/* "Just send it." grande como el mock (alineado a la derecha) */
 .contact-title {
-  margin: 0;
-  align-self: center;
-  justify-self: start;
+  margin-bottom: 8%;
+  align-self: end;
+  justify-self: end;
+  font-family: "Playfair Display", serif;
 
-  font-size: clamp(64px, 5.2vw, 96px);
+  font-size: clamp(74px, 6.2vw, 106px);
   line-height: 0.95;
   letter-spacing: -1.2px;
   color: rgba(0, 0, 0, 0.90);
@@ -136,51 +134,50 @@
 
 .info-title {
   margin: 0;
-  font-size: 11px;
-  text-transform: uppercase;
+  font-size: 18px;
   letter-spacing: 0.32px;
-  color: rgba(0, 0, 0, 0.60);
+  color: rgba(0, 0, 0, 0.88);
 }
 
 .info-text {
   margin: 8px 0 0 0;
-  font-size: 12.5px;
+  font-size: 15px;
   color: rgba(0, 0, 0, 0.78);
 }
 
-.social-row {
+.contactSocialIcons {
   display: flex;
-  gap: 10px;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
   margin-top: 10px;
-  flex-wrap: wrap;
+  /*margin-bottom: 1rem;
+  padding-bottom: 1rem;*/
 }
 
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.10);
-  background: #fafafa;
-  color: rgba(0, 0, 0, 0.85);
-  text-decoration: none;
-  font-size: 12.5px;
+.contactSocialIcons a {
+  color: rgba(30, 30, 30, 0.8);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.contactSocialIcons a:hover {
+  transform: translateY(-2px);
+  color: rgba(10, 10, 10, 0.95);
 }
 
 /* ========= BOTTOM RIGHT ========= */
 .contact-right {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 1;
 
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  /*border: 1px solid rgba(0, 0, 0, 0.08);*/
   border-radius: 18px;
   padding: 18px;
-  background: #ffffff;
+  background: transparent;
 
-  display: grid;
-  grid-template-rows: 1fr; /* SOLO el form */
-  gap: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -191,10 +188,12 @@
   border-radius: 16px;
   padding: 14px;
 
+  width: 100%;
   display: grid;
+  grid-auto-rows: min-content;
   gap: 10px;
   align-content: start;
-  height: 100%;
+  height: auto;
   overflow: hidden;
 }
 
@@ -248,23 +247,22 @@
     height: auto;
     min-height: calc(100vh - 36px);
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto;
   }
 
-  .services-grid {
-    grid-column: 1;
-    grid-row: 1;
-    grid-template-columns: 1fr 1fr;
+  .contact-shell::before,
+  .contact-shell::after {
+    opacity: 0.45;
   }
 
   .contact-left {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 1;
   }
 
   .contact-right {
     grid-column: 1;
-    grid-row: 3;
+    grid-row: 2;
   }
 
   .contact-bottom {
@@ -274,11 +272,9 @@
   .form-field textarea {
     min-height: 160px;
   }
-}
 
-@media (max-width: 720px) {
-  .services-grid {
-    grid-template-columns: 1fr;
+  .contact-form {
+    align-content: start;
   }
 }
 

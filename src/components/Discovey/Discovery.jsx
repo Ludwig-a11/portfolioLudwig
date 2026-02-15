@@ -70,6 +70,45 @@ const Discovery = () => {
     },
   ];
 
+  const services = [
+    {
+      title: "Discovery & Alignment",
+      footer: "Problem definition + priorities + success criteria",
+      bullets: [
+        "Understand the real problem (not just the request).",
+        "Business goals, users, and success metrics.",
+        "Initial scope and risks.",
+      ],
+    },
+    {
+      title: "Design & Technical Planning",
+      footer: "Functional design + technical plan ready to iterate",
+      bullets: [
+        "UX/UI flows (design-just what is needed).",
+        "Architecture and technical decisions.",
+        "MVP definition and iterations.",
+      ],
+    },
+    {
+      title: "Build, Test & Iterate",
+      footer: "Functional software validated through iterations",
+      bullets: [
+        "Incremental development.",
+        "Continuous testing (manual and automated).",
+        "Early feedback from clients and stakeholders.",
+      ],
+    },
+    {
+      title: "Launch, Monitor & Improve",
+      footer: "A living, stable product that continuously improves",
+      bullets: [
+        "Continuous deployment.",
+        "Monitoring (performance, errors, real usage).",
+        "Ongoing product evolution.",
+      ],
+    },
+  ];
+
   const handleMessage = () => {
     const recipient = "boue123@gmail.com";
     const subjectline = "Let's connect!";
@@ -377,6 +416,23 @@ const Discovery = () => {
                     </motion.div>
                   ))}
                 </div>
+              </div>
+            </div>
+
+            <div className="discoveryProjectsSection discoveryServicesSection">
+              <h2 className="discoveryProjectsTitle">Services</h2>
+              <div className="discoveryServicesGrid">
+                {services.map((service) => (
+                  <article key={service.title} className="discoveryServiceCard">
+                    <h3 className="discoveryServiceTitle">{service.title}</h3>
+                    <ul className="discoveryServiceList">
+                      {service.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                    <p className="discoveryServiceFooter">{service.footer}</p>
+                  </article>
+                ))}
               </div>
             </div>
 
