@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap");
 
-/* contact.css
-   Layout acordado:
-   - .services-grid arriba (1 sola fila, ancho completo)
-   - Abajo: .contact-left (izq) + .contact-right (der con form)
-   - Sin overlays absolutos, sin padding-top hacks
-   - Todo cabe en pantalla (en desktop)
-*/
-
 /* ===== Page wrapper ===== */
 .contact-page {
   min-height: 100vh;
@@ -33,7 +25,7 @@
 
   display: grid;
   grid-template-columns: 1.08fr 0.92fr; /* left | right */
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr auto;
   gap: 18px;
 
   overflow: hidden;
@@ -88,19 +80,17 @@
   grid-column: 1;
   grid-row: 1;
 
-  /*border: 1px solid rgba(0, 0, 0, 0.08);*/
-  /*border-radius: 18px;*/
   padding: 18px;
   background: transparent;
 
   display: grid;
-  grid-template-rows: auto 1fr auto; /* slogan | title | bottom cards */
+  grid-template-rows: auto 1fr; /* slogan | title */
   gap: 12px;
   overflow: hidden;
 }
 
 .contact-kicker {
-  margin: 0;
+  margin-top: 10%;
   font-size: 25px;
   color: rgba(0, 0, 0, 0.62);
 }
@@ -112,7 +102,7 @@
   justify-self: end;
   font-family: "Playfair Display", serif;
 
-  font-size: clamp(74px, 6.2vw, 106px);
+  font-size: clamp(74px, 5.5vw, 106px);
   line-height: 0.95;
   letter-spacing: -1.2px;
   color: rgba(0, 0, 0, 0.90);
@@ -120,6 +110,8 @@
 
 /* bottom cards */
 .contact-bottom {
+  grid-column: 1;
+  grid-row: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
@@ -168,7 +160,7 @@
 /* ========= BOTTOM RIGHT ========= */
 .contact-right {
   grid-column: 2;
-  grid-row: 1;
+  grid-row: 1 / span 2;
 
   /*border: 1px solid rgba(0, 0, 0, 0.08);*/
   border-radius: 18px;
@@ -227,6 +219,8 @@
 
 .send-button {
   height: 44px;
+  width: min(380px, 78%);
+  justify-self: center;
   border-radius: 999px;
   background: #111827;
   color: #ffffff;
@@ -234,6 +228,7 @@
   cursor: pointer;
   font-size: 14px;
   margin-top: 4px;
+  transition: all 0.3s ease;
 }
 
 /* ===== Responsive ===== */
@@ -247,7 +242,7 @@
     height: auto;
     min-height: calc(100vh - 36px);
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
   }
 
   .contact-shell::before,
@@ -258,15 +253,44 @@
   .contact-left {
     grid-column: 1;
     grid-row: 1;
+    padding: 10px 12px 0;
+    gap: 10px;
   }
 
   .contact-right {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 3;
+    padding-top: 4px;
   }
 
   .contact-bottom {
-    grid-template-columns: 1fr;
+    grid-column: 1;
+    grid-row: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-kicker {
+    margin-top: 0;
+    text-align: center;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .contact-title {
+    margin-bottom: 0;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    font-size: clamp(56px, 13.5vw, 78px);
+    line-height: 0.94;
+  }
+
+  .contact-info-card {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .contactSocialIcons {
+    justify-content: center;
   }
 
   .form-field textarea {
@@ -275,6 +299,47 @@
 
   .contact-form {
     align-content: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-shell {
+    grid-template-rows: auto auto auto;
+  }
+
+  .contact-right {
+    grid-row: 2;
+  }
+
+  .contact-bottom {
+    grid-row: 3;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .contact-bottom {
+    gap: 8px;
+    align-items: start;
+  }
+
+  .contact-info-card {
+    padding: 8px 10px;
+    min-height: auto;
+  }
+
+  .info-title {
+    font-size: 14px;
+  }
+
+  .info-text {
+    margin-top: 6px;
+    font-size: 12px;
+  }
+
+  .contactSocialIcons {
+    margin-top: 6px;
+    gap: 0.7rem;
   }
 }
 

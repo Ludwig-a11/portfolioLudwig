@@ -472,8 +472,12 @@
 /* Mobile */
 @media (max-width: 768px) {
   .homeStage {
-    padding: 2.5rem 2rem;
+    padding: 6.2rem 3rem 3.5rem;
     border-radius: 16px;
+  }
+
+  .homeGrid {
+    margin-top: 3rem;
   }
 
   .homeTop {
@@ -517,7 +521,11 @@
 /* Mobile pequeño */
 @media (max-width: 480px) {
   .homeStage {
-    padding: 2rem 1.5rem;
+    padding: 5.8rem 2.5rem 3rem;
+  }
+
+  .homeGrid {
+    margin-top: 2.8rem;
   }
 
   .homeText h1 {

@@ -3,18 +3,13 @@ import ProfilePicture from "../../assets/portfolio_pc2.jpg";
 import TechBannerImage from "../../assets/tech_banner.jpeg";
 import { GithubIcon, LinkedInIcon } from "../Icons";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-
-// Importa las imágenes de los proyectos
-import chloeImg from "../../assets/chloe_banner.jpeg";
-import kivoImg from "../../assets/kivo_banner.jpeg";
-import ddtcImg from "../../assets/ddtCalculator.png";
-import rickMortyImg from "../../assets/rick-morthy.png";
-import expensesPlaceholderImg from "../../assets/project1Pic.jpg";
+import { projects } from "../../data/projects";
 //import ContactForm from "../Home/ContactForm";
 
 const Discovery = () => {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isResetting, setIsResetting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
@@ -25,49 +20,6 @@ const Discovery = () => {
     { text: "HOME", link: "/" },
     { text: "DISCOVERY", link: "/discovery" },
     { text: "CONTACT", link: "/contact" },
-  ];
-
-  const projects = [
-    {
-      id: 1,
-      title: "Chloe",
-      description: "AI voice agent — Lead qualification",
-      stack: "Retell · n8n · Decision trees",
-      image: chloeImg,
-      link: "#",
-    },
-    {
-      id: 2,
-      title: "Kivo",
-      description: "Automation platform — Internal ops assistant",
-      stack: "n8n · Slack · Google Sheets",
-      image: kivoImg,
-      link: "#",
-    },
-    {
-      id: 3,
-      title: "Dedicated Teams Calculator",
-      description: "Pricing calculator — Fast quote experience",
-      stack: "React · CSS · JS",
-      image: ddtcImg,
-      link: "https://www.salvosoftware.com/dedicated-development-teams/#calculator",
-    },
-    {
-      id: 4,
-      title: "Rick & Morty",
-      description: "API explorer — Character discovery UI",
-      stack: "React · REST API · CSS",
-      image: rickMortyImg,
-      link: "https://subtle-pasca-8707dd.netlify.app/",
-    },
-    {
-      id: 5,
-      title: "Expenses record app",
-      description: "Expense tracker — Simple personal finance",
-      stack: "React · Local state · CSS",
-      image: expensesPlaceholderImg,
-      link: "#",
-    },
   ];
 
   const services = [
@@ -117,9 +69,14 @@ const Discovery = () => {
     window.open(mailtoUrl, "_blank");
   };
 
-  const handleProjectClick = (link) => {
-    if (link !== "#") {
-      window.open(link, "_blank");
+  const handleProjectCardClick = (projectSlug) => {
+    navigate(`/projects/${projectSlug}`);
+  };
+
+  const handleLiveClick = (event, liveUrl) => {
+    event.stopPropagation();
+    if (liveUrl) {
+      window.open(liveUrl, "_blank", "noopener,noreferrer");
     }
   };
 
@@ -195,7 +152,9 @@ const Discovery = () => {
             />
             <motion.div
               className="discoveryMenuLine"
-              animate={isMenuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+              animate={
+                isMenuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }
+              }
               transition={{ duration: 0.25 }}
             />
           </div>
@@ -393,11 +352,23 @@ const Discovery = () => {
                     <motion.div
                       key={`${project.id}-${index}`}
                       className="discoveryProjectCard sliderItem"
-                      onClick={() => handleProjectClick(project.link)}
+                      onClick={() => handleProjectCardClick(project.slug)}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter" || event.key === " ") {
+                          event.preventDefault();
+                          handleProjectCardClick(project.slug);
+                        }
+                      }}
                       onMouseEnter={() => setIsPaused(true)}
                       onMouseLeave={() => setIsPaused(false)}
                       whileHover={{ scale: 1.03 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 20,
+                      }}
                     >
                       <img
                         src={project.image}
@@ -412,6 +383,29 @@ const Discovery = () => {
                         <div className="discoveryProjectStack">
                           {project.stack}
                         </div>
+                        <div className="discoveryProjectActions">
+                          <button
+                            type="button"
+                            className="discoveryProjectBtn"
+                            onClick={(event) => {
+                              event.stopPropagation();
+                              handleProjectCardClick(project.slug);
+                            }}
+                          >
+                            View details
+                          </button>
+                          {project.liveUrl && (
+                            <button
+                              type="button"
+                              className="discoveryProjectBtn discoveryProjectBtnGhost"
+                              onClick={(event) =>
+                                handleLiveClick(event, project.liveUrl)
+                              }
+                            >
+                              Live
+                            </button>
+                          )}
+                        </div>
                       </div>
                     </motion.div>
                   ))}
@@ -420,7 +414,15 @@ const Discovery = () => {
             </div>
 
             <div className="discoveryProjectsSection discoveryServicesSection">
-              <h2 className="discoveryProjectsTitle">Services</h2>
+              <h2 className="discoveryProjectsTitle">What I&apos;ve learned</h2>
+              <p className="discoveryServicesText">
+                I’ve worked close to the problem from multiple angles, sales
+                conversations, QA validation, and product delivery, which made me
+                opinionated about one thing: reliability comes from a tight
+                loop. Define the problem and success criteria, plan what’s
+                needed for an MVP, build and test in small increments with early
+                feedback, then monitor and improve based on real usage.
+              </p>
               <div className="discoveryServicesGrid">
                 {services.map((service) => (
                   <article key={service.title} className="discoveryServiceCard">
@@ -435,15 +437,6 @@ const Discovery = () => {
                 ))}
               </div>
             </div>
-
-            {/*<div className="discoveryProjectsSection discoveryContactSection">
-              <h2 className="discoveryProjectsTitle">Contact</h2>
-              <p className="discoveryContactIntro">
-                If you’re building a web project, automating a workflow, or
-                simply validating an idea, feel free to reach out.
-              </p>
-              <ContactForm />
-            </div>*/}
           </div>
         </div>
       </div>

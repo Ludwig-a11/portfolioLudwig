@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap");
+
+.projectDetailsPage {
+  min-height: 100vh;
+  padding: 2rem 1.25rem;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(0deg, rgba(238, 238, 238, 0.95), rgba(238, 238, 238, 0.95)),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: auto, 200px 200px, 200px 200px;
+  font-family: "Work Sans", sans-serif;
+}
+
+.projectDetailsCard {
+  width: min(860px, 100%);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.11);
+}
+
+.projectDetailsLabel {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(30, 30, 30, 0.5);
+}
+
+.projectDetailsTitle {
+  margin: 0.6rem 0 0;
+  color: #1f1f1f;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4.2vw, 3rem);
+}
+
+.projectDetailsText {
+  margin: 1rem 0 0;
+  color: rgba(50, 50, 50, 0.76);
+  line-height: 1.7;
+}
+
+.projectDetailsSection {
+  margin-top: 1.25rem;
+}
+
+.projectDetailsSection h2 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 1.32rem;
+  color: #1f1f1f;
+}
+
+.projectDetailsSection ul {
+  margin: 0.65rem 0 0;
+  padding-left: 1.15rem;
+  color: rgba(40, 40, 40, 0.8);
+  line-height: 1.65;
+}
+
+.projectDetailsSection li {
+  margin-bottom: 0.45rem;
+}
+
+.projectDetailsStack {
+  margin: 0.9rem 0 0;
+  color: rgba(25, 25, 25, 0.78);
+  font-weight: 600;
+}
+
+.projectDetailsActions {
+  margin-top: 1.6rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.projectDetailsLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border-radius: 999px;
+  padding: 0 1rem;
+  text-decoration: none;
+  border: 1px solid rgba(20, 20, 20, 0.9);
+  background: rgba(20, 20, 20, 0.95);
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.projectDetailsLinkGhost {
+  background: transparent;
+  color: #1f1f1f;
+}

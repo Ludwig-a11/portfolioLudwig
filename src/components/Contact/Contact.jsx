@@ -91,39 +91,6 @@ export default function Contact() {
             Just <br />
             send it.
           </h1>
-
-          {/* Bottom blocks */}
-          <div className="contact-bottom">
-            {/* Opening hours */}
-            <div className="contact-info-card">
-              <p className="info-title">Opening hours</p>
-              <p className="info-text">Mon - Fri 8 AM - 8 PM CST</p>
-              <p className="info-text">Sat 8 AM - 12 PM CST</p>
-            </div>
-
-            {/* Follow me */}
-            <div className="contact-info-card">
-              <p className="info-title">Follow me</p>
-              <div className="contactSocialIcons">
-                <a
-                  href="https://www.linkedin.com/in/luis-zarza/"
-                  aria-label="LinkedIn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LinkedInIcon width="28" height="28" />
-                </a>
-                <a
-                  href="https://github.com/Ludwig-a11"
-                  aria-label="GitHub"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <GithubIcon width="28" height="28" />
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* RIGHT COLUMN */}
@@ -151,10 +118,52 @@ export default function Contact() {
                 rows="5" />
             </div>
 
-            <button type="submit" className="send-button">
+            <motion.button
+              type="submit"
+              className="send-button"
+              whileHover={{ scale: 1.05 }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+              }}
+            >
               Send message
-            </button>
+            </motion.button>
           </form>
+        </div>
+
+        {/* Bottom blocks */}
+        <div className="contact-bottom">
+          {/* Opening hours */}
+          <div className="contact-info-card">
+            <p className="info-title">Opening hours</p>
+            <p className="info-text">Mon - Fri 8 AM - 8 PM CST</p>
+            <p className="info-text">Sat 8 AM - 12 PM CST</p>
+          </div>
+
+          {/* Follow me */}
+          <div className="contact-info-card">
+            <p className="info-title">Follow me</p>
+            <div className="contactSocialIcons">
+              <a
+                href="https://www.linkedin.com/in/luis-zarza/"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedInIcon width="28" height="28" />
+              </a>
+              <a
+                href="https://github.com/Ludwig-a11"
+                aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GithubIcon width="28" height="28" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
