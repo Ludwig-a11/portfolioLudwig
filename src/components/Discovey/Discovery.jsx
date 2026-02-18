@@ -234,10 +234,9 @@ const Discovery = () => {
               <div className="discoverySidebarSection discoverySidebarSectionCentered">
                 <h3>Currently exploring</h3>
                 <ul className="discoverySidebarList">
-                  <li>LLMs + LangChain</li>
-                  <li>Typescript + Three.js + Python</li>
-                  <li>Tech Prompts (SOP, JSON scheme)</li>
-                  <li>Freefire + Auth (tokens, OAuth, API Keys)</li>
+                  <li>Typescript</li>
+                  <li>Python</li>
+                  <li>Three.js</li>
                 </ul>
               </div>
 
@@ -248,7 +247,7 @@ const Discovery = () => {
                   <li>Retell + n8n + LLMs</li>
                   <li>JavaScript + React.js + Motion</li>
                   <li>Cypress + Postman + Gerkin</li>
-                  <li>SQL + PostsgreSQL</li>
+                  <li>PostsgreSQL</li>
                   <li>APIs + Webhooks</li>
                 </ul>
               </div>
