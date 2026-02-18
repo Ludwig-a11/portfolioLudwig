@@ -42,7 +42,6 @@ export const projects = [
         "Google Calendar API",
       ],
       results: [
-        "+60% of leads with phone numbers automatically validated.",
         "Instant filtering of wrong numbers, spam, and unintended contacts.",
         "Fully automated follow-up for passive leads without human intervention.",
         "Calendar scheduling inside the same conversational flow.",
@@ -101,7 +100,28 @@ export const projects = [
     liveUrl:
       "https://www.salvosoftware.com/dedicated-development-teams/#calculator",
     summary:
-      "Interactive pricing flow to estimate dedicated team costs with instant feedback.",
+      "Dedicated Developemtn Team Cost Calculator. ",
+    details: {
+      hero: 
+        "A sales enablement tool designed to streamline pricing, improve transparency, and accelerate proposal creation.",
+      problem: [
+        "Sales and stakeholders lacked a clear, standardized way to estimate the cost of dedicated development teams.",
+        "Pricing discussions required manual effort, cross-team coordination, and repeated clarification around roles, salaries, and tech stacks.",
+        "This slowed down proposal delivery and created inconsistencies across sales conversations."
+      ],
+      stack: [
+        "React.js",
+        "WordPress",
+        "Python - lambdas",
+        "JavaScript - lambdas",
+        "MySQL"
+      ],
+      results: [
+        "Enabled faster and more consistent proposal and quotation generation.",
+        "Improved alignment between sales, technical teams, and client expectations.",
+        "Established a scalable foundation for pricing dedicated development teams in sales workflows."
+      ],
+    },
   },
   {
     id: 4,
@@ -123,7 +143,32 @@ export const projects = [
     image: expensesPlaceholderImg,
     liveUrl: null,
     summary:
-      "Minimal expense tracker for daily records and quick personal finance visibility.",
+      "Expense tracker for daily records and quick personal finance visibility.",
+    details: {
+      hero:
+        "A modern expense tracking application focused on clarity, usability, and clean architecture.",
+      problem: [
+        "Managing personal expenses often becomes messy and time-consuming when data entry is inconsistent or interfaces are unclear.",
+        "Many expense tracking tools prioritize features over usability, making simple actions like categorizing or reviewing expenses harder than necessary.",
+        "Developers frequently struggle to keep UI components scalable and maintainable as applications grow."  
+      ],
+      solution: [
+        "Designed and built a clean, modular expense tracking app with a strong separation between presentation and business logic.",
+        "Implemented reusable UI elements using CSS Modules and a consistent component architecture to ensure scalability.",
+        "Created controlled inputs and validation logic to improve data accuracy and user experience when entering expenses."
+      ],
+      stack: [
+        "React",
+        "JavaScript",
+        "CSS Modules",
+        "React Hooks",
+        "PropTypes",
+        "Firebase (authentication and data handling)"
+      ],
+      results: [
+        "An actively evolving project, currently under development, used to experiment with and refine best practices in UI design, state management, and front-end architecture."
+      ],
+    },
   },
 ];
 
