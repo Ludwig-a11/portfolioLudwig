@@ -1,4 +1,4 @@
-import * as React from "react";
+/* eslint-disable react/prop-types */
 
 export const GithubIcon = ({ className, ...rest }) => (
   <svg
@@ -407,4 +407,3 @@ export const LinkArrow = ({ className, ...rest }) => (
     />
   </svg>
 );
-

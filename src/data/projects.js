@@ -10,7 +10,7 @@ export const projects = [
     slug: "chloe",
     title: "Chloe",
     description: "AI voice agent - Lead qualification",
-    stack: "Retell · n8n · Decision trees",
+    stack: "Retell · n8n · ElevenLabs",
     image: chloeImg,
     liveUrl: null,
     summary:
@@ -54,7 +54,7 @@ export const projects = [
     slug: "kivo",
     title: "Kivo",
     description: "Automation platform - Internal ops assistant",
-    stack: "n8n · Slack · Google Sheets",
+    stack: "n8n · CRM · Google",
     image: kivoImg,
     liveUrl: null,
     summary:
@@ -78,9 +78,9 @@ export const projects = [
       ],
       stack: [
         "n8n",
-        "HubSpot API",
-        "Gmail API",
-        "Google Sheets",
+        "HubSpot",
+        "Google Workspace",
+        "Salck",
         "Retell AI (via Chloe)",
       ],
       results: [
@@ -95,7 +95,7 @@ export const projects = [
     slug: "dedicated-teams-calculator",
     title: "Dedicated Teams Calculator",
     description: "Pricing calculator - Fast quote experience",
-    stack: "React · CSS · JS",
+    stack: "React · Wordpress · JS",
     image: ddtcImg,
     liveUrl:
       "https://www.salvosoftware.com/dedicated-development-teams/#calculator",
@@ -103,11 +103,16 @@ export const projects = [
       "Dedicated Developemtn Team Cost Calculator. ",
     details: {
       hero: 
-        "A sales enablement tool designed to streamline pricing, improve transparency, and accelerate proposal creation.",
+        "A sales support initiative focused on improving pricing clarity and proposal preparation efficiency.",
+
       problem: [
-        "Sales and stakeholders lacked a clear, standardized way to estimate the cost of dedicated development teams.",
-        "Pricing discussions required manual effort, cross-team coordination, and repeated clarification around roles, salaries, and tech stacks.",
-        "This slowed down proposal delivery and created inconsistencies across sales conversations."
+        "Sales conversations around dedicated development teams required significant manual effort and coordination across multiple teams.",
+        "There was a need for clearer cost structures to support discussions around roles, salaries, and team composition.",
+      ],
+      solution: [
+        "Worked closely with sales leadership during the early conceptualization phase of a dedicated team cost calculator, with the goal of supporting pricing conversations.",
+        "Collaborated with UX/UI designers, project managers, and developers, contributing inputs from a business and sales perspective.",
+        "Supported the initiative through research and implementation tasks such as salary benchmarking, defining appropriate tech stacks by role, and providing input on the interface and overall structure within the company’s website."
       ],
       stack: [
         "React.js",
@@ -117,9 +122,9 @@ export const projects = [
         "MySQL"
       ],
       results: [
-        "Enabled faster and more consistent proposal and quotation generation.",
-        "Improved alignment between sales, technical teams, and client expectations.",
-        "Established a scalable foundation for pricing dedicated development teams in sales workflows."
+        "Improved clarity and consistency in pricing conversations for dedicated development teams.",
+    "Supported faster proposal and quotation preparation by providing structured inputs to the sales process.",
+    "Helped align sales expectations with technical considerations through better-defined roles and cost structures.",
       ],
     },
   },
@@ -132,14 +137,44 @@ export const projects = [
     image: rickMortyImg,
     liveUrl: "https://subtle-pasca-8707dd.netlify.app/",
     summary:
-      "Character explorer that consumes public API data with a fast browsing interface.",
+      "Rick and Morty Character Explorer",
+    details: {
+      hero:
+        "A front-end project built during my Full Stack Web Developer training to practice React fundamentals and API consumption.",
+
+      problem: [
+        "As part of my training, I needed to strengthen my understanding of component-based architecture, state management, and data fetching in React.",
+        "The challenge was to consume and display dynamic data from an external API while providing a clear and interactive user experience."
+      ],
+
+      solution: [
+        "Developed a React-based application that consumes the Rick and Morty public API to display character information.",
+        "Implemented a search feature that allows users to filter and explore characters dynamically.",
+        "Used React Router to manage navigation and structure the application into reusable views and components.",
+        "Styled the application using CSS, focusing on clarity, layout, and usability."
+      ],
+
+      stack: [
+        "React",
+        "CSS",
+        "Public API consumption",
+        "React Router",
+        "Component-based architecture"
+      ],
+
+      results: [
+        "Strengthened my understanding of React fundamentals, including components, props, state, and lifecycle concepts.",
+        "Gained hands-on experience consuming external APIs and rendering dynamic data.",
+        "Improved my ability to structure front-end applications and implement basic navigation and search functionality."
+      ],
+    }
   },
   {
     id: 5,
     slug: "expenses-record-app",
     title: "Expenses record app",
     description: "Expense tracker - Simple personal finance",
-    stack: "React · Local state · CSS",
+    stack: "React · JS · Firebase",
     image: expensesPlaceholderImg,
     liveUrl: null,
     summary:
@@ -160,9 +195,7 @@ export const projects = [
       stack: [
         "React",
         "JavaScript",
-        "CSS Modules",
-        "React Hooks",
-        "PropTypes",
+        "CSS",
         "Firebase (authentication and data handling)"
       ],
       results: [
