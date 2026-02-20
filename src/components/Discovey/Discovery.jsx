@@ -62,11 +62,7 @@ const Discovery = () => {
   ];
 
   const handleMessage = () => {
-    const recipient = "boue123@gmail.com";
-    const subjectline = "Let's connect!";
-    const body = "Hi Luis, I would like to connect with you...";
-    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subjectline)}&body=${encodeURIComponent(body)}`;
-    window.open(mailtoUrl, "_blank");
+    navigate("/contact");
   };
 
   const handleProjectCardClick = (projectSlug) => {
