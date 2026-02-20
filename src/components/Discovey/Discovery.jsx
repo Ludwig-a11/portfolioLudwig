@@ -113,7 +113,7 @@ const Discovery = () => {
       });
     }, 4500);
     return () => clearInterval(intervalId);
-  }, [projects.length, isPaused]);
+  }, [isPaused]);
 
   useEffect(() => {
     if (projects.length === 0) return;
@@ -122,7 +122,7 @@ const Discovery = () => {
       setCurrentIndex(0);
       requestAnimationFrame(() => setIsResetting(false));
     }
-  }, [currentIndex, projects.length]);
+  }, [currentIndex]);
 
   return (
     <div className="discoveryPageWrapper">
