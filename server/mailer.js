@@ -2,10 +2,10 @@ import nodemailer from "nodemailer";
 
 function requireEnv(name) {
   const value = process.env[name];
-  if (!value) {
+  if (!value || !value.trim()) {
     throw new Error(`Missing environment variable: ${name}`);
   }
-  return value;
+  return value.trim();
 }
 
 function escapeHtml(value) {
@@ -20,8 +20,8 @@ function escapeHtml(value) {
 function createTransporter() {
   const host = requireEnv("SMTP_HOST");
   const port = Number(process.env.SMTP_PORT || 587);
-  const user = requireEnv("SMTP_USER").trim();
-  const pass = requireEnv("REMOVED").replace(/\s+/g, "").trim();
+  const user = requireEnv("SMTP_USER");
+  const pass = requireEnv("SMTP_PASS").replace(/\s+/g, "");
 
   return nodemailer.createTransport({
     host,
@@ -35,8 +35,9 @@ function createTransporter() {
 }
 
 export async function sendContactEmail({ name, email, subject, message }) {
-  const to = process.env.CONTACT_TO_EMAIL || "ludwigd3v@gmail.com";
-  const from = process.env.CONTACT_FROM_EMAIL || process.env.SMTP_USER;
+  const to = requireEnv("CONTACT_TO_EMAIL");
+  const smtpUser = requireEnv("SMTP_USER");
+  const from = (process.env.CONTACT_FROM_EMAIL || smtpUser).trim();
 
   const transporter = createTransporter();
 
