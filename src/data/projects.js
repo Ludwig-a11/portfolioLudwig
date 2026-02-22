@@ -35,11 +35,10 @@ export const projects = [
       ],
       stack: [
         "Retell AI",
+        "ElevenLabs",
         "n8n",
-        "Google Sheets",
-        "Custom Webhook",
-        "Gmail API",
-        "Google Calendar API",
+        "JavaScript",
+        "Google Workspace API",
       ],
       results: [
         "Instant filtering of wrong numbers, spam, and unintended contacts.",
@@ -78,10 +77,10 @@ export const projects = [
       ],
       stack: [
         "n8n",
-        "HubSpot",
-        "Google Workspace",
-        "Salck",
+        "JavaScript",
+        "Google Workspace API",
         "Retell AI (via Chloe)",
+        "ElevenLabs",
       ],
       results: [
         "Response time reduced to under 10 seconds after form submission.",
