@@ -368,7 +368,9 @@ const Discovery = () => {
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="discoveryProjectImg"
+                        className={`discoveryProjectImg ${
+                          project.slug === "kivo" ? "discoveryProjectImgKivo" : ""
+                        }`}
                       />
                       <div className="discoveryProjectOverlay">
                         <h3>{project.title}</h3>

@@ -276,7 +276,7 @@
 }
 
 .discoveryWorkItem a:hover {
-  color: rgba(10, 10, 10, 0.85);
+  color: rgba(30, 121, 187, 0.85);
 }
 
 .discoveryWorkItem p {
@@ -471,6 +471,10 @@
   object-fit: cover;
   transition: transform 0.3s ease;
   filter: grayscale(40%) contrast(1.05);
+}
+
+.discoveryProjectImgKivo {
+  object-position: center 15%;
 }
 
 .discoveryProjectCard:hover .discoveryProjectImg {
@@ -687,6 +691,21 @@
   .discoveryProjectsSlider {
     --cards-per-view: 2;
     --card-gap: 20px;
+  }
+
+  .discoveryProjectOverlay {
+    opacity: 1;
+    min-height: 55%;
+    background: linear-gradient(
+      to top,
+      rgba(20, 20, 20, 0.92),
+      rgba(20, 20, 20, 0.45),
+      transparent
+    );
+  }
+
+  .discoveryProjectCard:hover .discoveryProjectImg {
+    transform: none;
   }
 
 }
