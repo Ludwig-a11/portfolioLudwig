@@ -6,20 +6,20 @@
   display: grid;
   place-items: center;
   background:
-    linear-gradient(0deg, rgba(238, 238, 238, 0.95), rgba(238, 238, 238, 0.95)),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    linear-gradient(0deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
+    linear-gradient(90deg, rgba(var(--gibraltar-sea-rgb), 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(var(--gibraltar-sea-rgb), 0.04) 1px, transparent 1px);
   background-size: auto, 200px 200px, 200px 200px;
   font-family: "Work Sans", sans-serif;
 }
 
 .projectDetailsCard {
   width: min(860px, 100%);
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(0, 0, 0, 0.09);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(var(--gibraltar-sea-rgb), 0.09);
   border-radius: 18px;
   padding: 2rem;
-  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.11);
+  box-shadow: 0 16px 38px rgba(var(--gibraltar-sea-rgb), 0.11);
 }
 
 .projectDetailsLabel {
@@ -27,19 +27,19 @@
   font-size: 0.78rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(30, 30, 30, 0.5);
+  color: rgba(var(--gibraltar-sea-rgb), 0.5);
 }
 
 .projectDetailsTitle {
   margin: 0.6rem 0 0;
-  color: #1f1f1f;
+  color: var(--gibraltar-sea);
   font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4.2vw, 3rem);
 }
 
 .projectDetailsText {
   margin: 1rem 0 0;
-  color: rgba(50, 50, 50, 0.76);
+  color: rgba(var(--gibraltar-sea-rgb), 0.76);
   line-height: 1.7;
 }
 
@@ -51,13 +51,13 @@
   margin: 0;
   font-family: "Playfair Display", serif;
   font-size: 1.32rem;
-  color: #1f1f1f;
+  color: var(--gibraltar-sea);
 }
 
 .projectDetailsSection ul {
   margin: 0.65rem 0 0;
   padding-left: 1.15rem;
-  color: rgba(40, 40, 40, 0.8);
+  color: rgba(var(--gibraltar-sea-rgb), 0.8);
   line-height: 1.65;
 }
 
@@ -67,7 +67,7 @@
 
 .projectDetailsStack {
   margin: 0.9rem 0 0;
-  color: rgba(25, 25, 25, 0.78);
+  color: rgba(var(--gibraltar-sea-rgb), 0.78);
   font-weight: 600;
 }
 
@@ -86,14 +86,19 @@
   border-radius: 999px;
   padding: 0 1rem;
   text-decoration: none;
-  border: 1px solid rgba(20, 20, 20, 0.9);
-  background: rgba(20, 20, 20, 0.95);
-  color: #fff;
+  border: 1px solid rgba(var(--dry-clay-rgb), 0.9);
+  background: rgba(var(--dry-clay-rgb), 0.95);
+  color: var(--bone);
   font-size: 0.92rem;
   font-weight: 600;
 }
 
 .projectDetailsLinkGhost {
   background: transparent;
-  color: #1f1f1f;
+  color: var(--dry-clay);
+}
+
+.projectDetailsLink:hover {
+  background: var(--harvest-gold);
+  border-color: var(--harvest-gold);
 }

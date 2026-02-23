@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap");
+
+.errorPage {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background:
+    linear-gradient(0deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
+    linear-gradient(90deg, rgba(var(--gibraltar-sea-rgb), 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(var(--gibraltar-sea-rgb), 0.04) 1px, transparent 1px);
+  background-size: auto, 200px 200px, 200px 200px;
+}
+
+.errorCard {
+  width: min(520px, 100%);
+  padding: 2.4rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(var(--gibraltar-sea-rgb), 0.14);
+  box-shadow: 0 14px 34px rgba(var(--gibraltar-sea-rgb), 0.13);
+  text-align: center;
+}
+
+.errorTag {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--dry-clay);
+}
+
+.errorCard h1 {
+  margin-top: 0.8rem;
+  color: var(--gibraltar-sea);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+}

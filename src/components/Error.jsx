@@ -1,9 +1,15 @@
 
+import "./error.css";
 
 const Error = () => {
   return (
-    <div>PAGE NOT FOUND!</div>
-  )
-}
+    <section className="errorPage">
+      <div className="errorCard">
+        <p className="errorTag">Error</p>
+        <h1>Page not found</h1>
+      </div>
+    </section>
+  );
+};
 
-export default Error
+export default Error;

@@ -1,23 +1,13 @@
-* {
-  box-sizing: border-box;
-  color: #181717;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;  /* oculta scroll horizontal */
-  width: 100%;
-}
-
-.app{
-  height: 100%;
+.app {
+  min-height: 100vh;
   margin: 0;
   position: relative;
+  background: var(--page-bg);
+  color: var(--text);
 }
 
-.hireMeContainer{
-  border: 1px solid #000;
+.hireMeContainer {
+  border: 1px solid var(--gibraltar-sea);
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -25,9 +15,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
-  color: aliceblue;
+  background-color: var(--accent-strong);
+  color: var(--bone);
   font-weight: 600;
-
 }
-

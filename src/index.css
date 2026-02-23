@@ -1,7 +1,46 @@
-*{
-  padding: 0;
-  margin: 0;
-  font-family: 'Gruppo', 'sans-serif';
-  /*background-color: rgb(32, 29, 29);*/
+:root {
+  --harvest-gold: #da9100;
+  --harvest-gold-rgb: 218, 145, 0;
+  --gibraltar-sea: #133951;
+  --gibraltar-sea-rgb: 19, 57, 81;
+  --pearl-blue: #b0b7be;
+  --pearl-blue-rgb: 176, 183, 190;
+  --bone: #e3dac9;
+  --bone-rgb: 227, 218, 201;
+  --dry-clay: #bd5c00;
+  --dry-clay-rgb: 189, 92, 0;
+
+  --page-bg: #ffffff;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-strong: rgba(255, 255, 255, 0.98);
+  --surface-muted: rgba(var(--pearl-blue-rgb), 0.3);
+  --text: var(--gibraltar-sea);
+  --text-muted: rgba(var(--gibraltar-sea-rgb), 0.72);
+  --line: rgba(var(--gibraltar-sea-rgb), 0.2);
+  --line-strong: rgba(var(--gibraltar-sea-rgb), 0.34);
+  --accent: var(--harvest-gold);
+  --accent-strong: var(--dry-clay);
+  --accent-soft: rgba(var(--harvest-gold-rgb), 0.2);
+  --shadow: rgba(var(--gibraltar-sea-rgb), 0.2);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gruppo", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: var(--page-bg);
+  color: var(--text);
+}
+
+body {
+  min-height: 100vh;
+}

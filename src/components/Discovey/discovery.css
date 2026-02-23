@@ -13,12 +13,12 @@
   flex-direction: column;
   overflow: hidden;
   background:
-    linear-gradient(0deg, rgba(238, 238, 238, 0.95), rgba(238, 238, 238, 0.95)),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    linear-gradient(0deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
+    linear-gradient(90deg, rgba(var(--gibraltar-sea-rgb), 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(var(--gibraltar-sea-rgb), 0.04) 1px, transparent 1px);
   background-size: auto, 200px 200px, 200px 200px;
   font-family: "Work Sans", sans-serif;
-  color: #1d1d1d;
+  color: var(--gibraltar-sea);
 }
 
 /* Botón flotante de navegación */
@@ -39,12 +39,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 26px rgba(var(--gibraltar-sea-rgb), 0.12);
   transition: box-shadow 0.2s ease;
 }
 
 .discoveryMenuButton:hover {
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 14px 32px rgba(var(--gibraltar-sea-rgb), 0.16);
 }
 
 .discoveryMenuIcon {
@@ -57,7 +57,7 @@
 .discoveryMenuLine {
   width: 100%;
   height: 2px;
-  background: #1a1a1a;
+  background: var(--gibraltar-sea);
   border-radius: 2px;
 }
 
@@ -69,14 +69,14 @@
   border-radius: 8px;
   padding: 8px;
   min-width: 170px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 40px rgba(var(--gibraltar-sea-rgb), 0.15);
+  border: 1px solid rgba(var(--gibraltar-sea-rgb), 0.08);
 }
 
 .discoveryMenuItem {
   display: block;
   padding: 12px 16px;
-  color: #666;
+  color: rgba(var(--gibraltar-sea-rgb), 0.75);
   text-decoration: none;
   font-size: 12px;
   letter-spacing: 2px;
@@ -86,12 +86,12 @@
 }
 
 .discoveryMenuItem:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: #1a1a1a;
+  background: rgba(var(--gibraltar-sea-rgb), 0.05);
+  color: var(--gibraltar-sea);
 }
 
 .discoveryMenuItem.active {
-  color: #1a1a1a;
+  color: var(--dry-clay);
   font-weight: 600;
 }
 
@@ -110,10 +110,10 @@
   height: 100%;
   overflow-y: auto;
   padding: 2rem 1.5rem 3rem;
-  background: rgba(245, 245, 245, 0.9);
-  box-shadow: 2px 0 18px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 2px 0 18px rgba(var(--gibraltar-sea-rgb), 0.08);
   flex-shrink: 0;
-  border-right: 1px solid rgba(80, 80, 80, 0.12);
+  border-right: 1px solid rgba(var(--gibraltar-sea-rgb), 0.12);
 }
 
 .discoveryProfileCard {
@@ -130,8 +130,8 @@
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 1.5rem;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
-  border: 6px solid rgba(245, 245, 245, 0.9);
+  box-shadow: 0 12px 28px rgba(var(--gibraltar-sea-rgb), 0.16);
+  border: 6px solid rgba(255, 255, 255, 0.92);
 }
 
 .discoveryPic {
@@ -148,13 +148,13 @@
 .discoveryProfileInfo h2 {
   margin: 0 0 0.5rem;
   font-size: 1.7rem;
-  color: #1f1f1f;
+  color: var(--gibraltar-sea);
   font-weight: 700;
   font-family: "Playfair Display", serif;
 }
 
 .discoveryProfileTitle {
-  color: rgba(60, 60, 60, 0.7);
+  color: rgba(var(--gibraltar-sea-rgb), 0.7);
   font-size: 0.95rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -183,38 +183,38 @@
 }
 
 .discoveryFollowBtn {
-  background: rgba(40, 40, 40, 0.9);
-  color: white;
+  background: var(--dry-clay);
+  color: var(--bone);
 }
 
 .discoveryFollowBtn:hover {
-  background: rgba(20, 20, 20, 0.95);
+  background: rgba(var(--dry-clay-rgb), 0.88);
 }
 
 .discoveryMessageBtn {
   height: 44px;
   border-radius: 999px;
-  background: #111827;
-  color: #ffffff;
+  background: var(--harvest-gold);
+  color: var(--bone);
   border: none;
   cursor: pointer;
   font-size: 14px;
-  /*background: rgba(255, 255, 255, 0.7);
-  color: #1f1f1f;
-  border: 1px solid rgba(0, 0, 0, 0.18);*/
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  /*background: rgba(var(--bone-rgb), 0.7);
+  color: var(--gibraltar-sea);
+  border: 1px solid rgba(var(--gibraltar-sea-rgb), 0.18);*/
+  box-shadow: 0 6px 16px rgba(var(--gibraltar-sea-rgb), 0.12);
 }
 
 /*.discoveryMessageBtn:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(var(--bone-rgb), 0.95);
 }*/
 
 /* Contact Details */
 .discoveryContactDetails {
   width: 100%;
   margin-bottom: 1.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(var(--gibraltar-sea-rgb), 0.12);
+  border-bottom: 1px solid rgba(var(--gibraltar-sea-rgb), 0.12);
   padding: 1.25rem 0;
 }
 
@@ -224,13 +224,13 @@
   gap: 0.75rem;
   padding: 0.5rem 0;
   font-size: 0.9rem;
-  color: rgba(60, 60, 60, 0.7);
+  color: rgba(var(--gibraltar-sea-rgb), 0.7);
 }
 
 .discoveryContactIcon {
   font-size: 1.2rem;
   min-width: 24px;
-  color: rgba(70, 70, 70, 0.7);
+  color: rgba(var(--gibraltar-sea-rgb), 0.7);
 }
 
 .discoveryContactValue {
@@ -247,13 +247,13 @@
 }
 
 .discoverySocialIcons a {
-  color: rgba(30, 30, 30, 0.8);
+  color: rgba(var(--gibraltar-sea-rgb), 0.8);
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .discoverySocialIcons a:hover {
   transform: translateY(-2px);
-  color: rgba(10, 10, 10, 0.95);
+  color: rgba(var(--gibraltar-sea-rgb), 0.95);
 }
 
 /* Certifications Experience Section */
@@ -268,7 +268,7 @@
 
 .discoveryWorkItem a {
   font-size: 1rem;
-  color: #1f1f1f;
+  color: var(--gibraltar-sea);
   margin: 0 0 0.25rem;
   font-weight: 600;
   text-decoration: none;
@@ -276,12 +276,12 @@
 }
 
 .discoveryWorkItem a:hover {
-  color: rgba(30, 121, 187, 0.85);
+  color: var(--dry-clay);
 }
 
 .discoveryWorkItem p {
   font-size: 0.85rem;
-  color: rgba(60, 60, 60, 0.65);
+  color: rgba(var(--gibraltar-sea-rgb), 0.65);
   margin: 0;
   line-height: 1.4;
 }
@@ -300,14 +300,14 @@
 .discoverySidebarSection h3 {
   margin: 0 0 0.75rem;
   font-size: 1rem;
-  color: #1f1f1f;
+  color: var(--gibraltar-sea);
   font-family: "Playfair Display", serif;
 }
 
 .discoverySidebarList {
   margin: 0;
   padding-left: 1.1rem;
-  color: rgba(60, 60, 60, 0.7);
+  color: rgba(var(--gibraltar-sea-rgb), 0.7);
   line-height: 1.6;
   font-size: 0.92rem;
 }
@@ -343,9 +343,9 @@
   width: 100%;
   height: 300px;
   overflow: hidden;
-  background: rgba(230, 230, 230, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 14px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 14px 28px rgba(var(--gibraltar-sea-rgb), 0.12);
 }
 
 .discoveryBannerImg {
@@ -362,7 +362,7 @@
 
 .discoveryProjectsTitle {
   font-size: 2.1rem;
-  color: #1f1f1f;
+  color: var(--gibraltar-sea);
   margin-bottom: 1.75rem;
   font-weight: 700;
   font-family: "Playfair Display", serif;
@@ -390,16 +390,16 @@
   width: auto;
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.75);
-  color: #1f1f1f;
-  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--gibraltar-sea);
+  border: 1px solid rgba(var(--gibraltar-sea-rgb), 0.18);
   opacity: 1;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 16px rgba(var(--gibraltar-sea-rgb), 0.12);
 }
 
 .discoveryAboutText {
   margin: 0;
-  color: rgba(60, 60, 60, 0.7);
+  color: rgba(var(--gibraltar-sea-rgb), 0.7);
   line-height: 1.7;
   font-size: 1rem;
 }
@@ -411,13 +411,13 @@
 .discoveryAboutBlock h3 {
   margin: 0 0 0.75rem;
   font-size: 1.1rem;
-  color: #1f1f1f;
+  color: var(--gibraltar-sea);
 }
 
 .discoveryAboutList {
   margin: 0;
   padding-left: 1.1rem;
-  color: rgba(60, 60, 60, 0.7);
+  color: rgba(var(--gibraltar-sea-rgb), 0.7);
   line-height: 1.7;
 }
 
@@ -451,18 +451,18 @@
 
 .discoveryProjectCard {
   position: relative;
-  background: rgba(245, 245, 245, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 18px rgba(var(--gibraltar-sea-rgb), 0.12);
   transition: box-shadow 0.3s ease;
   aspect-ratio: 4/3;
   width: var(--card-width);
 }
 
 .discoveryProjectCard:hover {
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 12px 28px rgba(var(--gibraltar-sea-rgb), 0.18);
 }
 
 .discoveryProjectImg {
@@ -489,8 +489,8 @@
   padding: 1.5rem;
   background: linear-gradient(
     to top,
-    rgba(20, 20, 20, 0.92),
-    rgba(20, 20, 20, 0.25),
+    rgba(var(--gibraltar-sea-rgb), 0.92),
+    rgba(var(--gibraltar-sea-rgb), 0.25),
     transparent
   );
   opacity: 0;
@@ -506,7 +506,7 @@
 }
 
 .discoveryProjectOverlay h3 {
-  color: white;
+  color: var(--bone);
   font-size: 1.15rem;
   margin: 0;
   font-weight: 600;
@@ -514,12 +514,12 @@
 
 .discoveryProjectMeta {
   margin: 0.35rem 0 0.5rem;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(var(--bone-rgb), 0.92);
   font-size: 0.9rem;
 }
 
 .discoveryProjectStack {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(var(--bone-rgb), 0.8);
   font-size: 0.82rem;
   letter-spacing: 0.2px;
 }
@@ -533,10 +533,10 @@
 
 .discoveryProjectBtn {
   min-height: 34px;
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(var(--bone-rgb), 0.65);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
-  color: #fff;
+  background: rgba(var(--bone-rgb), 0.14);
+  color: var(--bone);
   padding: 0 0.8rem;
   font-size: 0.78rem;
   font-weight: 600;
@@ -545,18 +545,18 @@
 }
 
 .discoveryProjectBtn:hover {
-  background: rgba(255, 255, 255, 0.24);
+  background: rgba(var(--bone-rgb), 0.24);
   transform: translateY(-1px);
 }
 
 .discoveryProjectBtnGhost {
-  background: rgba(20, 20, 20, 0.45);
+  background: rgba(var(--dry-clay-rgb), 0.5);
 }
 
 /* Contact intro */
 .discoveryContactIntro {
   margin: 0 0 1.5rem;
-  color: rgba(60, 60, 60, 0.7);
+  color: rgba(var(--gibraltar-sea-rgb), 0.7);
   line-height: 1.7;
   font-size: 1rem;
   max-width: 900px;
@@ -568,7 +568,7 @@
 
 .discoveryServicesText {
   margin-bottom: 30px;
-  color: rgba(60, 60, 60, 0.7);
+  color: rgba(var(--gibraltar-sea-rgb), 0.7);
   line-height: 1.7;
   font-size: 1rem;
 }
@@ -580,16 +580,16 @@
 }
 
 .discoveryServiceCard {
-  background: rgba(245, 245, 245, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(var(--gibraltar-sea-rgb), 0.1);
   border-radius: 14px;
   padding: 1rem;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 18px rgba(var(--gibraltar-sea-rgb), 0.08);
 }
 
 .discoveryServiceTitle {
   margin: 0;
-  color: #1f1f1f;
+  color: var(--gibraltar-sea);
   font-family: "Playfair Display", serif;
   font-size: 1.05rem;
   font-weight: 700;
@@ -598,7 +598,7 @@
 .discoveryServiceList {
   margin: 0.75rem 0 0;
   padding-left: 1.1rem;
-  color: rgba(60, 60, 60, 0.75);
+  color: rgba(var(--gibraltar-sea-rgb), 0.75);
   line-height: 1.55;
   font-size: 0.92rem;
 }
@@ -610,8 +610,8 @@
 .discoveryServiceFooter {
   margin: 0.85rem 0 0;
   padding-top: 0.75rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  color: rgba(60, 60, 60, 0.7);
+  border-top: 1px solid rgba(var(--gibraltar-sea-rgb), 0.12);
+  color: rgba(var(--gibraltar-sea-rgb), 0.7);
   font-size: 0.88rem;
 }
 
@@ -698,8 +698,8 @@
     min-height: 55%;
     background: linear-gradient(
       to top,
-      rgba(20, 20, 20, 0.92),
-      rgba(20, 20, 20, 0.45),
+      rgba(var(--gibraltar-sea-rgb), 0.92),
+      rgba(var(--gibraltar-sea-rgb), 0.45),
       transparent
     );
   }
