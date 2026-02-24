@@ -174,6 +174,16 @@ export default function Contact() {
         </AnimatePresence>
       </div>
 
+      <div className="contactPageBackdrop" aria-hidden="true">
+        <span className="contactPageShape contactPageShape1" />
+        <span className="contactPageShape contactPageShape2" />
+        <span className="contactPageShape contactPageShape3" />
+        <span className="contactPageShape contactPageShape4" />
+        <span className="contactPageShape contactPageShape5" />
+        <span className="contactPageShape contactPageShape6" />
+        <span className="contactPageShape contactPageShape7" />
+      </div>
+
       <div className="contact-shell">
         <div className="contact-left">
           <p className="contact-kicker">Let&apos;s make something amazing together.</p>

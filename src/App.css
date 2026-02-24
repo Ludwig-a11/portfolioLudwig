@@ -1,9 +1,82 @@
 .app {
-  min-height: 100vh;
+  min-height: 90vh;
   margin: 0;
   position: relative;
   background: var(--page-bg);
   color: var(--text);
+}
+
+.app > :not(.appHomeBackdrop) {
+  position: relative;
+  z-index: 2;
+}
+
+.appHomeBackdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.appHomeShape {
+  position: absolute;
+  border-radius: 12px;
+  box-shadow: 0 14px 30px rgba(var(--pearl-blue-rgb), 0.32);
+}
+
+.appHomeShape1 {
+  left: 91%;
+  bottom: 4%;
+  width: 30%;
+  height: 22%;
+  background: rgba(var(--gibraltar-sea-rgb), 0.14);
+}
+
+.appHomeShape2 {
+  left: 45%;
+  bottom: 80%;
+  width: 48%;
+  height: 21%;
+  background: rgba(var(--harvest-gold-rgb), 0.32);
+}
+
+.appHomeShape3 {
+  left: 96%;
+  bottom: 14%;
+  width: 24%;
+  height: 13%;
+  background: rgba(var(--dry-clay-rgb), 0.34);
+}
+
+.appHomeShape4 {
+  left: 7%;
+  top: 24%;
+  width: 10%;
+  height: 38%;
+  background: rgba(var(--gibraltar-sea-rgb), 0.14);
+}
+
+.appHomeShape5 {
+  left: 6%;
+  top: 7%;
+  width: 10%;
+  height: 20%;
+  background: rgba(var(--bone-rgb), 0.74);
+}
+
+.appHomeShape6 {
+  left: 58%;
+  top: 15%;
+  width: 37%;
+  height: 11%;
+  background: rgba(var(--bone-rgb), 0.76);
+}
+
+
+@media (max-width: 768px) {
+  .appHomeBackdrop {
+    display: none;
+  }
 }
 
 .hireMeContainer {

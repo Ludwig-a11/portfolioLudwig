@@ -13,6 +13,75 @@
   isolation: isolate;
 }
 
+.contactPageBackdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.contactPageShape {
+  position: absolute;
+  border-radius: 12px;
+  box-shadow: 0 14px 30px rgba(var(--pearl-blue-rgb), 0.32);
+}
+
+.contactPageShape1 {
+  left: 91%;
+  bottom: 4%;
+  width: 30%;
+  height: 22%;
+  background: rgba(var(--gibraltar-sea-rgb), 0.14);
+}
+
+.contactPageShape2 {
+  left: 45%;
+  bottom: 80%;
+  width: 48%;
+  height: 21%;
+  background: rgba(var(--harvest-gold-rgb), 0.32);
+}
+
+.contactPageShape3 {
+  left: 96%;
+  bottom: 14%;
+  width: 24%;
+  height: 13%;
+  background: rgba(var(--dry-clay-rgb), 0.34);
+}
+
+.contactPageShape4 {
+  left: 7%;
+  top: 24%;
+  width: 10%;
+  height: 38%;
+  background: rgba(var(--gibraltar-sea-rgb), 0.14);
+}
+
+.contactPageShape5 {
+  left: 6%;
+  top: 7%;
+  width: 10%;
+  height: 20%;
+  background: rgba(var(--bone-rgb), 0.74);
+}
+
+.contactPageShape6 {
+  left: 58%;
+  top: 15%;
+  width: 37%;
+  height: 11%;
+  background: rgba(var(--bone-rgb), 0.76);
+}
+
+.contactPageShape7 {
+  right: 18%;
+  top: 13%;
+  width: 2.7%;
+  height: 9%;
+  background: rgba(var(--bone-rgb), 0.76);
+}
+
 /* ===== Main shell (2 rows: services + content) ===== */
 .contact-shell {
   width: min(1380px, calc(100vw - 36px));   /* un poco más ancho */
@@ -30,6 +99,7 @@
 
   overflow: hidden;
   position: relative;
+  z-index: 2;
 }
 
 .contact-shell::before,
@@ -307,6 +377,10 @@
 }
 
 @media (max-width: 768px) {
+  .contactPageBackdrop {
+    display: none;
+  }
+
   .contact-shell {
     grid-template-rows: auto auto auto;
   }
