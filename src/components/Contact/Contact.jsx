@@ -182,6 +182,7 @@ export default function Contact() {
         <span className="contactPageShape contactPageShape5" />
         <span className="contactPageShape contactPageShape6" />
         <span className="contactPageShape contactPageShape7" />
+        <span className="contactPageShape contactPageShape8" />
       </div>
 
       <div className="contact-shell">
