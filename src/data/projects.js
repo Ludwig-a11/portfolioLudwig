@@ -2,7 +2,7 @@ import chloeImg from "../assets/chloe_banner.jpeg";
 import kivoImg from "../assets/kivo_banner.jpeg";
 import ddtcImg from "../assets/ddtCalculator.png";
 import rickMortyImg from "../assets/rick-morthy.png";
-import expensesPlaceholderImg from "../assets/project1Pic.jpg";
+import expenseTrackingAppImg from "../assets/expense_tracking_app.png";
 
 export const projects = [
   {
@@ -18,6 +18,11 @@ export const projects = [
     details: {
       hero:
         "Chloe is an AI-driven voice agent that calls leads to validate intent and data, routes outcomes in real time, and triggers follow-ups.",
+      whyThisBreaksDown: [
+        "Manual lead qualification does not scale with inbound volume.",
+        "Delayed validation causes revenue loss during peak demand.",
+        "Without structured outcomes, teams cannot learn or optimize campaigns.",
+      ],
       problem: [
         "Sales reps spend time calling wrong numbers, spam contacts, or unqualified leads.",
         "Lead validation falls behind during busy periods, creating backlog and lost opportunities.",
@@ -61,6 +66,11 @@ export const projects = [
     details: {
       hero:
         "Kivo is an automated scoring and response agent that analyzes inbound web leads in real time, filters noise, and drafts personalized replies.",
+      whyThisBreaksDown: [
+        "Human-led triage creates bottlenecks as inbound volume grows.",
+        "Response delays reduce lead intent before any conversation starts.",
+        "Without automation, operational consistency quickly degrades.",
+      ],
       problem: [
         "Sales teams lose time triaging spam, bots, and low-intent submissions.",
         "Response speed suffers when humans must validate, classify, and route every message.",
@@ -103,6 +113,11 @@ export const projects = [
     details: {
       hero: 
         "A sales support initiative focused on improving pricing clarity and proposal preparation efficiency.",
+      whyThisBreaksDown: [
+        "Pricing discussions become inefficient when cost structures are unclear.",
+        "Manual calculations slow down proposal cycles and introduce inconsistency.",
+        "Lack of shared reference points creates misalignment between sales and delivery.",
+      ],
 
       problem: [
         "Sales conversations around dedicated development teams required significant manual effort and coordination across multiple teams.",
@@ -140,6 +155,11 @@ export const projects = [
     details: {
       hero:
         "A front-end project built during my Full Stack Web Developer training to practice React fundamentals and API consumption.",
+      whyThisBreaksDown: [
+        "Learning React in isolation makes architectural mistakes harder to spot.",
+        "Without real data, state management and component design remain abstract.",
+        "Practical projects are required to internalize core front-end concepts.",
+      ],
 
       problem: [
         "As part of my training, I needed to strengthen my understanding of component-based architecture, state management, and data fetching in React.",
@@ -174,13 +194,18 @@ export const projects = [
     title: "Expenses record app",
     description: "Expense tracker - Simple personal finance",
     stack: "React · JS · Firebase",
-    image: expensesPlaceholderImg,
+    image: expenseTrackingAppImg,
     liveUrl: null,
     summary:
       "Expense tracker for daily records and quick personal finance visibility.",
     details: {
       hero:
         "A modern expense tracking application focused on clarity, usability, and clean architecture.",
+      whyThisBreaksDown: [
+        "Financial tracking fails when interfaces are inconsistent or unclear.",
+        "Over-engineered tools discourage daily usage and accuracy.",
+        "Without maintainable architecture, small apps become hard to evolve.",
+      ],
       problem: [
         "Managing personal expenses often becomes messy and time-consuming when data entry is inconsistent or interfaces are unclear.",
         "Many expense tracking tools prioritize features over usability, making simple actions like categorizing or reviewing expenses harder than necessary.",

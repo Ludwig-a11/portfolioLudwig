@@ -13,10 +13,16 @@
   flex-direction: column;
   overflow: hidden;
   background:
-    linear-gradient(0deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
-    linear-gradient(90deg, rgba(var(--gibraltar-sea-rgb), 0.04) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(var(--gibraltar-sea-rgb), 0.04) 1px, transparent 1px);
-  background-size: auto, 200px 200px, 200px 200px;
+    linear-gradient(
+      130deg,
+      rgba(var(--harvest-gold-rgb), 0.18) 0%,
+      rgba(255, 255, 255, 0.94) 38%
+    ),
+    radial-gradient(
+      circle at 86% 34%,
+      rgba(var(--gibraltar-sea-rgb), 0.22),
+      transparent 40%
+    );
   font-family: "Work Sans", sans-serif;
   color: var(--gibraltar-sea);
 }
@@ -130,8 +136,8 @@
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 1.5rem;
-  box-shadow: 0 12px 28px rgba(var(--gibraltar-sea-rgb), 0.16);
-  border: 6px solid rgba(255, 255, 255, 0.92);
+  box-shadow: 0 12px 28px rgba(var(--dry-clay-rgb), 0.16);
+  border: 6px solid rgba(var(--dry-clay-rgb)0.16);
 }
 
 .discoveryPic {
@@ -266,8 +272,19 @@
   margin-bottom: 1.5rem;
 }
 
-.discoveryWorkItem a {
+.discoveryWorkItem h3 {
+  margin: 0 0 0.75rem;
   font-size: 1rem;
+  color: var(--gibraltar-sea);
+  font-family: "Playfair Display", serif;
+}
+
+.discoveryWorkItem a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 1rem;
+  font-family: "Playfair Display", serif;
   color: var(--gibraltar-sea);
   margin: 0 0 0.25rem;
   font-weight: 600;
@@ -275,8 +292,21 @@
   transition: color 0.2s ease;
 }
 
+.discoveryWorkItem a::after {
+  content: "↗";
+  display: none;
+  font-size: 0.85em;
+  opacity: 0.75;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
 .discoveryWorkItem a:hover {
   color: var(--dry-clay);
+}
+
+.discoveryWorkItem a:hover::after {
+  transform: translate(1px, -1px);
+  opacity: 1;
 }
 
 .discoveryWorkItem p {
@@ -336,6 +366,8 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 1rem 2.5rem 3rem;
+  background: transparent;
+  border-radius: 18px;
 }
 
 /* Banner Superior */
@@ -682,6 +714,10 @@
   .discoveryWorkItem a,
   .discoveryWorkItem p {
     text-align: center;
+  }
+
+  .discoveryWorkItem a::after {
+    display: inline-block;
   }
 
   .discoveryContactSection .btnPrimary.discoveryMessageBtn {
