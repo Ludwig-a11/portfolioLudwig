@@ -319,16 +319,10 @@ const Discovery = () => {
             <div className="discoveryProjectsSection discoveryAboutSection">
               <h2 className="discoveryProjectsTitle">About</h2>
               <p className="discoveryAboutText">
-                Automation Developer with hands-on experience designing,
-                building, and deploying intelligent workflow systems powered by
-                LLMs, voice AI agents, and multi-app integrations. I specialize
-                in automating operational and sales processes using custom logic
-                to streamline response time and improve lead qualification.
-                Previously worked in QA, Sales Ops, and Tech Recruitment, giving
-                me a unique cross-functional understanding of how technology,
-                product, and business goals connect. I thrive in fast-paced
-                environments, quickly learning new tools, designing robust
-                automation flows, and delivering production-ready solutions.
+                There are three things that define how I work.<br/>
+                First, I build systems that connect decisions to real actions. I’ve designed and deployed intelligent workflows that combine LLMs, voice agents, and multi-app integrations to automate operational and sales processes, reducing friction, response time, and manual effort.<br/>
+                Second, I understand the problem from multiple angles. Before focusing on automation, I worked in QA, Sales Ops, and Tech Recruitment. That experience allowed me to see how poor validation breaks a process, how delayed responses cool down leads, and how lack of traceability affects entire teams. This cross-functional perspective is the foundation of how I design solutions today.<br/>
+                Third, I execute with a production mindset. I’m comfortable in fast-paced environments, learn new tools quickly, and prioritize workflows that are robust, clear, and maintainable. My focus isn’t just making things work, but making them work when volume grows and conditions aren’t perfect.
               </p>
             </div>
 
@@ -413,12 +407,9 @@ const Discovery = () => {
             <div className="discoveryProjectsSection discoveryServicesSection">
               <h2 className="discoveryProjectsTitle">What I&apos;ve learned</h2>
               <p className="discoveryServicesText">
-                I’ve worked close to the problem from multiple angles, sales
-                conversations, QA validation, and product delivery, which made me
-                opinionated about one thing: reliability comes from a tight
-                loop. Define the problem and success criteria, plan what’s
-                needed for an MVP, build and test in small increments with early
-                feedback, then monitor and improve based on real usage.
+                Working close to the problem, not just from a single role-taught me a very clear lesson: reliability doesn’t happen by accident, it’s designed.<br/>
+                I’ve seen it break during sales conversations where context was lost, in QA validations where edge cases were ignored, and in deliveries where feedback arrived too late. Over time, I realized that fragile systems almost always share the same flaw: loops that are too long.<br/>
+                Today, I work with a short and deliberate loop. Define the problem and what success looks like, narrow the scope to a clear MVP, build in small increments, validate early, and adjust using real usage data. This approach doesn’t just improve technical outcomes, it aligns product, operations, and business around the same reality.
               </p>
               <div className="discoveryServicesGrid">
                 {services.map((service) => (

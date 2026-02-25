@@ -16,24 +16,23 @@ export const projects = [
     summary:
       "Voice-first lead qualification assistant with routing logic and CRM handoff.",
     details: {
-      hero: "Chloe is an AI-driven voice agent that calls leads to validate intent and data, routes outcomes in real time, and triggers follow-ups.",
+      hero: "A voice agent that validates leads in real time, filters noise, and connects real opportunities with sales without unnecessary human friction.",
       whyThisBreaksDown: [
-        "Manual lead qualification does not scale when inbound volume increases. Delays in validating intent cause missed opportunities during peak demand, and without structured outcomes, sales teams struggle to analyze performance or improve campaigns over time.",
+        "Manual lead qualification stops working once volume increases. Calls get delayed, intent cools off, and outcomes become fragmented. Without structured results, sales teams can’t learn what works or improve campaigns using real data.",
       ],
       problem: [
-        "Sales reps spend time calling wrong numbers, spam contacts, or unqualified leads.",
-        "Lead validation falls behind during busy periods, creating backlog and lost opportunities.",
-        "Follow-ups are often inconsistent, and outcomes are not always captured cleanly for analysis.",
+        "Sales reps spend time calling wrong numbers, spam, or low-intent contacts.",
+        "Lead validation falls behind during peak demand.",
+        "Follow-ups are often inconsistent, and dificult to audit.",
         "Campaigns and reactivation efforts require heavy manual coordination without automation.",
       ],
       solution: [
-        "Places personalized phone calls using lead context.",
-        "Adjusts conversation flow dynamically using LLM-based logic.",
-        "Transfers hot leads to sales in real time when qualification is confirmed.",
-        "Terminates spam or wrong numbers quickly.",
-        "Sends post-call summaries and next steps automatically.",
-        "Schedules meetings via calendar integration.",
-        "Returns outcomes back to Kivo and sales for downstream routing.",
+        "Places personalized calls using real lead context.",
+        "Dynamically adjusts conversation flow using LLM-based logic.",
+        "Transfers qualified leads to sales immediately when intent is confirmed.",
+        "Quickly terminates spam and invalid numbers.",
+        "Sends post-call summaries, next steps, and handles scheduling automatically.",
+        "Returns structured outcomes for downstream routing and analysis.",
       ],
       stack: [
         "Retell AI",
@@ -61,23 +60,23 @@ export const projects = [
     summary:
       "Internal automation workflows for repetitive ops tasks and team notifications.",
     details: {
-      hero: "Kivo is an automated scoring and response agent that analyzes inbound web leads in real time, filters noise, and drafts personalized replies.",
+      hero: "Kivo is an internal agent that analyzes inbound leads, prioritizes intent, and preserves operational traceability.",
       whyThisBreaksDown: [
-        "As inbound messages grow, human-led triage quickly becomes a bottleneck. Response delays reduce lead intent before meaningful contact happens, and without automation, operational consistency degrades, making follow-ups and routing unreliable at scale.",
+        "When triage depends on humans, speed becomes the bottleneck. Every minute of delay reduces intent and makes processes inconsistent and difficult to scale.",
       ],
       problem: [
         "Sales teams lose time triaging spam, bots, and low-intent submissions.",
-        "Response speed suffers when humans must validate, classify, and route every message.",
+        "Manual classification and routing slow down response speed.",
         "Leads get cold fast due to delays, reducing conversion.",
-        "Without strict traceability, follow-up becomes inconsistent.",
+        "Lack of clear traceability across tools.",
       ],
       solution: [
-        "Analyzes each new form submission as it arrives.",
-        "Validates intent signals and detects spam or bot patterns.",
-        "Classifies contact type and extracts useful context.",
-        "Checks for phone number presence and delegates phone validation to Chloe.",
+        "Analyzes every inbound submission in real time.",
+        "Detects intent signals and spam patterns.",
+        "Automatically classifies contacts and extracts context.",
+        "Delegates phone validation to Chloe when needed.",
         "Drafts campaign-aligned emails for qualified contacts.",
-        "Updates CRM workflow and preserves traceability across tools.",
+        "Keeps CRM and internal tools fully synchronized.",
       ],
       stack: [
         "n8n",
@@ -87,9 +86,9 @@ export const projects = [
         "ElevenLabs",
       ],
       results: [
-        "Response time reduced to under 10 seconds after form submission.",
-        "Personalized context-aware outbound emails improved reply likelihood.",
-        "Spam and false leads filtered before consuming human time.",
+        "Response time reduced to seconds.",
+        "Personalized emails with higher reply likelihood.",
+        "False leads filtered before consuming human time.",
       ],
     },
   },
@@ -185,9 +184,9 @@ export const projects = [
     summary:
       "Expense tracker for daily records and quick personal finance visibility.",
     details: {
-      hero: "A modern expense tracking application focused on clarity, usability, and clean architecture.",
+      hero: "An expense tracking application focused on simplicity, clarity, and maintainable architecture.",
       whyThisBreaksDown: [
-        "Personal finance tracking fails when interfaces are inconsistent or overly complex. Over-engineered tools discourage daily usage and accuracy, and without a maintainable architecture, even small applications become difficult to evolve over time.",
+        "Personal finance tools fail when they become complex. Heavy interfaces discourage daily use.",
       ],
       problem: [
         "Managing personal expenses often becomes messy and time-consuming when data entry is inconsistent or interfaces are unclear.",
