@@ -16,12 +16,9 @@ export const projects = [
     summary:
       "Voice-first lead qualification assistant with routing logic and CRM handoff.",
     details: {
-      hero:
-        "Chloe is an AI-driven voice agent that calls leads to validate intent and data, routes outcomes in real time, and triggers follow-ups.",
+      hero: "Chloe is an AI-driven voice agent that calls leads to validate intent and data, routes outcomes in real time, and triggers follow-ups.",
       whyThisBreaksDown: [
-        "Manual lead qualification does not scale with inbound volume.",
-        "Delayed validation causes revenue loss during peak demand.",
-        "Without structured outcomes, teams cannot learn or optimize campaigns.",
+        "Manual lead qualification does not scale when inbound volume increases. Delays in validating intent cause missed opportunities during peak demand, and without structured outcomes, sales teams struggle to analyze performance or improve campaigns over time.",
       ],
       problem: [
         "Sales reps spend time calling wrong numbers, spam contacts, or unqualified leads.",
@@ -64,12 +61,9 @@ export const projects = [
     summary:
       "Internal automation workflows for repetitive ops tasks and team notifications.",
     details: {
-      hero:
-        "Kivo is an automated scoring and response agent that analyzes inbound web leads in real time, filters noise, and drafts personalized replies.",
+      hero: "Kivo is an automated scoring and response agent that analyzes inbound web leads in real time, filters noise, and drafts personalized replies.",
       whyThisBreaksDown: [
-        "Human-led triage creates bottlenecks as inbound volume grows.",
-        "Response delays reduce lead intent before any conversation starts.",
-        "Without automation, operational consistency quickly degrades.",
+        "As inbound messages grow, human-led triage quickly becomes a bottleneck. Response delays reduce lead intent before meaningful contact happens, and without automation, operational consistency degrades, making follow-ups and routing unreliable at scale.",
       ],
       problem: [
         "Sales teams lose time triaging spam, bots, and low-intent submissions.",
@@ -108,15 +102,11 @@ export const projects = [
     image: ddtcImg,
     liveUrl:
       "https://www.salvosoftware.com/dedicated-development-teams/#calculator",
-    summary:
-      "Dedicated Developemtn Team Cost Calculator. ",
+    summary: "Dedicated Developemtn Team Cost Calculator. ",
     details: {
-      hero: 
-        "A sales support initiative focused on improving pricing clarity and proposal preparation efficiency.",
+      hero: "A sales support initiative focused on improving pricing clarity and proposal preparation efficiency.",
       whyThisBreaksDown: [
-        "Pricing discussions become inefficient when cost structures are unclear.",
-        "Manual calculations slow down proposal cycles and introduce inconsistency.",
-        "Lack of shared reference points creates misalignment between sales and delivery.",
+        "Pricing conversations break down when cost structures are unclear or fragmented. Manual calculations slow down proposal cycles, introduce inconsistencies, and create misalignment between sales expectations and delivery realities.",
       ],
 
       problem: [
@@ -126,19 +116,19 @@ export const projects = [
       solution: [
         "Worked closely with sales leadership during the early conceptualization phase of a dedicated team cost calculator, with the goal of supporting pricing conversations.",
         "Collaborated with UX/UI designers, project managers, and developers, contributing inputs from a business and sales perspective.",
-        "Supported the initiative through research and implementation tasks such as salary benchmarking, defining appropriate tech stacks by role, and providing input on the interface and overall structure within the company’s website."
+        "Supported the initiative through research and implementation tasks such as salary benchmarking, defining appropriate tech stacks by role, and providing input on the interface and overall structure within the company’s website.",
       ],
       stack: [
         "React.js",
         "WordPress",
         "Python - lambdas",
         "JavaScript - lambdas",
-        "MySQL"
+        "MySQL",
       ],
       results: [
         "Improved clarity and consistency in pricing conversations for dedicated development teams.",
-    "Supported faster proposal and quotation preparation by providing structured inputs to the sales process.",
-    "Helped align sales expectations with technical considerations through better-defined roles and cost structures.",
+        "Supported faster proposal and quotation preparation by providing structured inputs to the sales process.",
+        "Helped align sales expectations with technical considerations through better-defined roles and cost structures.",
       ],
     },
   },
@@ -150,27 +140,23 @@ export const projects = [
     stack: "React · REST API · CSS",
     image: rickMortyImg,
     liveUrl: "https://subtle-pasca-8707dd.netlify.app/",
-    summary:
-      "Rick and Morty Character Explorer",
+    summary: "Rick and Morty Character Explorer",
     details: {
-      hero:
-        "A front-end project built during my Full Stack Web Developer training to practice React fundamentals and API consumption.",
+      hero: "A front-end project built during my Full Stack Web Developer training to practice React fundamentals and API consumption.",
       whyThisBreaksDown: [
-        "Learning React in isolation makes architectural mistakes harder to spot.",
-        "Without real data, state management and component design remain abstract.",
-        "Practical projects are required to internalize core front-end concepts.",
+        "Learning React without real-world data makes architectural mistakes harder to detect. Without practical projects that involve external APIs, concepts like state management, component design, and data flow remain abstract and harder to internalize.",
       ],
 
       problem: [
         "As part of my training, I needed to strengthen my understanding of component-based architecture, state management, and data fetching in React.",
-        "The challenge was to consume and display dynamic data from an external API while providing a clear and interactive user experience."
+        "The challenge was to consume and display dynamic data from an external API while providing a clear and interactive user experience.",
       ],
 
       solution: [
         "Developed a React-based application that consumes the Rick and Morty public API to display character information.",
         "Implemented a search feature that allows users to filter and explore characters dynamically.",
         "Used React Router to manage navigation and structure the application into reusable views and components.",
-        "Styled the application using CSS, focusing on clarity, layout, and usability."
+        "Styled the application using CSS, focusing on clarity, layout, and usability.",
       ],
 
       stack: [
@@ -178,15 +164,15 @@ export const projects = [
         "CSS",
         "Public API consumption",
         "React Router",
-        "Component-based architecture"
+        "Component-based architecture",
       ],
 
       results: [
         "Strengthened my understanding of React fundamentals, including components, props, state, and lifecycle concepts.",
         "Gained hands-on experience consuming external APIs and rendering dynamic data.",
-        "Improved my ability to structure front-end applications and implement basic navigation and search functionality."
+        "Improved my ability to structure front-end applications and implement basic navigation and search functionality.",
       ],
-    }
+    },
   },
   {
     id: 5,
@@ -199,31 +185,28 @@ export const projects = [
     summary:
       "Expense tracker for daily records and quick personal finance visibility.",
     details: {
-      hero:
-        "A modern expense tracking application focused on clarity, usability, and clean architecture.",
+      hero: "A modern expense tracking application focused on clarity, usability, and clean architecture.",
       whyThisBreaksDown: [
-        "Financial tracking fails when interfaces are inconsistent or unclear.",
-        "Over-engineered tools discourage daily usage and accuracy.",
-        "Without maintainable architecture, small apps become hard to evolve.",
+        "Personal finance tracking fails when interfaces are inconsistent or overly complex. Over-engineered tools discourage daily usage and accuracy, and without a maintainable architecture, even small applications become difficult to evolve over time.",
       ],
       problem: [
         "Managing personal expenses often becomes messy and time-consuming when data entry is inconsistent or interfaces are unclear.",
         "Many expense tracking tools prioritize features over usability, making simple actions like categorizing or reviewing expenses harder than necessary.",
-        "Developers frequently struggle to keep UI components scalable and maintainable as applications grow."  
+        "Developers frequently struggle to keep UI components scalable and maintainable as applications grow.",
       ],
       solution: [
         "Designed and built a clean, modular expense tracking app with a strong separation between presentation and business logic.",
         "Implemented reusable UI elements using CSS Modules and a consistent component architecture to ensure scalability.",
-        "Created controlled inputs and validation logic to improve data accuracy and user experience when entering expenses."
+        "Created controlled inputs and validation logic to improve data accuracy and user experience when entering expenses.",
       ],
       stack: [
         "React",
         "JavaScript",
         "CSS",
-        "Firebase (authentication and data handling)"
+        "Firebase (authentication and data handling)",
       ],
       results: [
-        "An actively evolving project, currently under development, used to experiment with and refine best practices in UI design, state management, and front-end architecture."
+        "An actively evolving project, currently under development, used to experiment with and refine best practices in UI design, state management, and front-end architecture.",
       ],
     },
   },

@@ -200,15 +200,6 @@ export default function ProjectDetails() {
                 </article>
               ))}
             </div>
-            {resultItems.length > 0 && (
-              <div className="projectDetailsShowcaseResultsText">
-                <ul>
-                  {resultItems.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </section>
         )}
 

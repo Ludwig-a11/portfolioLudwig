@@ -539,33 +539,6 @@
   line-height: 1.45;
 }
 
-.projectDetailsShowcaseResultsText ul {
-  margin: 1rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.65rem;
-}
-
-.projectDetailsShowcaseResultsText li {
-  position: relative;
-  padding-left: 1.2rem;
-  font-family: "Manrope", sans-serif;
-  color: rgba(var(--gibraltar-sea-rgb), 0.84);
-  line-height: 1.55;
-}
-
-.projectDetailsShowcaseResultsText li::before {
-  content: "";
-  width: 0.44rem;
-  height: 0.44rem;
-  border-radius: 999px;
-  background: var(--dry-clay);
-  position: absolute;
-  left: 0;
-  top: 0.45rem;
-}
-
 .projectDetailsShowcaseCases {
   background: #fff;
 }
