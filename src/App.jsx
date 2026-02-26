@@ -1,4 +1,5 @@
 import "./App.css";
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Error from "./components/Error";
 import Home from "./components/Home/Home";
@@ -10,6 +11,10 @@ import ProjectDetails from "./components/Projects/ProjectDetails";
 function AppLayout() {
   const location = useLocation();
   const isHome = location.pathname === "/";
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location.pathname]);
 
   return (
     <div className="app">

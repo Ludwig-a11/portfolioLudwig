@@ -4,17 +4,14 @@ import TechBannerImage from "../../assets/tech_banner.jpeg";
 import { GithubIcon, LinkedInIcon } from "../Icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { projects } from "../../data/projects";
 //import ContactForm from "../Home/ContactForm";
 
 const Discovery = () => {
   const navigate = useNavigate();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isResetting, setIsResetting] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const wheelLockRef = useRef(0);
+  const [isCarouselPaused, setIsCarouselPaused] = useState(false);
 
   const menuItems = [
     { text: "HOME", link: "/" },
@@ -65,60 +62,20 @@ const Discovery = () => {
     navigate("/contact");
   };
 
-  const handleProjectCardClick = (projectSlug) => {
-    navigate(`/projects/${projectSlug}`);
-  };
+  const canPauseCarouselOnHover = () =>
+    window.matchMedia("(min-width: 1025px) and (hover: hover) and (pointer: fine)").matches;
 
-  const handleLiveClick = (event, liveUrl) => {
-    event.stopPropagation();
-    if (liveUrl) {
-      window.open(liveUrl, "_blank", "noopener,noreferrer");
+  const handleCardMouseEnter = () => {
+    if (canPauseCarouselOnHover()) {
+      setIsCarouselPaused(true);
     }
   };
 
-  const handleWheel = (event) => {
-    event.preventDefault();
-    const now = Date.now();
-    if (now - wheelLockRef.current < 300) return;
-    wheelLockRef.current = now;
-
-    const direction = event.deltaY > 0 ? 1 : -1;
-    if (direction > 0) {
-      setCurrentIndex((prev) => {
-        if (projects.length === 0) return 0;
-        if (prev >= projects.length) return 1;
-        return prev + 1;
-      });
-      return;
+  const handleCardMouseLeave = () => {
+    if (canPauseCarouselOnHover()) {
+      setIsCarouselPaused(false);
     }
-
-    setCurrentIndex((prev) => {
-      if (projects.length === 0) return 0;
-      if (prev <= 0) return projects.length - 1;
-      return prev - 1;
-    });
   };
-
-  useEffect(() => {
-    if (projects.length <= 1 || isPaused) return undefined;
-    const intervalId = setInterval(() => {
-      setCurrentIndex((prev) => {
-        if (projects.length === 0) return 0;
-        if (prev >= projects.length) return 1;
-        return prev + 1;
-      });
-    }, 4500);
-    return () => clearInterval(intervalId);
-  }, [isPaused]);
-
-  useEffect(() => {
-    if (projects.length === 0) return;
-    if (currentIndex === projects.length) {
-      setIsResetting(true);
-      setCurrentIndex(0);
-      requestAnimationFrame(() => setIsResetting(false));
-    }
-  }, [currentIndex]);
 
   return (
     <div className="discoveryPageWrapper">
@@ -329,77 +286,53 @@ const Discovery = () => {
             {/* Projects Grid */}
             <div className="discoveryProjectsSection">
               <h2 className="discoveryProjectsTitle">Projects</h2>
-              <div className="discoveryProjectsSlider" onWheel={handleWheel}>
+              <div className="discoveryProjectCarousel discoveryProjectsCarousel">
                 <div
-                  className="discoveryProjectsTrack"
-                  style={{
-                    "--slide-index": currentIndex,
-                    transition: isResetting ? "none" : "transform 4.5s ease",
-                  }}
+                  className="discoveryProjectCarouselTrack"
+                  style={{ animationPlayState: isCarouselPaused ? "paused" : "running" }}
                 >
-                  {[...projects, ...projects].map((project, index) => (
-                    <motion.div
-                      key={`${project.id}-${index}`}
-                      className="discoveryProjectCard sliderItem"
-                      onClick={() => handleProjectCardClick(project.slug)}
-                      role="button"
-                      tabIndex={0}
-                      onKeyDown={(event) => {
-                        if (event.key === "Enter" || event.key === " ") {
-                          event.preventDefault();
-                          handleProjectCardClick(project.slug);
-                        }
-                      }}
-                      onMouseEnter={() => setIsPaused(true)}
-                      onMouseLeave={() => setIsPaused(false)}
-                      whileHover={{ scale: 1.03 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 20,
-                      }}
-                    >
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className={`discoveryProjectImg ${
-                          project.slug === "kivo" ? "discoveryProjectImgKivo" : ""
-                        }`}
-                      />
-                      <div className="discoveryProjectOverlay">
-                        <h3>{project.title}</h3>
-                        <p className="discoveryProjectMeta">
-                          {project.description}
-                        </p>
-                        <div className="discoveryProjectStack">
-                          {project.stack}
-                        </div>
-                        <div className="discoveryProjectActions">
-                          <button
-                            type="button"
-                            className="discoveryProjectBtn"
-                            onClick={(event) => {
-                              event.stopPropagation();
-                              handleProjectCardClick(project.slug);
-                            }}
-                          >
-                            View details
-                          </button>
-                          {project.liveUrl && (
-                            <button
-                              type="button"
-                              className="discoveryProjectBtn discoveryProjectBtnGhost"
-                              onClick={(event) =>
-                                handleLiveClick(event, project.liveUrl)
-                              }
+                  {[...projects, ...projects].map((project, index) => {
+                    const stackTags = project.stack
+                      .split("·")
+                      .map((item) => item.trim())
+                      .filter(Boolean)
+                      .slice(0, 2);
+                    const topBadge = stackTags[0] || "Featured";
+
+                    return (
+                      <article
+                        key={`${project.id}-${index}`}
+                        className="discoveryProjectCard discoveryProjectCaseCard"
+                        onMouseEnter={handleCardMouseEnter}
+                        onMouseLeave={handleCardMouseLeave}
+                      >
+                        <img src={project.image} alt={project.title} />
+                        <span className="discoveryProjectCardBadge">{topBadge}</span>
+                        <div className="discoveryProjectCaseBody">
+                          <h3>{project.title}</h3>
+                          <p>{project.description}</p>
+                          <div className="discoveryProjectCardActions">
+                            <Link
+                              className="discoveryProjectCardBtn"
+                              to={`/projects/${project.slug}`}
                             >
-                              Live
-                            </button>
-                          )}
+                              View details
+                            </Link>
+                            {project.liveUrl && (
+                              <a
+                                className="discoveryProjectCardBtn discoveryProjectCardBtnGhost"
+                                href={project.liveUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                Live
+                              </a>
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    </motion.div>
-                  ))}
+                      </article>
+                    );
+                  })}
                 </div>
               </div>
             </div>

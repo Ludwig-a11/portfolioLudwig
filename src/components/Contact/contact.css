@@ -167,13 +167,19 @@
 .contact-left::after {
   content: "";
   position: absolute;
-  right: 18%;
-  bottom: 8%;
-  width: 126px;
-  height: 228px;
-  border-radius: 14px;
-  background: rgba(var(--harvest-gold-rgb), 0.58);
-  box-shadow: 0 14px 24px rgba(var(--pearl-blue-rgb), 0.26);
+  right: clamp(10%, 13vw, 18%);
+  bottom: clamp(2%, 4vw, 8%);
+  width: clamp(140px, 15vw, 210px);
+  height: clamp(140px, 15vw, 210px);
+  border-radius: clamp(20px, 2.4vw, 30px);
+  background: linear-gradient(
+    180deg,
+    rgba(var(--harvest-gold-rgb), 0.48) 0%,
+    rgba(var(--harvest-gold-rgb), 0.34) 100%
+  );
+  box-shadow: 0 26px 68px rgba(var(--harvest-gold-rgb), 0.28);
+  filter: blur(13px);
+  opacity: 0.95;
   z-index: 0;
 }
 
@@ -485,6 +491,7 @@
     grid-row: 3;
     grid-template-columns: 1fr;
   }
+
 }
 
 @media (min-width: 769px) and (max-width: 1100px) {
