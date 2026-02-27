@@ -365,7 +365,7 @@
 .discoveryContentInner {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 1rem 0 3rem;
+  padding: 1rem 2.5rem 3rem;
   background: transparent;
   border-radius: 18px;
 }
@@ -761,6 +761,10 @@
   .discoveryContentScrollable {
     height: auto;
     overflow-y: visible;
+  }
+
+  .discoveryContentInner {
+    padding: 1rem 0 3rem;
   }
 
   .discoveryBanner {
