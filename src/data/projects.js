@@ -9,7 +9,7 @@ export const projects = [
     id: 1,
     slug: "chloe",
     title: "Chloe",
-    description: "AI voice agent - Lead Validation",
+    description: "AI voice agent - Lead validation",
     stack: "Retell · n8n · ElevenLabs",
     image: chloeImg,
     liveUrl: null,

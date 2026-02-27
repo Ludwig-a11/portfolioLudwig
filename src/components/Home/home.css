@@ -587,3 +587,51 @@
   }
   .contactForm{ grid-template-columns: 1fr; }
 }
+
+/* Mobile horizontal: preserve photo without side/top clipping */
+@media (max-width: 1024px) and (orientation: landscape) and (max-height: 500px) {
+  .homeStage {
+    padding: 4.8rem 1.4rem 1.8rem;
+  }
+
+  .homeShell {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .homeShell::before,
+  .homeShell::after,
+  .homeGrid::after {
+    display: none;
+  }
+
+  .homeGrid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 0;
+  }
+
+  .homeText {
+    max-width: 760px;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .homeText h1 {
+    font-size: clamp(1.9rem, 4.4vw, 2.45rem);
+    margin-bottom: 0.55rem;
+  }
+
+  .homeText p {
+    margin-bottom: 1rem;
+    font-size: 0.93rem;
+  }
+
+  .homeRole {
+    margin: 0 auto;
+  }
+
+  .homeImageWrap {
+    display: none;
+  }
+}

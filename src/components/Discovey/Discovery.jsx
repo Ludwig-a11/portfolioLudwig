@@ -4,7 +4,7 @@ import TechBannerImage from "../../assets/tech_banner.jpeg";
 import { GithubIcon, LinkedInIcon } from "../Icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { projects } from "../../data/projects";
 //import ContactForm from "../Home/ContactForm";
 
@@ -12,6 +12,7 @@ const Discovery = () => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
+  const projectCarouselRef = useRef(null);
 
   const menuItems = [
     { text: "HOME", link: "/" },
@@ -76,6 +77,45 @@ const Discovery = () => {
       setIsCarouselPaused(false);
     }
   };
+
+  const handleCardClick = () => {
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+      setIsCarouselPaused(true);
+    }
+  };
+
+  useEffect(() => {
+    if (!isCarouselPaused) {
+      return;
+    }
+
+    const isTouchLayout = window.matchMedia("(max-width: 1024px)").matches;
+    if (!isTouchLayout) {
+      return;
+    }
+
+    const handlePointerDown = (event) => {
+      if (!projectCarouselRef.current?.contains(event.target)) {
+        setIsCarouselPaused(false);
+      }
+    };
+
+    const resumeOnScroll = () => {
+      setIsCarouselPaused(false);
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    window.addEventListener("scroll", resumeOnScroll, { passive: true });
+    window.addEventListener("touchmove", resumeOnScroll, { passive: true });
+    window.addEventListener("wheel", resumeOnScroll, { passive: true });
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      window.removeEventListener("scroll", resumeOnScroll);
+      window.removeEventListener("touchmove", resumeOnScroll);
+      window.removeEventListener("wheel", resumeOnScroll);
+    };
+  }, [isCarouselPaused]);
 
   return (
     <div className="discoveryPageWrapper">
@@ -286,7 +326,10 @@ const Discovery = () => {
             {/* Projects Grid */}
             <div className="discoveryProjectsSection">
               <h2 className="discoveryProjectsTitle">Projects</h2>
-              <div className="discoveryProjectCarousel discoveryProjectsCarousel">
+              <div
+                ref={projectCarouselRef}
+                className="discoveryProjectCarousel discoveryProjectsCarousel"
+              >
                 <div
                   className="discoveryProjectCarouselTrack"
                   style={{ animationPlayState: isCarouselPaused ? "paused" : "running" }}
@@ -305,6 +348,7 @@ const Discovery = () => {
                         className="discoveryProjectCard discoveryProjectCaseCard"
                         onMouseEnter={handleCardMouseEnter}
                         onMouseLeave={handleCardMouseLeave}
+                        onClick={handleCardClick}
                       >
                         <img src={project.image} alt={project.title} />
                         <span className="discoveryProjectCardBadge">{topBadge}</span>

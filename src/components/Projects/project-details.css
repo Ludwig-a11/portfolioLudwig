@@ -237,26 +237,28 @@
 }
 
 .projectDetailsBackBtn {
-  min-height: 40px;
+  height: 44px;
+  width: min(380px, 78%);
   padding: 0 1rem;
   border-radius: 999px;
   text-decoration: none;
-  border: 1px solid rgba(var(--dry-clay-rgb), 0.78);
-  background: rgba(var(--dry-clay-rgb), 0.93);
+  border: none;
+  background: var(--dry-clay);
   color: var(--bone);
-  font-size: 0.86rem;
-  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-family: inherit;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 180ms ease;
+  margin-top: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .projectDetailsBackBtn:hover {
   background: var(--harvest-gold);
-  border-color: var(--harvest-gold);
-  color: rgba(var(--gibraltar-sea-rgb), 0.96);
+  transform: scale(1.05);
 }
 
 @media (max-width: 960px) {
@@ -609,16 +611,12 @@
 }
 
 .projectDetailsShowcaseContact .projectDetailsBackBtn {
-  background: var(--harvest-gold);
-  border-color: var(--harvest-gold);
-  color: var(--gibraltar-sea);
   min-width: 220px;
-  min-height: 46px;
+  min-height: 44px;
 }
 
 .projectDetailsShowcaseContact .projectDetailsBackBtn:hover {
-  background: rgba(var(--bone-rgb), 0.95);
-  border-color: rgba(var(--bone-rgb), 0.95);
+  background: var(--harvest-gold);
 }
 
 @media (max-width: 980px) {
