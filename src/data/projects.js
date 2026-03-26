@@ -176,11 +176,12 @@ export const projects = [
   {
     id: 5,
     slug: "expenses-record-app",
-    title: "Expense Tracker App",
+    title: "Expense Record App",
     description: "Simple personal finance",
     stack: "React · JS · Firebase",
     image: expenseTrackingAppImg,
-    liveUrl: null,
+    liveUrl:
+      "https://expenserecordapp.netlify.app",
     summary:
       "Expense tracker for daily records and quick personal finance visibility.",
     details: {
