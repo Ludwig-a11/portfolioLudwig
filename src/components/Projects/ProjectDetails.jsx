@@ -223,6 +223,9 @@ export default function ProjectDetails() {
                 ))}
               </div>
             </div>
+            <p className="projectDetailsShowcaseDisclaimer">
+              Some projects shown are generalized representations of work developed in professional environments. Sensitive details, internal systems, and proprietary information have been omitted or modified.
+            </p>
           </section>
         )}
 

@@ -200,7 +200,7 @@ const Discovery = () => {
             <div className="discoveryProfileInfo">
               <h2>Luis Martinez</h2>
               <p className="discoveryProfileTitle">
-                Automation Developer at Salvo Software
+                AI Automation Developer at Salvo Software
               </p>
 
               {/* Social Media Icons */}
@@ -240,7 +240,7 @@ const Discovery = () => {
                   <li>Retell + n8n + LLMs</li>
                   <li>JavaScript + React.js + Motion</li>
                   <li>Cypress + Postman + Gerkin</li>
-                  <li>PostsgreSQL</li>
+                  <li>PostgreSQL</li>
                   <li>APIs + Webhooks</li>
                 </ul>
               </div>
@@ -379,6 +379,9 @@ const Discovery = () => {
                   })}
                 </div>
               </div>
+              <p className="discoveryProjectsDisclaimer">
+                Some projects shown are generalized representations of work developed in professional environments. Sensitive details, internal systems, and proprietary information have been omitted or modified.
+              </p>
             </div>
 
             <div className="discoveryProjectsSection discoveryServicesSection">

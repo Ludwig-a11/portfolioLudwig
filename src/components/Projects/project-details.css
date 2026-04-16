@@ -551,6 +551,15 @@
   width: 100%;
 }
 
+.projectDetailsShowcaseDisclaimer {
+  margin: 1rem 0 0;
+  max-width: 90ch;
+  color: rgba(var(--gibraltar-sea-rgb), 0.64);
+  font-family: "Manrope", sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
 .projectDetailsShowcaseCarouselTrack {
   display: flex;
   gap: 1rem;
