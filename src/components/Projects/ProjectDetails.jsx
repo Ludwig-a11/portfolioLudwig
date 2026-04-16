@@ -5,6 +5,7 @@ import {
   FaCode,
   FaCss3Alt,
   FaDatabase,
+  FaExclamationCircle,
   FaPuzzlePiece,
   FaReact,
   FaRobot,
@@ -224,7 +225,13 @@ export default function ProjectDetails() {
               </div>
             </div>
             <p className="projectDetailsShowcaseDisclaimer">
-              Some projects shown are generalized representations of work developed in professional environments. Sensitive details, internal systems, and proprietary information have been omitted or modified.
+              <FaExclamationCircle
+                className="projectDetailsShowcaseDisclaimerIcon"
+                aria-hidden="true"
+              />
+              <span>
+                Some projects shown are generalized representations of work developed in professional environments. Sensitive&nbsp;details, internal systems, and proprietary information have been omitted or modified.
+              </span>
             </p>
           </section>
         )}

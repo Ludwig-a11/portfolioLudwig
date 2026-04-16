@@ -2,6 +2,7 @@ import "./discovery.css";
 import ProfilePicture from "../../assets/portfolio_pc2.jpg";
 import TechBannerImage from "../../assets/tech_banner.jpeg";
 import { GithubIcon, LinkedInIcon } from "../Icons";
+import { FaExclamationCircle } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
@@ -380,7 +381,13 @@ const Discovery = () => {
                 </div>
               </div>
               <p className="discoveryProjectsDisclaimer">
-                Some projects shown are generalized representations of work developed in professional environments. Sensitive details, internal systems, and proprietary information have been omitted or modified.
+                <FaExclamationCircle
+                  className="discoveryProjectsDisclaimerIcon"
+                  aria-hidden="true"
+                />
+                <span>
+                  Some projects shown are generalized representations of work developed in professional environments. Sensitive&nbsp;details, internal systems, and proprietary information have been omitted or modified.
+                </span>
               </p>
             </div>
 
