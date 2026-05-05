@@ -3,6 +3,7 @@ import kivoImg from "../assets/kivo_banner.jpeg";
 import ddtcImg from "../assets/ddtCalculator.png";
 import rickMortyImg from "../assets/rick-morthy.png";
 import expenseTrackingAppImg from "../assets/expense_tracking_app.png";
+import arloImg from "../assets/arloImg.jpeg"
 
 export const projects = [
   {
@@ -210,6 +211,63 @@ export const projects = [
       ],
     },
   },
+  {
+  id: 6,
+  slug: "arlo",
+  title: "Arlo",
+  description: "AI recruiting agent - Hiring intelligence system",
+  stack: "n8n · ATS · AI · Data · React · Next.js",
+  image: arloImg,
+  liveUrl: null,
+  summary:
+    "AI-powered recruiting system that evaluates candidates, standardizes decision-making, and builds long-term hiring intelligence through traceability.",
+  details: {
+    hero: "Arlo is an AI recruiting agent that analyzes candidates across the hiring funnel, augments decision-making, and transforms recruiting into a structured, data-driven system.",
+
+    whyThisBreaksDown: [
+      "Recruiting decisions are often subjective and lack long-term feedback loops. Teams evaluate candidates, but don’t systematically learn from hiring outcomes, making it difficult to improve over time.",
+    ],
+
+    problem: [
+      "Uncertainty after hiring, no structured way to validate if a hire was successful until much later.",
+      "Heavy reliance on subjective judgment during candidate evaluation.",
+      "Repetitive manual screening and interview preparation.",
+      "No traceability between candidate profiles, evaluations, and post-hire performance.",
+      "Inability to identify patterns that lead to successful hires or early attrition.",
+    ],
+
+    solution: [
+      "Pre-evaluates candidates at early stages using resume and application data.",
+      "Identifies strengths, red flags, and fit signals automatically.",
+      "Generates tailored interview questions based on candidate profiles.",
+      "Integrates technical, and behavioral assessments for deeper analysis.",
+      "Goes beyond correct/incorrect answers by analyzing logic, structure, and seniority level.",
+      "Interprets personality assessments to estimate fit, risk, and behavioral patterns.",
+      "Delivers structured insights to recruiters for faster decision-making.",
+      "Builds a continuous feedback loop by linking hiring decisions with long-term performance.",
+    ],
+
+    stack: [
+      "n8n",
+      "React.js",
+      "Next.js",
+      "ATS API",
+      "Anthropic Claude",
+      "Code Test API",
+      "Pych Test API",
+      "PostgreSQL",
+      "Slack API"
+    ],
+
+    results: [
+      "Reduced manual screening and interview preparation time.",
+      "More consistent and structured candidate evaluations.",
+      "Faster decision-making with AI-assisted insights.",
+      "Foundation for measuring hiring success over time.",
+      "Ability to identify patterns in successful vs unsuccessful hires.",
+    ],
+  },
+}
 ];
 
 export const projectsBySlug = projects.reduce((acc, project) => {
