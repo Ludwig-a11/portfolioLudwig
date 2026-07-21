@@ -1,6 +1,5 @@
 import "./discovery.css";
 import ProfilePicture from "../../assets/portfolio_pc2.jpg";
-import TechBannerImage from "../../assets/tech_banner.jpeg";
 import { GithubIcon, LinkedInIcon } from "../Icons";
 import { FaExclamationCircle } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
@@ -201,7 +200,7 @@ const Discovery = () => {
             <div className="discoveryProfileInfo">
               <h2>Luis Martinez</h2>
               <p className="discoveryProfileTitle">
-                AI Automation Developer at Salvo Software
+                AI Automation Developer | Agentic AI Systems
               </p>
 
               {/* Social Media Icons */}
@@ -228,9 +227,7 @@ const Discovery = () => {
               <div className="discoverySidebarSection discoverySidebarSectionCentered">
                 <h3>Currently exploring</h3>
                 <ul className="discoverySidebarList">
-                  <li>Typescript</li>
-                  <li>Python</li>
-                  <li>Three.js</li>
+                  <li>Agentic AI | Stateful multi-step agents & tool use with LangGraph, RAG and persistent memory | LLM observability & evals with LangSmith</li>
                 </ul>
               </div>
 
@@ -239,10 +236,12 @@ const Discovery = () => {
                 <h3>Tech Skills</h3>
                 <ul className="discoverySidebarList">
                   <li>Retell + n8n + LLMs</li>
-                  <li>JavaScript + React.js + Motion</li>
+                  <li>JavaScript + React.js + Python</li>
                   <li>Cypress + Postman + Gerkin</li>
-                  <li>PostgreSQL</li>
+                  <li>PostgreSQL + ChromaDB + Supabase</li>
                   <li>APIs + Webhooks</li>
+                  <li>LangGraph + LangChain + Anthropic Claude</li>
+                  <li>FastAPI + Next.js + TypeScript + LangSmith</li>
                 </ul>
               </div>
 
@@ -301,18 +300,9 @@ const Discovery = () => {
           </div>
         </div>
 
-        {/* Contenido principal - Banner y Projects Grid */}
+        {/* Contenido principal - Projects Grid */}
         <div className="discoveryContentScrollable">
           <div className="discoveryContentInner">
-            {/* Banner superior */}
-            <div className="discoveryBanner">
-              <img
-                src={TechBannerImage}
-                alt="Banner"
-                className="discoveryBannerImg"
-              />
-            </div>
-
             {/* About Section */}
             <div className="discoveryProjectsSection discoveryAboutSection">
               <h2 className="discoveryProjectsTitle">About</h2>

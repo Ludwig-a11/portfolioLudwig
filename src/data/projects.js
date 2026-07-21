@@ -3,7 +3,7 @@ import kivoImg from "../assets/kivo_banner.jpeg";
 import ddtcImg from "../assets/ddtCalculator.png";
 import rickMortyImg from "../assets/rick-morthy.png";
 import expenseTrackingAppImg from "../assets/expense_tracking_app.png";
-import arloImg from "../assets/arloImg.jpeg"
+import barryImg from "../assets/arloImg.jpeg"
 
 export const projects = [
   {
@@ -213,58 +213,59 @@ export const projects = [
   },
   {
   id: 6,
-  slug: "arlo",
-  title: "Arlo",
-  description: "AI recruiting agent - Hiring intelligence system",
-  stack: "n8n · ATS · AI · Data · React · Next.js",
-  image: arloImg,
+  slug: "barry",
+  title: "Barry",
+  description: "AI recruiting agent - Sourcing & evaluation",
+  stack: "LangGraph · Claude · FastAPI · Next.js",
+  image: barryImg,
   liveUrl: null,
   summary:
-    "AI-powered recruiting system that evaluates candidates, standardizes decision-making, and builds long-term hiring intelligence through traceability.",
+    "End-to-end AI recruiting agent that sources, enriches, and scores candidates, closing the loop by learning from every recruiter decision.",
   details: {
-    hero: "Arlo is an AI recruiting agent that analyzes candidates across the hiring funnel, augments decision-making, and transforms recruiting into a structured, data-driven system.",
+    hero: "Barry is an end-to-end AI recruiting agent that automates candidate sourcing, enrichment, and evaluation for technical hiring a full-stack agentic AI application with production LangGraph orchestration, tool use, persistent memory, and a custom frontend.",
 
     whyThisBreaksDown: [
-      "Recruiting decisions are often subjective and lack long-term feedback loops. Teams evaluate candidates, but don’t systematically learn from hiring outcomes, making it difficult to improve over time.",
+      "Even a successful hire carries long-term uncertainty. There's rarely a structured way to know whether it was truly the right decision until months later, so teams end up leaning on subjective, case-by-case judgment instead of a system that learns from every hire and gets smarter over time.",
     ],
 
     problem: [
-      "Uncertainty after hiring, no structured way to validate if a hire was successful until much later.",
-      "Heavy reliance on subjective judgment during candidate evaluation.",
-      "Repetitive manual screening and interview preparation.",
-      "No traceability between candidate profiles, evaluations, and post-hire performance.",
-      "Inability to identify patterns that lead to successful hires or early attrition.",
+      "Even after a successful hire, there's no structured way to know whether it was the right decision until months later, teams rely heavily on subjective, case-by-case judgment.",
+      "Sourcing is fully manual: a recruiter takes a job description and target keywords and searches LinkedIn/the web by hand, with no systematic way to score or rank candidates.",
+      "No traceability links candidate profiles, assessment results, hiring decisions, and retention/performance, so the team can't learn which patterns actually predict a successful hire or early attrition.",
+      "Assessment data lives in silos: technical results (e.g. HackerRank) and behavioral/personality results (e.g. TestGorilla) get evaluated superficially — right/wrong — instead of for seniority, logic, and problem-solving approach.",
+      "ATS deduplication silently failed due to an undocumented API behavior, causing false-positive duplicate detection.",
+      "Candidate identity (LinkedIn URLs) comes back in inconsistent formats across data sources, breaking cross-service matching.",
     ],
 
     solution: [
-      "Pre-evaluates candidates at early stages using resume and application data.",
-      "Identifies strengths, red flags, and fit signals automatically.",
-      "Generates tailored interview questions based on candidate profiles.",
-      "Integrates technical, and behavioral assessments for deeper analysis.",
-      "Goes beyond correct/incorrect answers by analyzing logic, structure, and seniority level.",
-      "Interprets personality assessments to estimate fit, risk, and behavioral patterns.",
-      "Delivers structured insights to recruiters for faster decision-making.",
-      "Builds a continuous feedback loop by linking hiring decisions with long-term performance.",
+      "Turns a job description and target keywords into a ranked, score-analyzed candidate shortlist, replacing hours of manual sourcing.",
+      "Pre-screens every candidate early, surfacing strengths and red flags and recommending targeted interview questions.",
+      "Reads technical and behavioral/personality assessment results beyond a simple pass/fail, estimating seniority, fit, and retention risk.",
+      "Builds long-term traceability between candidate profiles, assessments, hiring decisions, and retention, the foundation for understanding which candidate profiles succeed and which signals predict turnover.",
+      "Learns continuously: every recruiter decision feeds back into future searches, so results get sharper over time without manual tuning.",
+      "Delivered as a full-stack application with a live dashboard for reviewing ranked candidates and recording hiring decisions in real time.",
     ],
 
     stack: [
-      "n8n",
-      "React.js",
-      "Next.js",
-      "ATS API",
-      "Anthropic Claude",
-      "Code Test API",
-      "Pych Test API",
-      "PostgreSQL",
-      "Slack API"
+      "Python",
+      "LangGraph",
+      "LangChain",
+      "Anthropic Claude API",
+      "FastAPI",
+      "Supabase (PostgreSQL)",
+      "ChromaDB",
+      "LangSmith",
+      "Next.js 16",
+      "TypeScript",
+      "Tailwind CSS"
     ],
 
     results: [
-      "Reduced manual screening and interview preparation time.",
-      "More consistent and structured candidate evaluations.",
-      "Faster decision-making with AI-assisted insights.",
-      "Foundation for measuring hiring success over time.",
-      "Ability to identify patterns in successful vs unsuccessful hires.",
+      "Full pipeline working end-to-end: PDF upload → search → score → UI → feedback → learning loop.",
+      "Recruiter feedback measurably changes system behavior, rejected candidates are filtered from future searches, not just logged.",
+      "Clean separation between true failures and empty results, avoiding false-positive errors at the API layer.",
+      "Fixed a cross-service data consistency bug so rejected-candidate filtering actually matches across Serper, PDL, and Supabase.",
+      "In active development: HackerRank/TestGorilla assessment analysis, retention traceability (success rate by candidate profile, score-to-performance correlation, 3/6-month retention), history view for past decisions, non-technical role query tuning, light/dark theme toggle.",
     ],
   },
 }

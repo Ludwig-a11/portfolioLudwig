@@ -88,10 +88,10 @@ const Home = () => {
             <div className="homeText">
               <h1>Hi, I&apos;m Luis Martinez</h1>
               <p>
-                I turn “We&apos;ve got an idea” into “It&apos;s live and working”
+                I turn “We&apos;ve got an idea” into “AI agents that work”
               </p>
               <div className="homeRole">
-                Automation Developer • Web Developer
+                AI Automation Developer • Agentic AI
               </div>
             </div>
             <div className="homeImageWrap">
