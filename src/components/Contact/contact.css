@@ -24,6 +24,7 @@
   position: absolute;
   border-radius: 12px;
   box-shadow: 0 14px 30px rgba(var(--pearl-blue-rgb), 0.32);
+  animation: floatBlob var(--float-duration, 12s) ease-in-out infinite;
 }
 
 .contactPageShape1 {
@@ -32,6 +33,10 @@
   width: 30%;
   height: 22%;
   background: rgba(var(--gibraltar-sea-rgb), 0.14);
+  --float-x: 16px;
+  --float-y: -14px;
+  --float-r: 1.6deg;
+  --float-duration: 12s;
 }
 
 .contactPageShape2 {
@@ -40,6 +45,11 @@
   width: 48%;
   height: 21%;
   background: rgba(var(--harvest-gold-rgb), 0.32);
+  --float-x: -14px;
+  --float-y: 12px;
+  --float-r: -1.4deg;
+  --float-duration: 14s;
+  animation-delay: -2s;
 }
 
 .contactPageShape3 {
@@ -48,6 +58,11 @@
   width: 24%;
   height: 13%;
   background: rgba(var(--dry-clay-rgb), 0.34);
+  --float-x: 10px;
+  --float-y: 16px;
+  --float-r: 1.2deg;
+  --float-duration: 10s;
+  animation-delay: -5s;
 }
 
 .contactPageShape4 {
@@ -56,6 +71,11 @@
   width: 10%;
   height: 38%;
   background: rgba(var(--gibraltar-sea-rgb), 0.14);
+  --float-x: -12px;
+  --float-y: -10px;
+  --float-r: -1.8deg;
+  --float-duration: 13s;
+  animation-delay: -6s;
 }
 
 .contactPageShape5 {
@@ -64,6 +84,11 @@
   width: 10%;
   height: 20%;
   background: rgba(var(--bone-rgb), 0.74);
+  --float-x: 8px;
+  --float-y: -14px;
+  --float-r: 1deg;
+  --float-duration: 15s;
+  animation-delay: -1s;
 }
 
 .contactPageShape6 {
@@ -72,6 +97,11 @@
   width: 37%;
   height: 11%;
   background: rgba(var(--bone-rgb), 0.76);
+  --float-x: -10px;
+  --float-y: 10px;
+  --float-r: -1deg;
+  --float-duration: 11s;
+  animation-delay: -3s;
 }
 
 .contactPageShape7 {
@@ -80,10 +110,32 @@
   width: 2.7%;
   height: 9%;
   background: rgba(var(--bone-rgb), 0.76);
+  --float-x: 6px;
+  --float-y: -10px;
+  --float-r: 2deg;
+  --float-duration: 9s;
+  animation-delay: -4s;
 }
 
 .contactPageShape8 {
   display: none;
+}
+
+@keyframes floatBlob {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(var(--float-x, 10px), var(--float-y, -12px), 0)
+      rotate(var(--float-r, 1.5deg));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contactPageShape {
+    animation: none;
+  }
 }
 
 /* ===== Main shell (2 rows: services + content) ===== */
@@ -288,6 +340,7 @@
 }
 
 .form-field {
+  position: relative;
   display: grid;
   gap: 6px;
 }
@@ -308,6 +361,32 @@
   padding: 10px 12px;
   font-size: 13.5px;
   outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: rgba(var(--dry-clay-rgb), 0.55);
+  box-shadow: 0 0 0 3px rgba(var(--dry-clay-rgb), 0.12);
+}
+
+.form-field::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--dry-clay), var(--harvest-gold));
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.form-field:focus-within::after {
+  transform: scaleX(1);
 }
 
 .form-field textarea {

@@ -2,7 +2,11 @@ import { useState } from "react";
 import "./contact.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FaCheck } from "react-icons/fa";
 import { GithubIcon, LinkedInIcon } from "../Icons";
+import { RevealGroup, RevealItem } from "../motion/Reveal";
+import { ShakeOnError } from "../motion/ShakeOnError";
+import { useMagnetic } from "../motion/useMagnetic";
 
 const INITIAL_FORM = {
   name: "",
@@ -47,8 +51,11 @@ export default function Contact() {
   const [formData, setFormData] = useState(INITIAL_FORM);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState({ type: "idle", message: "" });
+  const [errorPulse, setErrorPulse] = useState(0);
+  const sendMagnetic = useMagnetic(0.2);
 
   const isSubmitting = status.type === "loading";
+  const isSuccess = status.type === "success";
 
   const menuItems = [
     { text: "HOME", link: "/" },
@@ -74,6 +81,7 @@ export default function Contact() {
 
     if (Object.keys(validationErrors).length > 0) {
       setStatus({ type: "error", message: "Please review the highlighted fields." });
+      setErrorPulse((n) => n + 1);
       return;
     }
 
@@ -93,6 +101,7 @@ export default function Contact() {
       if (!response.ok) {
         if (payload.errors && typeof payload.errors === "object") {
           setErrors(payload.errors);
+          setErrorPulse((n) => n + 1);
         }
 
         throw new Error(payload.message || "Could not send message.");
@@ -186,13 +195,15 @@ export default function Contact() {
       </div>
 
       <div className="contact-shell">
-        <div className="contact-left">
-          <p className="contact-kicker">Let&apos;s make something amazing together.</p>
-          <h1 className="contact-title">
-            Just <br />
-            send it.
-          </h1>
-        </div>
+        <RevealGroup as="div" className="contact-left" mode="mount" stagger={0.12}>
+          <RevealItem as="p" className="contact-kicker">
+            Let&apos;s make something amazing together.
+          </RevealItem>
+          <RevealGroup as="h1" className="contact-title" mode="mount" stagger={0.1} delayChildren={0.15}>
+            <RevealItem as="span" style={{ display: "block" }}>Just</RevealItem>
+            <RevealItem as="span" style={{ display: "block" }}>send it.</RevealItem>
+          </RevealGroup>
+        </RevealGroup>
 
         <div className="contact-right">
           <form className="contact-form" onSubmit={handleSubmit} noValidate>
@@ -209,7 +220,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="form-field">
+            <ShakeOnError className="form-field" trigger={errors.name ? errorPulse : 0}>
               <label htmlFor="name">Name</label>
               <input
                 id="name"
@@ -221,9 +232,9 @@ export default function Contact() {
                 required
               />
               {errors.name ? <p className="field-error">{errors.name}</p> : null}
-            </div>
+            </ShakeOnError>
 
-            <div className="form-field">
+            <ShakeOnError className="form-field" trigger={errors.email ? errorPulse : 0}>
               <label htmlFor="email">Email</label>
               <input
                 id="email"
@@ -235,9 +246,9 @@ export default function Contact() {
                 required
               />
               {errors.email ? <p className="field-error">{errors.email}</p> : null}
-            </div>
+            </ShakeOnError>
 
-            <div className="form-field">
+            <ShakeOnError className="form-field" trigger={errors.subject ? errorPulse : 0}>
               <label htmlFor="subject">Subject</label>
               <input
                 id="subject"
@@ -249,9 +260,9 @@ export default function Contact() {
                 required
               />
               {errors.subject ? <p className="field-error">{errors.subject}</p> : null}
-            </div>
+            </ShakeOnError>
 
-            <div className="form-field">
+            <ShakeOnError className="form-field" trigger={errors.message ? errorPulse : 0}>
               <label htmlFor="message">Message</label>
               <textarea
                 id="message"
@@ -263,16 +274,20 @@ export default function Contact() {
                 required
               />
               {errors.message ? <p className="field-error">{errors.message}</p> : null}
-            </div>
+            </ShakeOnError>
 
             {status.type !== "idle" ? (
               <p className={`form-status ${status.type}`}>{status.message}</p>
             ) : null}
 
             <motion.button
+              ref={sendMagnetic.ref}
+              style={sendMagnetic.style}
+              onMouseMove={isSubmitting || isSuccess ? undefined : sendMagnetic.onMouseMove}
+              onMouseLeave={sendMagnetic.onMouseLeave}
               type="submit"
               className="send-button"
-              whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
+              whileHover={{ scale: isSubmitting || isSuccess ? 1 : 1.05 }}
               transition={{
                 type: "spring",
                 stiffness: 400,
@@ -280,7 +295,30 @@ export default function Contact() {
               }}
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Sending..." : "Send message"}
+              <AnimatePresence mode="wait" initial={false}>
+                {isSuccess ? (
+                  <motion.span
+                    key="success"
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0, opacity: 0 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                    style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}
+                  >
+                    <FaCheck aria-hidden="true" /> Sent
+                  </motion.span>
+                ) : (
+                  <motion.span
+                    key="label"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {isSubmitting ? "Sending..." : "Send message"}
+                  </motion.span>
+                )}
+              </AnimatePresence>
             </motion.button>
           </form>
         </div>

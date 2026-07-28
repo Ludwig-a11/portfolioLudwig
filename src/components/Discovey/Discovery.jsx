@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { projects } from "../../data/projects";
+import { Reveal, RevealGroup, RevealItem } from "../motion/Reveal";
+import { useMagnetic } from "../motion/useMagnetic";
 //import ContactForm from "../Home/ContactForm";
 
 const Discovery = () => {
@@ -13,6 +15,7 @@ const Discovery = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
   const projectCarouselRef = useRef(null);
+  const connectMagnetic = useMagnetic(0.25);
 
   const menuItems = [
     { text: "HOME", link: "/" },
@@ -234,15 +237,21 @@ const Discovery = () => {
               {/* Tech Skills*/}
               <div className="discoverySidebarSection discoverySidebarSectionCentered">
                 <h3>Tech Skills</h3>
-                <ul className="discoverySidebarList">
-                  <li>Retell + n8n + LLMs</li>
-                  <li>JavaScript + React.js + Python</li>
-                  <li>Cypress + Postman + Gerkin</li>
-                  <li>PostgreSQL + ChromaDB + Supabase</li>
-                  <li>APIs + Webhooks</li>
-                  <li>LangGraph + LangChain + Anthropic Claude</li>
-                  <li>FastAPI + Next.js + TypeScript + LangSmith</li>
-                </ul>
+                <RevealGroup
+                  as="ul"
+                  className="discoverySidebarList"
+                  mode="mount"
+                  stagger={0.06}
+                  delayChildren={0.15}
+                >
+                  <RevealItem as="li">Retell + n8n + LLMs</RevealItem>
+                  <RevealItem as="li">JavaScript + React.js + Python</RevealItem>
+                  <RevealItem as="li">Cypress + Postman + Gerkin</RevealItem>
+                  <RevealItem as="li">PostgreSQL + ChromaDB + Supabase</RevealItem>
+                  <RevealItem as="li">APIs + Webhooks</RevealItem>
+                  <RevealItem as="li">LangGraph + LangChain + Anthropic Claude</RevealItem>
+                  <RevealItem as="li">FastAPI + Next.js + TypeScript + LangSmith</RevealItem>
+                </RevealGroup>
               </div>
 
               {/* Certifications Experience */}
@@ -282,6 +291,10 @@ const Discovery = () => {
                   {/* Boton Let's Connect */}
                   <div className="discoveryActionButtons">
                     <motion.button
+                      ref={connectMagnetic.ref}
+                      style={connectMagnetic.style}
+                      onMouseMove={connectMagnetic.onMouseMove}
+                      onMouseLeave={connectMagnetic.onMouseLeave}
                       className="discoveryMessageBtn"
                       onClick={handleMessage}
                       whileHover={{ scale: 1.05 }}
@@ -304,7 +317,11 @@ const Discovery = () => {
         <div className="discoveryContentScrollable">
           <div className="discoveryContentInner">
             {/* About Section */}
-            <div className="discoveryProjectsSection discoveryAboutSection">
+            <Reveal
+              as="div"
+              className="discoveryProjectsSection discoveryAboutSection"
+              y={30}
+            >
               <h2 className="discoveryProjectsTitle">About</h2>
               <p className="discoveryAboutText">
                 There are three things that define how I work.<br/>
@@ -312,10 +329,10 @@ const Discovery = () => {
                 Second, I understand the problem from multiple angles. Before focusing on automation, I worked in QA, Sales Ops, and Tech Recruitment. That experience allowed me to see how poor validation breaks a process, how delayed responses cool down leads, and how lack of traceability affects entire teams. This cross-functional perspective is the foundation of how I design solutions today.<br/>
                 Third, I execute with a production mindset. I’m comfortable in fast-paced environments, learn new tools quickly, and prioritize workflows that are robust, clear, and maintainable. My focus isn’t just making things work, but making them work when volume grows and conditions aren’t perfect.
               </p>
-            </div>
+            </Reveal>
 
             {/* Projects Grid */}
-            <div className="discoveryProjectsSection">
+            <Reveal as="div" className="discoveryProjectsSection" y={30}>
               <h2 className="discoveryProjectsTitle">Projects</h2>
               <div
                 ref={projectCarouselRef}
@@ -379,18 +396,28 @@ const Discovery = () => {
                   Some projects shown are generalized representations of work developed in professional environments. Sensitive&nbsp;details, internal systems, and proprietary information have been omitted or modified.
                 </span>
               </p>
-            </div>
+            </Reveal>
 
-            <div className="discoveryProjectsSection discoveryServicesSection">
+            <Reveal
+              as="div"
+              className="discoveryProjectsSection discoveryServicesSection"
+              y={30}
+            >
               <h2 className="discoveryProjectsTitle">What I&apos;ve learned</h2>
               <p className="discoveryServicesText">
                 Working close to the problem, not just from a single role-taught me a very clear lesson: reliability doesn’t happen by accident, it’s designed.<br/>
                 I’ve seen it break during sales conversations where context was lost, in QA validations where edge cases were ignored, and in deliveries where feedback arrived too late. Over time, I realized that fragile systems almost always share the same flaw: loops that are too long.<br/>
                 Today, I work with a short and deliberate loop. Define the problem and what success looks like, narrow the scope to a clear MVP, build in small increments, validate early, and adjust using real usage data. This approach doesn’t just improve technical outcomes, it aligns product, operations, and business around the same reality.
               </p>
-              <div className="discoveryServicesGrid">
+              <RevealGroup as="div" className="discoveryServicesGrid" stagger={0.1}>
                 {services.map((service) => (
-                  <article key={service.title} className="discoveryServiceCard">
+                  <RevealItem
+                    key={service.title}
+                    as="article"
+                    className="discoveryServiceCard"
+                    whileHover={{ y: -6, boxShadow: "0 16px 30px rgba(19, 57, 81, 0.16)" }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                  >
                     <h3 className="discoveryServiceTitle">{service.title}</h3>
                     <ul className="discoveryServiceList">
                       {service.bullets.map((bullet) => (
@@ -398,10 +425,10 @@ const Discovery = () => {
                       ))}
                     </ul>
                     <p className="discoveryServiceFooter">{service.footer}</p>
-                  </article>
+                  </RevealItem>
                 ))}
-              </div>
-            </div>
+              </RevealGroup>
+            </Reveal>
           </div>
         </div>
       </div>

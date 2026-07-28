@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   FaBolt,
   FaChartLine,
@@ -15,6 +16,7 @@ import {
 } from "react-icons/fa";
 import { TbApi } from "react-icons/tb";
 import { projects, projectsBySlug } from "../../data/projects";
+import { Reveal, RevealGroup, RevealItem } from "../motion/Reveal";
 import "./project-details.css";
 
 export default function ProjectDetails() {
@@ -125,54 +127,76 @@ export default function ProjectDetails() {
           </div>
 
           <div className="projectDetailsShowcaseHeroGrid">
-            <div className="projectDetailsShowcaseHeroContent">
-              <p className="projectDetailsShowcaseEyebrow">Project Details</p>
-              <h1 className="projectDetailsTitle">{project.title}</h1>
-              <p className="projectDetailsSubTitle">{project.description}</p>
-              <p className="projectDetailsBodyText">
+            <RevealGroup
+              as="div"
+              className="projectDetailsShowcaseHeroContent"
+              mode="mount"
+              stagger={0.1}
+            >
+              <RevealItem as="p" className="projectDetailsShowcaseEyebrow">
+                Project Details
+              </RevealItem>
+              <RevealItem as="h1" className="projectDetailsTitle">
+                {project.title}
+              </RevealItem>
+              <RevealItem as="p" className="projectDetailsSubTitle">
+                {project.description}
+              </RevealItem>
+              <RevealItem as="p" className="projectDetailsBodyText">
                 {project.details?.hero || project.summary}
-              </p>
-              <ul className="projectDetailsTagList">
+              </RevealItem>
+              <RevealItem as="ul" className="projectDetailsTagList">
                 {stackItems.map((item) => (
                   <li key={item}>
                     <span className="projectDetailsTagIcon">{getTechIcon(item)}</span>
                     <span>{item}</span>
                   </li>
                 ))}
-              </ul>
-            </div>
-            <div className="projectDetailsShowcaseHeroMedia">
+              </RevealItem>
+            </RevealGroup>
+            <motion.div
+              className="projectDetailsShowcaseHeroMedia"
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            >
               <img src={project.image} alt={project.title} />
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {whyThisBreaksDownItems.length > 0 && (
-          <section className="projectDetailsShowcaseSection projectDetailsShowcaseWhy">
+          <Reveal as="section" className="projectDetailsShowcaseSection projectDetailsShowcaseWhy">
             <h2>Why This Breaks Down</h2>
             <ul className="projectDetailsShowcaseWhyList">
               {whyThisBreaksDownItems.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-          </section>
+          </Reveal>
         )}
 
         {challengeTrack.length > 0 && (
-          <section className="projectDetailsShowcaseSection projectDetailsShowcaseChallenge">
+          <Reveal
+            as="section"
+            className="projectDetailsShowcaseSection projectDetailsShowcaseChallenge"
+          >
             <h2>The Challenge</h2>
-            <div className="projectDetailsShowcaseChallengeTrack">
+            <RevealGroup as="div" className="projectDetailsShowcaseChallengeTrack" stagger={0.12}>
               {challengeTrack.map((item) => (
-                <article key={item} className="projectDetailsShowcaseChallengeStep">
+                <RevealItem key={item} as="article" className="projectDetailsShowcaseChallengeStep">
                   <p>{item}</p>
-                </article>
+                </RevealItem>
               ))}
-            </div>
-          </section>
+            </RevealGroup>
+          </Reveal>
         )}
 
         {solutionItems.length > 0 && (
-          <section className="projectDetailsShowcaseSection projectDetailsShowcaseSolution">
+          <Reveal
+            as="section"
+            className="projectDetailsShowcaseSection projectDetailsShowcaseSolution"
+          >
             <h2>The Solution</h2>
             <div className="projectDetailsShowcaseSolutionGrid">
               <div className="projectDetailsShowcaseShotWrap">
@@ -186,26 +210,41 @@ export default function ProjectDetails() {
                 </ul>
               </article>
             </div>
-          </section>
+          </Reveal>
         )}
 
         {resultHighlights.length > 0 && (
-          <section className="projectDetailsShowcaseSection projectDetailsShowcaseResults">
+          <Reveal
+            as="section"
+            className="projectDetailsShowcaseSection projectDetailsShowcaseResults"
+          >
             <h2>Results</h2>
-            <div className="projectDetailsShowcaseResultsGrid">
+            <RevealGroup as="div" className="projectDetailsShowcaseResultsGrid" stagger={0.1}>
               {resultHighlights.map((item) => (
-                <article key={item.label} className="projectDetailsShowcaseResultCard">
-                  <span className="projectDetailsResultIcon">{item.icon}</span>
+                <RevealItem
+                  key={item.label}
+                  as="article"
+                  className="projectDetailsShowcaseResultCard"
+                >
+                  <motion.span
+                    className="projectDetailsResultIcon"
+                    initial={{ scale: 0, rotate: -15 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    viewport={{ once: true, amount: 0.6 }}
+                    transition={{ type: "spring", stiffness: 350, damping: 12, delay: 0.1 }}
+                  >
+                    {item.icon}
+                  </motion.span>
                   <h3>{item.label}</h3>
                   <p>{item.value}</p>
-                </article>
+                </RevealItem>
               ))}
-            </div>
-          </section>
+            </RevealGroup>
+          </Reveal>
         )}
 
         {otherProjects.length > 0 && (
-          <section className="projectDetailsShowcaseSection projectDetailsShowcaseCases">
+          <Reveal as="section" className="projectDetailsShowcaseSection projectDetailsShowcaseCases">
             <h2>Explore More</h2>
             <div className="projectDetailsShowcaseCarousel">
               <div className="projectDetailsShowcaseCarouselTrack">
@@ -233,14 +272,14 @@ export default function ProjectDetails() {
                 Some projects shown are generalized representations of work developed in professional environments. Sensitive&nbsp;details, internal systems, and proprietary information have been omitted or modified.
               </span>
             </p>
-          </section>
+          </Reveal>
         )}
 
-        <section className="projectDetailsShowcaseSection projectDetailsShowcaseContact">
+        <Reveal as="section" className="projectDetailsShowcaseSection projectDetailsShowcaseContact">
           <Link className="projectDetailsBackBtn" to="/contact">
             Let&apos;s Connect
           </Link>
-        </section>
+        </Reveal>
       </div>
     </section>
   );
