@@ -1,0 +1,340 @@
+/* shared bits (console, buttons) */
+.pf-btn {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font: 500 14px/1 var(--font);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.pf-btn-acc {
+  background: var(--acc);
+  color: var(--accfg);
+  font-weight: 600;
+}
+
+.pf-btn-acc:hover {
+  color: var(--accfg);
+}
+
+.pf-btn-ghost {
+  border: 1px solid var(--line);
+  background: var(--bg2);
+  color: var(--fg);
+}
+
+.pf-console {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: linear-gradient(180deg, #14161a, #0e0f12);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  color: #ecede9;
+}
+
+.pf-console-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.pf-console-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.pf-console-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2a2d33;
+}
+
+.pf-console-title {
+  font: 400 12px/1 var(--mono);
+  color: #73776f;
+  white-space: nowrap;
+}
+
+.pf-console-rec {
+  font: 500 11px/1 var(--mono);
+  color: oklch(0.86 0.17 128);
+  white-space: nowrap;
+}
+
+.pf-console-body {
+  padding: 18px 18px 22px;
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font: 400 13px/1.5 var(--mono);
+}
+
+.pf-log {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.pf-log-k {
+  color: #5d6159;
+}
+
+.pf-log-t.is-in { color: #ecede9; }
+.pf-log-t.is-run { color: #a3a69f; }
+.pf-log-t.is-voice { color: #f0c674; }
+.pf-log-t.is-out { color: oklch(0.86 0.17 128); }
+
+.pf-caret {
+  color: oklch(0.86 0.17 128);
+  animation: pfblink 1s steps(1) infinite;
+}
+
+/* hero */
+.home-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
+  gap: 56px;
+  align-items: center;
+  padding: clamp(56px, 10vh, 110px) 0 80px;
+}
+
+.home-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 12px 7px 10px;
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  background: var(--bg2);
+  font: 400 12px/1 var(--mono);
+  color: var(--mut);
+}
+
+.home-h1 {
+  margin: 28px 0 22px;
+  font: 500 clamp(38px, 5.4vw, 72px) / 1.03 var(--font);
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.home-h1 span {
+  color: var(--acc);
+}
+
+.home-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* marquee */
+.home-marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+  margin: 0 calc(-1 * var(--gutter));
+  -webkit-mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.home-marquee-track {
+  display: flex;
+  gap: 44px;
+  width: max-content;
+  animation: pfmarquee 40s linear infinite;
+}
+
+.home-marquee-track span {
+  font: 400 14px/1 var(--mono);
+  color: var(--dim);
+  white-space: nowrap;
+}
+
+@keyframes pfmarquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-marquee-track {
+    animation: none;
+  }
+}
+
+/* project list */
+.home-work {
+  padding: 80px 0 0;
+}
+
+.home-work-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.home-work-head h2 {
+  margin: 0;
+  font: 500 13px/1 var(--mono);
+  color: var(--acc);
+  white-space: nowrap;
+}
+
+.home-work-head button {
+  border: none;
+  background: none;
+  color: var(--mut);
+  font: 400 13px/1 var(--mono);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.home-work-head button:hover {
+  color: var(--acc);
+}
+
+.home-row {
+  position: relative;
+  border-top: 1px solid var(--line);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.home-row-main {
+  display: grid;
+  grid-template-columns: 48px 1.3fr 1fr 32px;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  padding: 24px 0;
+  border: none;
+  background: none;
+  color: var(--fg);
+  text-align: left;
+  cursor: pointer;
+  transition: padding 0.45s var(--ease), color 0.45s var(--ease);
+}
+
+.home-row-n {
+  font: 400 13px/1 var(--mono);
+  opacity: 0.6;
+}
+
+.home-row-title {
+  font: 500 clamp(22px, 3vw, 38px) / 1.05 var(--font);
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.home-row-tag {
+  font: 400 13px/1.4 var(--mono);
+  opacity: 0.75;
+}
+
+.home-row-arrow {
+  font: 400 20px/1 var(--font);
+  justify-self: end;
+  transition: transform 0.45s var(--ease);
+}
+
+.home-row-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.5s var(--ease), opacity 0.5s var(--ease);
+}
+
+.home-row-more-clip {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.home-row-more-in {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 0 0 24px 68px;
+  font: 400 13px/1.5 var(--mono);
+  color: var(--mut);
+}
+
+.home-row-gt {
+  color: var(--acc);
+}
+
+.home-row-more .pf-chips span {
+  padding: 5px 9px;
+  border-radius: 7px;
+  font-size: 11px;
+  color: var(--fg);
+}
+
+/* "on" = hover (mouse) or scroll focus (touch) */
+.home-row.is-on .home-row-main {
+  padding: 24px 14px 24px 20px;
+  color: var(--acc);
+}
+
+.home-row.is-on .home-row-arrow {
+  transform: rotate(45deg);
+}
+
+.home-row.is-on .home-row-more {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.home-row.is-instant .home-row-main,
+.home-row.is-instant .home-row-arrow,
+.home-row.is-instant .home-row-more {
+  transition: none;
+}
+
+/* mobile */
+@media (max-width: 699px) {
+  .pf-console-body {
+    padding: 14px 14px 16px;
+    min-height: 230px;
+    gap: 7px;
+    font-size: 11.5px;
+  }
+
+  .home-row-main {
+    grid-template-columns: 32px minmax(0, 1fr) 24px;
+    gap: 6px 14px;
+    padding: 20px 0;
+  }
+
+  .home-row.is-on .home-row-main {
+    padding: 20px 0 12px 8px;
+  }
+
+  .home-row-tag {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    font-size: 12px;
+    opacity: 0.7;
+  }
+
+  .home-row-more {
+    transition: grid-template-rows 0.5s var(--ease), opacity 0.4s var(--ease);
+  }
+
+  .home-row-more-in {
+    padding: 0 0 20px 46px;
+    font-size: 12px;
+  }
+}

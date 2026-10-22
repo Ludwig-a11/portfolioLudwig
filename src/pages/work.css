@@ -1,0 +1,355 @@
+.pf-kicker {
+  margin: 0;
+  font: 400 13px/1 var(--mono);
+  color: var(--acc);
+}
+
+h2.pf-kicker {
+  font-weight: 500;
+}
+
+.mask-line {
+  display: block;
+  overflow: hidden;
+}
+
+.mask-line-inner {
+  display: block;
+}
+
+/* intro */
+.work-intro {
+  padding: clamp(56px, 10vh, 100px) 0 48px;
+}
+
+.work-intro .pf-kicker {
+  margin-bottom: 18px;
+}
+
+.work-h1 {
+  margin: 0 0 18px;
+  font: 500 clamp(44px, 7.4vw, 112px) / 0.95 var(--font);
+  letter-spacing: -0.05em;
+  overflow: hidden;
+}
+
+.work-lead {
+  margin: 0;
+  max-width: 560px;
+  font: 400 19px/1.5 var(--font);
+  color: var(--mut);
+}
+
+/* stacked cards */
+.work-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-bottom: 32px;
+}
+
+.work-sticky {
+  position: sticky;
+  top: calc(84px + var(--i) * 16px);
+  z-index: calc(var(--i) + 1);
+}
+
+.work-card {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  height: clamp(260px, 34vh, 320px);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  box-shadow: 0 -14px 40px rgba(0, 0, 0, 0.12);
+  transition: border-color 0.3s;
+}
+
+.work-card:hover {
+  border-color: var(--acc);
+}
+
+.work-card-body {
+  padding: clamp(20px, 2.6vw, 32px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+}
+
+.work-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font: 400 12px/1 var(--mono);
+}
+
+.work-card-top span:first-child {
+  color: var(--acc);
+  white-space: nowrap;
+}
+
+.work-card-top span:last-child {
+  color: var(--dim);
+  text-align: right;
+}
+
+.work-card h3 {
+  margin: 0 0 8px;
+  font: 500 clamp(26px, 3vw, 40px) / 1 var(--font);
+  letter-spacing: -0.035em;
+}
+
+.work-card p {
+  margin: 0;
+  font: 400 15px/1.5 var(--font);
+  color: var(--mut);
+  text-wrap: pretty;
+}
+
+.work-card-img {
+  background: var(--bg3);
+  min-width: 0;
+}
+
+.work-disclaimer {
+  margin: 0 0 88px;
+  max-width: 660px;
+  font: 400 12px/1.6 var(--mono);
+  color: var(--dim);
+}
+
+/* about */
+.work-about {
+  padding: 80px 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+}
+
+.work-about .pf-kicker {
+  margin-bottom: 12px;
+}
+
+.work-about-lead {
+  margin: 0;
+  font: 500 28px/1.15 var(--font);
+  letter-spacing: -0.02em;
+}
+
+.work-pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.work-pillar span {
+  font: 400 12px/1 var(--mono);
+  color: var(--acc);
+}
+
+.work-pillar h3 {
+  margin: 0;
+  font: 500 19px/1.2 var(--font);
+}
+
+.work-pillar p {
+  margin: 0;
+  font: 400 15px/1.55 var(--font);
+  color: var(--mut);
+  text-wrap: pretty;
+}
+
+/* process */
+.work-process {
+  padding: 80px 0;
+  border-top: 1px solid var(--line);
+}
+
+.work-process-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  align-items: end;
+}
+
+.work-process-head .pf-kicker {
+  margin-bottom: 14px;
+}
+
+.work-process-title {
+  margin: 0;
+  font: 500 clamp(32px, 4vw, 52px) / 1 var(--font);
+  letter-spacing: -0.04em;
+}
+
+.work-process-lead {
+  margin: 0;
+  max-width: 420px;
+  font: 400 16px/1.5 var(--font);
+  color: var(--mut);
+}
+
+.work-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2px;
+  background: var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.work-step {
+  background: var(--bg);
+  padding: 28px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  transition: background 0.3s;
+}
+
+.work-step:hover {
+  background: var(--bg2);
+}
+
+.work-step > span {
+  font: 400 13px/1 var(--mono);
+  color: var(--acc);
+}
+
+.work-step h3 {
+  margin: 0 0 8px;
+  font: 500 18px/1.2 var(--font);
+}
+
+.work-step p {
+  margin: 0;
+  font: 400 14px/1.5 var(--font);
+  color: var(--mut);
+}
+
+/* toolkit / exploring / courses */
+.work-extra {
+  padding: 80px 0 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 56px;
+}
+
+.work-kicker-gap {
+  margin-bottom: 24px !important;
+}
+
+.work-skill {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.work-skill > span {
+  font: 400 13px/1.5 var(--mono);
+  color: var(--dim);
+}
+
+.work-skill > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font: 400 15px/1.5 var(--font);
+}
+
+.work-extra-col {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.work-exploring {
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--bg2);
+}
+
+.work-exploring h2 {
+  margin: 0 0 14px;
+  font: 500 13px/1 var(--mono);
+  color: var(--acc);
+}
+
+.work-exploring p {
+  margin: 0;
+  font: 400 19px/1.45 var(--font);
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+
+.work-courses-h {
+  margin-bottom: 10px !important;
+}
+
+.work-course {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.work-course b {
+  display: block;
+  font: 500 15px/1.3 var(--font);
+}
+
+.work-course i {
+  font: 400 13px/1.4 var(--font);
+  font-style: normal;
+  color: var(--dim);
+}
+
+.work-course-y {
+  font: 400 13px/1 var(--mono);
+  color: var(--dim);
+  white-space: nowrap;
+}
+
+/* mobile: vertical sticky cards */
+@media (max-width: 699px) {
+  .work-sticky {
+    top: calc(70px + var(--i) * 12px);
+  }
+
+  .work-card {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 220px auto;
+    height: auto;
+    box-shadow: 0 -14px 40px rgba(0, 0, 0, 0.14);
+  }
+
+  .work-card-img {
+    grid-row: 1;
+  }
+
+  .work-card-body {
+    grid-row: 2;
+    padding: 18px;
+    gap: 12px;
+  }
+
+  .work-card h3 {
+    font-size: 26px;
+  }
+
+  .work-card p {
+    font-size: 14px;
+  }
+}

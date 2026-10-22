@@ -1,0 +1,116 @@
+[data-theme] {
+  --bg: #0b0c0e;
+  --bg2: #121418;
+  --bg3: #1a1c21;
+  --fg: #ecede9;
+  --mut: #a3a69f;
+  --dim: #73776f;
+  --line: rgba(255, 255, 255, 0.09);
+  --acc: oklch(0.86 0.17 128);
+  --accfg: #0b0c0e;
+  --inv: #ecede9;
+  --invfg: #0b0c0e;
+  --err: #ff7a6b;
+  --hdr: rgba(11, 12, 14, 0.78);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --gutter: clamp(20px, 4vw, 48px);
+  --status: oklch(0.8 0.17 135);
+  --font: "Geist", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, monospace;
+}
+
+[data-theme="light"] {
+  --bg: #f5f5f3;
+  --bg2: #ffffff;
+  --bg3: #ebebe7;
+  --fg: #121212;
+  --mut: #4a4a47;
+  --dim: #85857f;
+  --line: rgba(18, 18, 18, 0.12);
+  --acc: oklch(0.52 0.15 140);
+  --accfg: #ffffff;
+  --inv: #121212;
+  --invfg: #ffffff;
+  --err: #c4362b;
+  --hdr: rgba(245, 245, 243, 0.82);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #0b0c0e;
+}
+
+/* clip (not hidden) so position: sticky keeps working */
+body {
+  overflow-x: clip;
+}
+
+html[data-theme="light"],
+html[data-theme="light"] body {
+  background: #f5f5f3;
+}
+
+body {
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--acc);
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--dim);
+}
+
+::selection {
+  background: var(--acc);
+  color: var(--accfg);
+}
+
+@keyframes pfblink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes pfpulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 oklch(0.8 0.17 135 / 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 6px oklch(0.8 0.17 135 / 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

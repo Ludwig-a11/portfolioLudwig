@@ -1,0 +1,204 @@
+.pf-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.pf-drawer {
+  width: min(680px, 100%);
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  border-left: 1px solid var(--line);
+}
+
+.pf-drawer-hero {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--bg3);
+}
+
+.pf-drawer-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #0b0c0e;
+  color: #ecede9;
+  font: 500 12px/1 var(--mono);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.pf-drawer-body {
+  padding: 28px clamp(20px, 4vw, 40px) 56px;
+}
+
+.pf-drawer-kicker {
+  font: 500 12px/1 var(--mono);
+  color: var(--acc);
+}
+
+.pf-drawer-body h2 {
+  margin: 10px 0 12px;
+  font: 500 clamp(36px, 5vw, 54px) / 1 var(--font);
+  letter-spacing: -0.04em;
+}
+
+.pf-drawer-problem {
+  margin: 0 0 28px;
+  font: 400 18px/1.55 var(--font);
+  color: var(--mut);
+}
+
+.pf-drawer-h {
+  margin: 0 0 10px;
+  font: 500 12px/1 var(--mono);
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pf-drawer-row {
+  margin: 0;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  font: 400 15px/1.5 var(--font);
+}
+
+.pf-drawer-results {
+  margin-top: 28px;
+  padding: 22px;
+  border-radius: 16px;
+  background: #0f1013;
+  color: #ecede9;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pf-drawer-results h3 {
+  margin: 0 0 12px;
+  font: 500 12px/1 var(--mono);
+  color: oklch(0.86 0.17 128);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pf-drawer-results p {
+  margin: 0 0 8px;
+  font: 400 15px/1.5 var(--font);
+}
+
+.pf-drawer-results p span {
+  color: oklch(0.86 0.17 128);
+  font-family: var(--mono);
+}
+
+.pf-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pf-chips span {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--bg3);
+  font: 400 12px/1 var(--mono);
+  white-space: nowrap;
+}
+
+.pf-chips-lg {
+  margin-top: 24px;
+}
+
+.pf-chips-lg span {
+  padding: 7px 11px;
+}
+
+.pf-drawer-live {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 22px;
+  border-radius: 99px;
+  background: var(--inv);
+  color: var(--invfg);
+  font: 500 14px/1 var(--font);
+}
+
+.pf-drawer-live:hover {
+  color: var(--invfg);
+}
+
+.pf-grab {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  touch-action: none;
+  cursor: grab;
+}
+
+.pf-grab span {
+  width: 40px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--dim);
+}
+
+/* mobile: bottom sheet */
+@media (max-width: 699px) {
+  .pf-overlay {
+    align-items: flex-end;
+    justify-content: stretch;
+  }
+
+  .pf-drawer.is-sheet {
+    width: 100%;
+    height: 92vh;
+    border-left: none;
+    border-top: 1px solid var(--line);
+    border-radius: 22px 22px 0 0;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .pf-grab + .pf-drawer-hero {
+    margin-top: -22px;
+  }
+}
+
+/* project image: full image, blurred fill behind */
+.pf-media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg3);
+}
+
+.pf-media::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: var(--media) center / cover no-repeat;
+  filter: blur(24px) saturate(1.1);
+  opacity: 0.55;
+}
+
+.pf-media img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}

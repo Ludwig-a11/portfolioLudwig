@@ -1,62 +1,40 @@
-import "./App.css";
-import { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
-import Error from "./components/Error";
-import Home from "./components/Home/Home";
-//import Footer from "./components/Footer";
-import Discovery from "./components/Discovey/Discovery";
-import Contact from "./components/Contact/Contact";
-import ProjectDetails from "./components/Projects/ProjectDetails";
+import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from "react-router-dom";
+import { AppProvider } from "./context/AppContext";
+import AppLayout from "./layout/AppLayout";
 import PageTransition from "./components/motion/PageTransition";
-import RouteProgressBar from "./components/motion/RouteProgressBar";
+import Home from "./pages/Home";
+import Work from "./pages/Work";
+import Contact from "./pages/Contact";
+import Error from "./components/Error";
 
-function AppLayout() {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
+const LEGACY_SLUGS = { "dedicated-teams-calculator": "dtc", "expenses-record-app": "expense" };
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, [location.pathname]);
-
-  return (
-    <div className="app">
-      <RouteProgressBar />
-      {isHome && (
-        <div className="appHomeBackdrop" aria-hidden="true">
-          <span className="appHomeShape appHomeShape1" />
-          <span className="appHomeShape appHomeShape2" />
-          <span className="appHomeShape appHomeShape3" />
-          <span className="appHomeShape appHomeShape4" />
-          <span className="appHomeShape appHomeShape5" />
-          <span className="appHomeShape appHomeShape6" />
-        </div>
-      )}
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-          <Route path="/discovery" element={<PageTransition><Discovery /></PageTransition>} />
-          <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-          <Route
-            path="/projects/:slug"
-            element={<PageTransition><ProjectDetails /></PageTransition>}
-          />
-          <Route path="*" element={<PageTransition><Error /></PageTransition>} />
-        </Routes>
-      </AnimatePresence>
-    </div>
-  );
-}
+const page = (el) => <PageTransition>{el}</PageTransition>;
 
 function App() {
   return (
-    <>
+    <AppProvider>
       <Router>
-        <AppLayout />
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route path="/" element={page(<Home />)} />
+            <Route path="/discovery" element={page(<Work />)} />
+            <Route path="/work" element={<Navigate to="/discovery" replace />} />
+            <Route path="/contact" element={page(<Contact />)} />
+            <Route path="/projects/:slug" element={<LegacyProject />} />
+            <Route path="*" element={page(<Error />)} />
+          </Route>
+        </Routes>
       </Router>
-      {/*<Footer />*/}
-    </>
+    </AppProvider>
   );
+}
+
+// Old /projects/:slug links now open the drawer over Work.
+function LegacyProject() {
+  const { slug } = useParams();
+  const target = LEGACY_SLUGS[slug] || slug;
+  return <Navigate to={`/discovery?project=${target}`} replace />;
 }
 
 export default App;
