@@ -2,12 +2,13 @@ import img0 from "../assets/arloImg.jpeg";
 import img1 from "../assets/chloe_banner.jpeg";
 import img2 from "../assets/kivo_banner.jpeg";
 import img3 from "../assets/ddtCalculator.png";
-import img4 from "../assets/expense_tracking_app.png";
+import img4 from "../assets/expense-record-cover-dark-en.png";
 import img5 from "../assets/rick-morthy.png";
 
 const projects = [
   {
     "slug": "barry",
+    "imgPos": "center 30%",
     "title": "Barry",
     "stack": [
       "LangGraph",
@@ -54,6 +55,7 @@ const projects = [
   },
   {
     "slug": "chloe",
+    "imgPos": "center 42%",
     "title": "Chloe",
     "stack": [
       "Retell AI",
@@ -100,6 +102,7 @@ const projects = [
   },
   {
     "slug": "kivo",
+    "imgPos": "center 15%",
     "title": "Kivo",
     "stack": [
       "n8n",
@@ -145,6 +148,7 @@ const projects = [
   },
   {
     "slug": "dtc",
+    "imgPos": "center top",
     "title": "Dedicated Teams Calculator",
     "stack": [
       "React",
@@ -188,6 +192,7 @@ const projects = [
   },
   {
     "slug": "expense",
+    "imgPos": "center 45%",
     "title": "Expense Record App",
     "stack": [
       "React",
@@ -227,6 +232,7 @@ const projects = [
   },
   {
     "slug": "rick-morty",
+    "imgPos": "center top",
     "title": "Rick & Morty",
     "stack": [
       "React",

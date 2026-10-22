@@ -42,7 +42,7 @@ export default function Work() {
                 </div>
               </div>
               <div className="work-card-img">
-                <ProjectImage src={p.img} alt={p.title} />
+                <ProjectImage src={p.img} alt={p.title} pos={p.imgPos} />
               </div>
             </article>
           </div>

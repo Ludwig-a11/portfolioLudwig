@@ -111,8 +111,16 @@ h2.pf-kicker {
 }
 
 .work-card-img {
+  position: relative;
   background: var(--bg3);
   min-width: 0;
+  min-height: 0;
+}
+
+/* absolute so the image is clipped to the frame and object-position applies */
+.work-card-img .pf-media {
+  position: absolute;
+  inset: 0;
 }
 
 .work-disclaimer {

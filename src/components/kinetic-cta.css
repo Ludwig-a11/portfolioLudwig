@@ -1,0 +1,52 @@
+.kinetic-cta {
+  margin: 96px calc(-1 * var(--gutter)) 0;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kinetic-cta:focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: -2px;
+}
+
+.kc-row {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  align-items: center;
+  will-change: transform;
+}
+
+.kc-word {
+  font: 500 clamp(56px, 9vw, 140px) / 1 var(--font);
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  color: var(--fg);
+}
+
+.kc-word--outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--fg);
+}
+
+.kc-sep {
+  font: 400 clamp(32px, 5vw, 72px) / 1 var(--font);
+  color: var(--acc);
+}
+
+.kc-sep--mono {
+  font-family: var(--mono);
+}
+
+/* reduced motion: static rows, second one offset so they don't line up */
+@media (prefers-reduced-motion: reduce) {
+  .kc-row--rev {
+    transform: translateX(-25%);
+  }
+}

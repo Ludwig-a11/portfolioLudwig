@@ -15,7 +15,7 @@ function Content({ project, onClose }) {
   return (
     <>
       <div className="pf-drawer-hero">
-        <ProjectImage src={project.img} />
+        <ProjectImage src={project.img} pos={project.imgPos} />
         <button type="button" className="pf-drawer-close" onClick={onClose}>
           esc · {t.close} ✕
         </button>

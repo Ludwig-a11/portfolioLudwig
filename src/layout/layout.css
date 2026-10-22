@@ -261,8 +261,8 @@
   display: flex;
   flex-direction: column;
   padding: 18px 22px calc(28px + env(safe-area-inset-bottom));
-  background: #0b0c0e;
-  color: #ecede9;
+  background: var(--bg);
+  color: var(--fg);
   overflow-y: auto;
 }
 
@@ -271,23 +271,23 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--line);
   font: 400 12px/1 var(--mono);
-  color: #73776f;
+  color: var(--dim);
 }
 
 .pf-cmd-top b {
   font-weight: inherit;
-  color: oklch(0.86 0.17 128);
+  color: var(--acc);
 }
 
 .pf-cmd-top button {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--line);
   background: none;
-  color: #ecede9;
+  color: var(--fg);
   font-size: 15px;
   cursor: pointer;
 }
@@ -305,19 +305,19 @@
   display: inline-block;
   font: 500 46px/1.15 var(--font);
   letter-spacing: -0.04em;
-  color: #ecede9;
+  color: var(--fg);
 }
 
 .pf-cmd-links a i {
   font: 400 13px/1 var(--mono);
   font-style: normal;
-  color: #73776f;
+  color: var(--dim);
   letter-spacing: 0;
   margin-right: 8px;
 }
 
 .pf-cmd-links a.is-active {
-  color: oklch(0.86 0.17 128);
+  color: var(--acc);
 }
 
 .pf-cmd-bottom {
@@ -332,8 +332,8 @@
   gap: 14px;
   padding: 14px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  background: #0f1013;
+  border: 1px solid var(--line);
+  background: var(--bg2);
 }
 
 .pf-cmd-who img {
@@ -354,12 +354,12 @@
 
 .pf-cmd-who i {
   font-style: normal;
-  color: #73776f;
+  color: var(--dim);
 }
 
 .pf-cmd-who em {
   font-style: normal;
-  color: oklch(0.86 0.17 128);
+  color: var(--acc);
 }
 
 .pf-cmd-row {
@@ -376,7 +376,7 @@
 }
 
 .pf-cmd-links2 a {
-  color: #ecede9;
+  color: var(--fg);
 }
 
 .pf-cmd-ctrl {
@@ -388,9 +388,9 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--line);
   background: none;
-  color: #ecede9;
+  color: var(--fg);
   font: 500 11px/1 var(--mono);
   cursor: pointer;
 }

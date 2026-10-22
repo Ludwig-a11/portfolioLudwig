@@ -99,6 +99,10 @@ const en = {
   "errMessage": "Message must be 10–2000 characters.",
   "okMsg": "Message sent. I’ll get back to you soon.",
   "footer": "Designed & built by Luis Martinez",
+  "kA": "Open to full-time roles",
+  "kB": "Let’s build agents that work",
+  "kC": "Get in touch",
+  "kD": "Just send it",
   "backTop": "Back to top"
 };
 

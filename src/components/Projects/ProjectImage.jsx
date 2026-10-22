@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-// Shows the whole image (contain) over a blurred copy of itself, so nothing is cropped.
-export default function ProjectImage({ src, alt = "", className = "" }) {
+// Fills the frame (zoomed); `pos` picks which part of the image stays in view.
+export default function ProjectImage({ src, alt = "", pos = "center top", className = "" }) {
   return (
-    <div className={`pf-media ${className}`} style={{ "--media": `url("${src}")` }}>
-      <img src={src} alt={alt} />
+    <div className={`pf-media ${className}`}>
+      <img src={src} alt={alt} style={{ objectPosition: pos }} />
     </div>
   );
 }

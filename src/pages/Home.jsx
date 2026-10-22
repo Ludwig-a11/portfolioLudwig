@@ -9,6 +9,7 @@ import useScramble from "../hooks/useScramble";
 import useIsTouch from "../hooks/useIsTouch";
 import useScrollFocus from "../hooks/useScrollFocus";
 import { agentLog, skills } from "../data/site";
+import KineticCta from "../components/KineticCta";
 import Reveal from "../components/motion/Reveal";
 import useOpenProject from "../hooks/useOpenProject";
 import "./home.css";
@@ -179,6 +180,7 @@ export default function Home() {
             <ProjectRow key={p.slug} project={p} active={active === p.slug} isTouch={isTouch} onOpen={open} />
           ))}
         </div>
+        <KineticCta />
       </section>
     </>
   );
