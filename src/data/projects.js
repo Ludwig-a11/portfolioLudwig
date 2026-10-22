@@ -33,7 +33,7 @@ const projects = [
       "results": [
         "End-to-end pipeline: PDF → search → score → UI → feedback → learning",
         "Rejected candidates are filtered from future searches, not just logged",
-        "Fixed a cross-service identity bug across Serper, PDL and Supabase"
+        "Reduced bad hires with empirical data"
       ]
     },
     "es": {
@@ -48,7 +48,7 @@ const projects = [
       "results": [
         "Pipeline completo: PDF → búsqueda → score → UI → feedback → aprendizaje",
         "Los candidatos rechazados se filtran en búsquedas futuras",
-        "Corregí un bug de identidad entre Serper, PDL y Supabase"
+        "Reducción de malas contrataciones con datos empíricos"
       ]
     },
     "img": img0
@@ -108,14 +108,15 @@ const projects = [
       "n8n",
       "JavaScript",
       "Google Workspace",
-      "Retell (via Chloe)"
+      "Retell (via Chloe)",
+      "HubSpot CRM"
     ],
     "live": null,
     "ai": true,
     "en": {
       "tag": "AI ops agent",
       "desc": "Triages every inbound lead, detects intent and keeps CRM and tools in sync.",
-      "problem": "Human triage was the bottleneck — every minute of delay cost intent and consistency.",
+      "problem": "Human triage was the bottleneck: every minute of delay cost intent and consistency.",
       "solution": [
         "Analyzes each submission in real time",
         "Detects intent signals and spam patterns",
@@ -131,7 +132,7 @@ const projects = [
     "es": {
       "tag": "Agente de operaciones IA",
       "desc": "Clasifica cada lead entrante, detecta intención y mantiene CRM y herramientas sincronizados.",
-      "problem": "El triage humano era el cuello de botella — cada minuto de retraso costaba intención y consistencia.",
+      "problem": "El triage humano era el cuello de botella: cada minuto de retraso costaba intención y consistencia.",
       "solution": [
         "Analiza cada envío en tiempo real",
         "Detecta señales de intención y spam",
@@ -204,28 +205,34 @@ const projects = [
     "ai": false,
     "en": {
       "tag": "Personal finance",
-      "desc": "A simple, modular expense tracker built for daily use.",
-      "problem": "Finance tools fail when they get heavy — complexity kills daily habits.",
+      "desc": "A personal finance app with an AI agent that guides you toward your savings goals.",
+      "problem": "Keeping your accounts in a boring spreadsheet is slow, and most people give up before it ever helps them save.",
       "solution": [
-        "Clean separation of UI and business logic",
-        "Reusable components with CSS Modules",
-        "Controlled inputs and validation"
+        "A simple but fast UI built for daily use: log an expense in seconds",
+        "An AI agent that guides you toward your savings goals with advice based on your own spending",
+        "Set your budget and follow it day by day, with spending grouped by category",
+        "Clean separation of UI and business logic, with reusable components in CSS Modules"
       ],
       "results": [
-        "Actively evolving playground for UI, state and architecture best practices"
+        "Replaces the spreadsheet with a faster, easier way to keep your accounts",
+        "Budget progress and category breakdown visible at a glance",
+        "Savings goals backed by the guidance of an intelligent agent"
       ]
     },
     "es": {
       "tag": "Finanzas personales",
-      "desc": "Un registro de gastos simple y modular para uso diario.",
-      "problem": "Las apps de finanzas fallan cuando son pesadas — la complejidad mata el hábito.",
+      "desc": "Una app de finanzas personales con un agente de IA que te guía hacia tus metas de ahorro.",
+      "problem": "Llevar tus cuentas en un Excel aburrido es lento, y la mayoría lo abandona antes de que le ayude a ahorrar.",
       "solution": [
-        "Separación limpia entre UI y lógica",
-        "Componentes reutilizables con CSS Modules",
-        "Inputs controlados y validación"
+        "Una interfaz sencilla pero ágil, pensada para el uso diario: registra un gasto en segundos",
+        "Un agente de IA que te guía hacia tus metas de ahorro con consejos basados en tus propios gastos",
+        "Define tu presupuesto y síguelo día a día, con los gastos agrupados por categoría",
+        "Separación limpia entre UI y lógica, con componentes reutilizables en CSS Modules"
       ],
       "results": [
-        "Proyecto en evolución para practicar UI, estado y arquitectura"
+        "Reemplaza el Excel con una forma más rápida y fácil de llevar tus cuentas",
+        "Avance del presupuesto y desglose por categoría a simple vista",
+        "Metas de ahorro respaldadas por la asesoría de un agente inteligente"
       ]
     },
     "img": img4

@@ -193,30 +193,44 @@
   z-index: 30;
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 6px;
+  gap: 2px;
+  padding: 4px;
   border-radius: 99px;
-  background: #16181c;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+  background: var(--hdr);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid color-mix(in srgb, var(--acc) 40%, transparent);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
 }
 
 .pf-nav a {
-  padding: 11px 18px;
+  position: relative;
+  padding: 10px 18px;
   border-radius: 99px;
-  font: 500 13px/1 var(--font);
+  font: 500 12px/1 var(--mono);
   white-space: nowrap;
-  color: rgba(236, 237, 233, 0.65);
-  transition: background 0.3s var(--ease), color 0.3s var(--ease);
+  color: var(--mut);
+  transition: color 0.3s var(--ease);
 }
 
 .pf-nav a:hover {
-  color: #ecede9;
+  color: var(--fg);
 }
 
-.pf-nav a.is-active {
-  background: #ecede9;
-  color: #0b0c0e;
+.pf-nav a.is-active,
+.pf-nav a.is-active:hover {
+  color: var(--invfg);
+}
+
+.pf-nav-pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 99px;
+  background: var(--inv);
+}
+
+.pf-nav-label {
+  position: relative;
 }
 
 /* ---------- footer ---------- */
@@ -241,17 +255,19 @@
   z-index: 30;
   padding: 14px 18px;
   border-radius: 99px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: #16181c;
-  color: #ecede9;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid color-mix(in srgb, var(--acc) 40%, transparent);
+  background: var(--hdr);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  color: var(--fg);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
   font: 500 13px/1 var(--mono);
   white-space: nowrap;
   cursor: pointer;
 }
 
 .pf-fab span {
-  color: oklch(0.86 0.17 128);
+  color: var(--acc);
 }
 
 .pf-cmd {
